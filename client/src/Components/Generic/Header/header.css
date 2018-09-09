@@ -8,6 +8,16 @@
     height: 80px;
     width: 100vw;
   }
+
+  .mobileMenu{
+    float: right;
+    margin-right: 2rem;
+  }
+
+  .mobileMenu i{
+    font-size: 3rem;
+    color: rgba(0,0,0,0.74);
+  }
   
   .active{
     color: white;
@@ -20,7 +30,7 @@
   }
   
   .logoText{
-    margin-top: 20px;
+    margin-top: 3rem!important;
     float: left;
     color:#3A8B21;
   }
@@ -30,7 +40,7 @@
   }
   
   .logo{
-    margin-top: 15px;
+    margin-top: 2rem;
     float: left;
     max-height: 5rem;
     max-width: 8rem;

@@ -14,9 +14,12 @@ class Header extends Component {
        	 	<h1 className="logoText col-md-6 col-sm-6 hidden-xs">FAVOR <span className="titleColor">BANK</span></h1>
        	 	</NavLink>
         	<input className="Search col-md-1 col-sm-2 hidden-xs" placeholder="Find Workers"/>
-        	<div className="mainNav col-md-8 col-sm-5 hidden-xs">
-        		<ul className="nav">
-
+					<div className="mobileMenu hidden-md hidden-lg hidden-sm">
+						<i className="fa fa-navicon"></i>
+					</div>
+					<div className="mainNav col-md-8 col-sm-5 hidden-xs">
+						<ul className="nav">
+						
         		  <li><button className="but" type="button">
 	        		  <NavLink to='/signup' className="active">
 	        		 	 CREATE JOB
