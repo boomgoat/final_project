@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './landing.css';
 
 class Landing extends Component {
   render() {
     return (
       <div className="Landing">
-
-        <NavLink to='/signup'>
-          <div className="col-md-4">
+        <div className="welcome col-md-4">
+          <h1>Get it done with a favor!</h1> 
+          <NavLink to='/signup'>
             <button type='button' className="buttonMain"><h4>START NOW</h4></button>
-          </div>
-        </NavLink>
+          </NavLink>
+        </div>
        	<div className="col-md-8 background">
-       	 	<h1>Get it done with a favor!</h1> 
+       	 	
        	</div>
 
       </div>

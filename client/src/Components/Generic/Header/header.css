@@ -1,0 +1,90 @@
+/*Header styling*/
+
+*{
+  /* border: 2px dotted black;  */
+}
+
+.Header{
+    height: 80px;
+    width: 100vw;
+  }
+  
+  .active{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .active:hover{
+    color: white;
+    text-decoration: none;
+  }
+  
+  .logoText{
+    margin-top: 20px;
+    float: left;
+    color:#3A8B21;
+  }
+  
+  .titleColor{
+    color: #54D854;
+  }
+  
+  .logo{
+    margin-top: 15px;
+    float: left;
+    max-height: 5rem;
+    max-width: 8rem;
+  }
+  
+  .Search{
+    float: left;
+    margin-top: 2rem;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+  }
+  
+  .Search::placeholder{
+    font-family: "DosisB";
+  }
+  
+  .nav li{
+    float: right;
+    margin-top: 20px;
+  }
+  
+  .but{
+    background-color: #3A8B21;
+    border: none;
+    color: white;
+    margin-top: 5px;
+    margin-right: 2rem;
+    height: 3rem;;
+    border-radius: 5px;
+  }
+  
+  .navL{
+    color: black;
+    text-decoration: none;
+  }
+  
+  .navL:hover{
+    color: black;
+    text-decoration: none;
+  }
+  
+  /*Header End */
+
+  @media only screen and (max-width: 1740px) {
+    .logoText{
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    .but{
+      margin-right: 1rem;
+    }
+}

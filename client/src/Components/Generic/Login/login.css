@@ -1,0 +1,53 @@
+.Login {
+    text-align: center;
+    font-family: "Dosis";
+    overflow-x: hidden;
+  }
+
+/*Login*/
+
+.login{
+    margin:10rem;
+    height: 35rem;
+    margin-left:35%;
+    margin-right:35%;
+    min-width: 20rem;
+    border-radius: 15px;
+    min-height: 40rem;
+    align-content: center;
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+  }
+  
+  .login input{
+    margin-top: 2rem;
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+  }
+  
+  .button{
+    background-color: #54D854;
+    border: none;
+    color: white;
+    margin-top: 5%;
+    padding: 3px;
+    padding-right: 45px;
+    padding-left: 45px;
+    border-radius: 5px;
+  }
+  
+  /*Login End*/
+  
+  @media only screen and (max-width: 762px) {
+    .login{
+        margin: 10rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+}

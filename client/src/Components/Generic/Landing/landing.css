@@ -1,0 +1,28 @@
+/*Landing*/
+
+.background{
+    height: 35em;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../../Resources/Images/bg.png);
+  }
+  
+  .welcome h1{
+    font-family: "DosisB";
+    margin-top: 10rem;
+  }
+  
+  .buttonMain{
+    background-color: #3A8B21;
+    border: none;
+    color: white;
+    margin-top: 5rem;
+    padding: 5px;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-radius: 5px;
+  }
+  
+  /*Landing End*/
+  

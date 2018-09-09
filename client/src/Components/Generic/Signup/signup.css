@@ -1,0 +1,61 @@
+.Signup {
+    text-align: center;
+    font-family: "Dosis";
+    overflow-x: hidden;
+  }
+
+/*Signup*/
+
+.cont{
+    background-color: #F4F7F8;
+    min-height: 100vh;
+    -webkit-box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
+    box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
+  }
+  
+  .signup{
+    margin:15rem;
+    margin-left:35%;
+    margin-right:35%;
+    min-width: 20rem;
+    border-radius: 15px;
+    min-height: 40rem;
+    align-content: center;
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+  }
+  
+  .signup input{
+    margin-top: 2rem;
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+  }
+  
+  .button{
+    background-color: #3A8B21;
+    border: none;
+    color: white;
+    margin-top: 5%;
+    height: 4rem;
+    padding: 3px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 5px;
+  }
+  
+  /*Signup End*/
+
+@media only screen and (max-width: 762px) {
+    .signup{
+        margin: 10rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+}
