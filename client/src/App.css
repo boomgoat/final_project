@@ -13,6 +13,9 @@
   font-family: "Dosis";
   overflow-x: hidden;
 }
+*{
+  transition: all .5s ease;
+}
 
 .App-title {
   font-size: 1.5em;
