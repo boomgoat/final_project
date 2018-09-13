@@ -25,7 +25,7 @@ class Footer extends Component {
           <div className="base col-md-6 col-sm-6 col-xs-12 text-left">
             <h3>Connect with us</h3>
             <input className="subscribe col-md-7 col-sm-7 col-xs-12" placeholder="Enter Email"/> 
-            <button className="buttn col-md-3 col-sm-6 col-xs-12" type="button">SUBSCRIBE</button>
+            <button className="buttn col-md-3 col-sm-6 col-xs-12" type="button"><h4>SUBSCRIBE</h4></button>
             <div className="col-md-12 col-sm-12 col-xs-12">
             <i className="fa fa-github col-md-3 col-sm-3 col-xs-3"></i>
             <i className="fa fa-twitter-square col-md-3 col-sm-3 col-xs-3"></i>

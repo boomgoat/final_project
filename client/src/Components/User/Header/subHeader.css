@@ -1,0 +1,26 @@
+/*SubHeader*/
+
+.Subheader{
+    /* border-top: 1px solid black;
+    border-bottom: 1px solid black; */
+    -webkit-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    -moz-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
+    float: left;
+    width: 95vw;
+    border-radius: 5px;
+    margin: 2.5vw;
+    margin-top: 0;
+  }
+  
+  .navList{
+    float: left;
+    list-style: none;
+  }
+  
+  .navList li{
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  /*SubHeader End*/

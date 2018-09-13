@@ -8,8 +8,8 @@
 
   .comform{
     margin:15rem;
-    margin-left:5%;
-    margin-right:5%;
+    margin-left:25%;
+    margin-right:25%;
     min-width: 20rem;
     border-radius: 15px;
     min-height: 40rem;
@@ -29,3 +29,15 @@
     -moz-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
     box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
   }
+
+  .space{
+    margin-top: 3rem;
+    padding: 3rem;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .comform{
+      margin-left: 0;
+      margin-right: 0;
+    }
+}

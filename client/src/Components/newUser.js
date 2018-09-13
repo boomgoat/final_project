@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Header from './Generic/Header/header';
+import Header from './User/Header/header';
 import ComForm from './User/newProfile/completionForm';
 import Footer from './Generic/Footer/footer';
 import { BrowserRouter } from 'react-router-dom';

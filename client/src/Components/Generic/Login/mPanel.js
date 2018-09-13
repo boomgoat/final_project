@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './login.css';
+import { NavLink } from 'react-router-dom';
 
 class MPanel extends Component {
   render() {
@@ -10,7 +11,11 @@ class MPanel extends Component {
             <h2 className="col-md-12 col-sm-12">Log in and get to work</h2>
             <input placeholder="Username" className="col-md-12 col-sm-12 col-xs-12 uname"/>
             <input placeholder="Password" className="col-md-12 col-sm-12 col-xs-12 password"/>
-            <button className="button col-sm-12 col-xs-12"><h4>LOGIN</h4></button>
+            <NavLink to="/feed">
+              <button className="button col-sm-12 col-xs-12">
+                <h4>LOGIN</h4>
+              </button>
+            </NavLink>
           </div>
         </div>
       </div>

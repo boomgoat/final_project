@@ -7,6 +7,7 @@ import Footer from "./Generic/Footer/footer";
 import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
+
 class App extends Component {
   render() {
     return (

@@ -1,8 +1,8 @@
 /*Header styling*/
 
-*{
-  /* border: 2px dotted black;  */
-}
+/* *{
+  border: 2px dotted black; 
+} */
 
 .Header{
     height: 80px;
@@ -56,28 +56,40 @@
     -moz-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
     box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
   }
+
+  .mainNav{
+    float: right;
+  }
+
+  .ddLink{
+    cursor: pointer;
+    font-size: 2rem;
+    top: -2rem;
+  }
   
   .Search::placeholder{
     font-family: "DosisB";
-  }
-  
-  .nav li{
-    float: right;
-    margin-top: 20px;
   }
   
   .but{
     background-color: #3A8B21;
     border: none;
     color: white;
+    margin-top: 5px;
     margin-right: 2rem;
-    height: 3rem;
+    height: 3rem;;
     border-radius: 5px;
   }
   
-  .navL{
+  .navL h4{
     color: black;
     text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .navL{
+    padding-top: 2rem;
   }
   
   .navL:hover{
