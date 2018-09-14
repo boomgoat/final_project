@@ -26,7 +26,6 @@ ReactDOM.render(
 			<Route path='/profile' component={uProfile} />
 			<Route path='/feed' component={feed} />
 		</div>
-		
 	</BrowserRouter>
 	</Provider>,
 	document.getElementById('root'));

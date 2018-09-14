@@ -14,7 +14,7 @@ const AdminSchema = new mongoose.Schema({
         lowercase:true,
         index: true
     },
-    email: {
+    email: { 
         type: String,
         default: '',
         required: true,

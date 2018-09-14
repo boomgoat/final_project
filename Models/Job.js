@@ -20,7 +20,7 @@ const JobSchema = new mongoose.Schema({
         default: '',
         required: true,
         lowercase:true,
-        index: true
+        index: true 
     },
     isDeleted: {
         type: Boolean,

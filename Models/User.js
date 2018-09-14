@@ -22,7 +22,7 @@ const UserSchema = new mongoose.Schema({
     phone: {
         type: Number,
         default: '',
-        index: true
+        index: true 
     },
     password: {
         type: String,

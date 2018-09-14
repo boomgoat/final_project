@@ -8,7 +8,7 @@ const AdSchema = new mongoose.Schema({
         lowercase:true,
         index: true
     },
-    redirectURL: {
+    redirectURL: { 
         type: String,
         default: '',
         required: true,

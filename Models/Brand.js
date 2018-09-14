@@ -19,7 +19,7 @@ const BrandSchema = new mongoose.Schema({
         type: Number,
         default: '',
         required: true,
-        index: true
+        index: true 
     },
     password: {
         type: String,
