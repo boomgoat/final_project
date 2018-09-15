@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const user = require('./routes/api/users');
 const admin = require('./routes/api/users');
+const loginAuth = require('./routes/api/loginAuth');
 
 const app = express();
 
@@ -24,6 +25,7 @@ mongoose
 //Use routes
 app.use('/api/users', user);
 app.use('/api/admins', admin);
+app.use('/api/loginAuth', loginAuth);
 
 const port = process.env.PORT || 5050;
 

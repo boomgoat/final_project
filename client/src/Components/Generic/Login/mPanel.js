@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Form, FormGroup } from 'reactstrap';
 // import Validator from 'validator';
 import InlineError from '../Utilities/InlineError';
+import PropTypes from 'prop-types';
 
 class MPanel extends Component {
 
@@ -25,12 +26,17 @@ class MPanel extends Component {
     e.preventDefault();
     const errors = this.validate(this.state.data);
     this.setState({ errors });
+
+    if (Object.keys(errors).length === 0){
+      this.props.submit(this.state.data)
+      .catch(err => this.setState({ errors: err.response.data.errors }));
+    }
   };
 
   validate = (data) => {
     const errors = {};
-    if (!data.pass) errors.pass = "Can't be blank";
     if (!data.username) errors.username = "Can't be blank";
+    if (!data.pass) errors.pass = "Can't be blank";
     return errors;
   }
 
@@ -41,6 +47,11 @@ class MPanel extends Component {
         <div className="container-fluid cont">
           <div className="jumbotron login">
             <Form onSubmit={this.onSubmit}>
+            {errors.global && (
+              <div className="alert alert-warning">Oops! Something went wrong!<br/>
+                {errors.global}
+              </div>
+            )}
               <FormGroup>
                 <h2 className="col-md-12 col-sm-12">Log in and get to work</h2>
                 <input 
@@ -57,7 +68,9 @@ class MPanel extends Component {
                   placeholder="Password" 
                   value={data.pass} 
                   name="pass" 
+                  type="password"
                   className="col-md-12 col-sm-12 col-xs-12 password"
+                  onChange= { this.onChange }
                 />
 
                 {errors.pass && <InlineError text={errors.pass} />}
@@ -75,4 +88,11 @@ class MPanel extends Component {
     );
   }
 }
+
+
+MPanel.propTypes = {
+  submit: PropTypes.func.isRequired
+}
+
+
 export default MPanel;

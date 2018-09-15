@@ -17,16 +17,16 @@ import store from './Components/store';
 ReactDOM.render(
 	
 	<Provider store={store}>
-	<BrowserRouter>
-		<div>
-			<Route exact path='/' component={App} />
-			<Route path='/signup' component={Signup} />
-			<Route path='/newUser' component={newUser} />
-			<Route path='/login' component={Login} />
-			<Route path='/profile' component={uProfile} />
-			<Route path='/feed' component={feed} />
-		</div>
-	</BrowserRouter>
+		<BrowserRouter>
+			<div>
+				<Route exact path='/' component={App} />
+				<Route path='/signup' component={Signup} />
+				<Route path='/newUser' component={newUser} />
+				<Route path='/login' component={Login} />
+				<Route path='/profile' component={uProfile} />
+				<Route path='/feed' component={feed} />
+			</div>
+		</BrowserRouter>
 	</Provider>,
 	document.getElementById('root'));
 
