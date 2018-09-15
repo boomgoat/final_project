@@ -27,12 +27,6 @@ const UserSchema = new mongoose.Schema({
         lowercase: true,
         index: true
     },
-    passwordHash: {
-        type: String,
-        default: false,
-        required: true,
-        index: true
-    },
     password: {
         type: String,
         default: false,
@@ -97,7 +91,6 @@ const UserSchema = new mongoose.Schema({
 
 
 UserSchema.methods.isValidPassword = function isValidPassword(password) {
-    console.log(password, this.password);
     return bcrypt.compareSync(password, this.password);
 };
 
