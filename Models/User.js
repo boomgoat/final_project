@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const UserSchema = new mongoose.Schema({
     firstName: {
@@ -13,9 +14,22 @@ const UserSchema = new mongoose.Schema({
         required: true,
         index: true
     },
+    userName: {
+        type: String,
+        default: '',
+        required: true,
+        index: true
+    },
     email: {
         type: String,
         default: '',
+        required: true,
+        lowercase: true,
+        index: true
+    },
+    passwordHash: {
+        type: String,
+        default: false,
         required: true,
         index: true
     },
@@ -23,12 +37,6 @@ const UserSchema = new mongoose.Schema({
         type: Number,
         default: '',
         index: true 
-    },
-    password: {
-        type: String,
-        default: false,
-        required: true,
-        index: true
     },
     isDeleted: {
         type: Boolean,
@@ -80,6 +88,12 @@ const UserSchema = new mongoose.Schema({
 {
     timestamps: true
 });
+
+
+UserSchema.methods.isValidPassword = function isValidPassword(password) {
+    console.log(this.passwordHash);
+    return bcrypt.compareSync(password, this.passwordHash);
+};
 
 
 module.exports = mongoose.model('User', UserSchema);

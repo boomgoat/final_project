@@ -1,4 +1,4 @@
-# final_project
+# FAVOR BANK
 
 # How To Run The Project:
 Make sure you have npm installed. 

@@ -10,7 +10,7 @@ class MPanel extends Component {
 
   state = {
     data: {
-      username: '',
+      email: '',
       pass: ''
     },
     loading: false,
@@ -35,7 +35,7 @@ class MPanel extends Component {
 
   validate = (data) => {
     const errors = {};
-    if (!data.username) errors.username = "Can't be blank";
+    if (!data.email) errors.userName = "Can't be blank";
     if (!data.pass) errors.pass = "Can't be blank";
     return errors;
   }
@@ -55,14 +55,14 @@ class MPanel extends Component {
               <FormGroup>
                 <h2 className="col-md-12 col-sm-12">Log in and get to work</h2>
                 <input 
-                  placeholder="Username" 
-                  value={data.username} 
-                  name="username" 
+                  placeholder="Email" 
+                  value={data.email} 
+                  name="email" 
                   className="col-md-12 col-sm-12 col-xs-12 uname"
                   onChange= { this.onChange }
                 />
 
-                {errors.username && <InlineError text={errors.username} />}
+                {errors.userName && <InlineError text={errors.userName} />}
                 
                 <input 
                   placeholder="Password" 

@@ -7,4 +7,4 @@ export const userLoggedIn = (user) => ({
 });
 
 export const login = credentials => dispatch => 
-    api.user.login(credentials).then( user => dispatchEvent(userLoggedIn(user)));
+    api.user.login(credentials).then( user => dispatch(userLoggedIn(user)));
