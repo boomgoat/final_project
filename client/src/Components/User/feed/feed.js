@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './feed.css';
+import JobListing from '../Listing/jobListing';
 
 class Feed extends Component {
   render() {
@@ -15,7 +16,7 @@ class Feed extends Component {
               <li><h4>Action</h4></li>
             </ul>
           </div>
-          <div className="jumbotron mainFeed col-md-8"></div>
+          <JobListing/>
           <div className="col-md-2 text-left">
             <ul className="sidePanels">
               <li><h4>Action</h4></li>

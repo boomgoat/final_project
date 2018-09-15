@@ -3,7 +3,7 @@ import { GET_USERS, ADD_USER, DELETE_USER} from '../actions/types';
 
 const initialState = {
     users: [
-        { id: uuid(), name: 'Jhoomlaal'}
+        { id: uuid(), name: 'John'}
     ]
 }
 
