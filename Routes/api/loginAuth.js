@@ -6,8 +6,7 @@ router.post('/', (req, res) => {
 console.log(req.body.credentials);
    const { credentials } = req.body;
    User.findOne({ email: credentials.email }).then(user=> {
-       console.log(user && user.isValidPassword(credentials.password));
-       if(user) {
+       if(user && user.isValidPassword(credentials.pass)) {
             res.json({ user: { email: user.email } });
        } else {
            res.status(400).json({ errors: { global: "Invalid Credenials "}});
