@@ -9,10 +9,15 @@ import Login from './Components/login';
 import uProfile from './Components/profile';
 import feed from './Components/feed';
 import { BrowserRouter, Route } from 'react-router-dom';
-
+import {userLoggedIn} from './redux/users/actions';
 
 import { Provider } from 'react-redux';
 import store from './redux';
+
+if(localStorage.FavorBankJWT){
+	const loginUser = {token: localStorage.FavorBankJWT};
+	store.dispatch(userLoggedIn(loginUser))
+}
 
 ReactDOM.render(
 	

@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { login } from '../actions/auth'
+import { login } from '../redux/users/actions';
 
 class Login extends Component {
 

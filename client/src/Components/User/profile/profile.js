@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './profile.css';
 import { connect } from 'react-redux';
-import { getUsers } from '../../../actions/userActions';
+import { getUsers } from '../../../redux/users/actions';
 import PropTypes from 'prop-types';
 
 class Profile extends Component {

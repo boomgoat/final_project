@@ -4,8 +4,9 @@ import logo from "../../Resources/Logo/Icon.png";
 import { NavLink } from 'react-router-dom';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { connect } from 'react-redux';
-import { getUsers } from '../../../actions/userActions';
+import { getUsers } from '../../../redux/users/actions';
 import PropTypes from 'prop-types';
+import { logout } from '../../../redux/users/actions';
 
 
 
@@ -20,7 +21,7 @@ class Header extends Component {
     return (
 			<div className="Header">
 			{ users.map(({ id, name }) => (
-			<div className="container">
+			<div className="container" key={id}>
 			
 				<NavLink to='/' className="col-md-2 col-sm-5">
 				<img className="logo" src = { logo } alt="logo"/>
@@ -53,7 +54,7 @@ class Header extends Component {
 								<DropdownItem>View Profile</DropdownItem>
 							</NavLink>
 							<DropdownItem divider />
-							<NavLink to='/'>
+							<NavLink to='/' onClick={logout()}>
 								<DropdownItem>LOG OUT</DropdownItem>
 							</NavLink>
 						</DropdownMenu>

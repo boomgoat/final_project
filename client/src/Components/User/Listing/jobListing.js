@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './jl.css';
 import { connect } from 'react-redux';
-import { getJobs } from '../../../actions/jobActions';
+import { getJobs } from '../../../redux/jobs/actions';
 import PropTypes from 'prop-types';
 import { Row } from 'reactstrap'; 
 
