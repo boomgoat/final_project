@@ -4,6 +4,7 @@ import styles from './cf.css';
 import { Form, FormGroup, Label, Input, Col} from 'reactstrap';
 import { connect } from 'react-redux';
 import { updateUser } from '../../../redux/users/actions';
+import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 
 class ComForm extends Component {
@@ -44,13 +45,12 @@ class ComForm extends Component {
   });
 
   submit = data => {
-    console.log(this.props, {...data, id: this.props.user._id})
     return this.props.updateUser({...data, id: this.props.user._id})
-    .then(() => this.props.history.push("/profile"))
+    .then(() => {
+      this.props.history.push("/profile")
+    })
     .catch(err => console.log(err));
-  }
-  // .then(() => this.props.history.push("/"))
-  // .catch(err => console.log(err));
+  };
 
   render() {
     const {data} = this.state;
@@ -173,4 +173,4 @@ const mapStateToProps = (state) => ({
 	user: state.user.user
 });
 
-export default connect(mapStateToProps, {updateUser})(ComForm);
+export default withRouter(connect(mapStateToProps, {updateUser})(ComForm));
