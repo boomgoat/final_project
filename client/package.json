@@ -20,10 +20,18 @@
     "start": "cross-env PORT=3006 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint -p ."
   },
   "proxy": "http://localhost:5050",
   "devDependencies": {
-    "cross-env": "^5.1.5"
+    "babel-core": "^7.0.0-beta.3",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "cross-env": "^5.1.5",
+    "eslint": "^5.5.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
   }
 }
