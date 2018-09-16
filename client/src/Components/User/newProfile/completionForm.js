@@ -43,7 +43,7 @@ class ComForm extends Component {
   });
 
   submit = data => this.props.updateUser(data)
-  .then(() => this.props.history.push("/"))
+  // .then(() => this.props.history.push("/"))
   .catch(err => console.log(err));
 
   render() {

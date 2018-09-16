@@ -38,7 +38,7 @@ router.delete('/:id', (req, res) => {
     .catch(err => res.status(404).json({success: false}));
 });
 
-router.patch('/:id', function(req, res, next){
+router.patch('/', function(req, res, next){
     User.findById(req.payload.id).then(function(user){
       if(!user){ return res.sendStatus(401); }
   
