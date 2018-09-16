@@ -1,5 +1,5 @@
 import uuid from 'uuid';
-import { GET_USERS, ADD_USER, DELETE_USER} from '../actions/types';
+import { GET_USERS, ADD_USER, DELETE_USER} from './types';
 
 const initialState = {
     users: [

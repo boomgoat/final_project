@@ -19,7 +19,7 @@ class Profile extends Component {
         <div className="container">
         
           <div className="jumbotron text-left prof col-md-9">
-            <img src= { picURL } className="pp col-md-2" alt="profile-picture"/>
+            <img src="../../Resources/Images/dingus.jpg" className="pp col-md-2" alt="profile-picture"/>
             <h2 className="col-md-7 name">Welcome Back {name}</h2>
             <p className="about">
               { about }

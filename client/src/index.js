@@ -12,7 +12,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 
 import { Provider } from 'react-redux';
-import store from './Components/store';
+import store from './redux';
 
 ReactDOM.render(
 	
