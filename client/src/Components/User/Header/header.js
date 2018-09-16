@@ -17,13 +17,12 @@ class Header extends Component {
 	}
 
   render() {
-		const { users } = this.props.user
+		const { firstName } = this.props.user.user
     return (
 			<div className="Header">
-			{ users.map(({ id, name }) => (
-			<div className="container" key={id}>
+			<div className="container">
 			
-				<NavLink to='/' className="col-md-2 col-sm-5">
+				<NavLink to='/feed' className="col-md-2 col-sm-5">
 				<img className="logo" src = { logo } alt="logo"/>
 				</NavLink>
 							
@@ -45,10 +44,10 @@ class Header extends Component {
 					
 					<UncontrolledDropdown className="col-md-3 navL">
 						<DropdownToggle tag="a" className="nav-link ddLink" caret>
-						{name}
+						{firstName}
 						</DropdownToggle>
 						<DropdownMenu>
-							<DropdownItem header>Welcome Back {name}!</DropdownItem>
+							<DropdownItem header>Welcome Back {firstName}!</DropdownItem>
 							<DropdownItem disabled>Action</DropdownItem>
 							<NavLink to='/profile'>
 								<DropdownItem>View Profile</DropdownItem>

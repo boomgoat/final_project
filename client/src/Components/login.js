@@ -11,7 +11,7 @@ import { login } from '../redux/users/actions';
 
 class Login extends Component {
 
-  submit = data => this.props.login(data).then(() => this.props.history.push("/"));
+  submit = data => this.props.login(data).then(() => this.props.history.push("/feed"));
 
   render() {
     return (

@@ -13,7 +13,8 @@ class ComForm extends Component {
       gender: '',
       phone:'',
       about:'',
-      skills:''
+      skills:'',
+      id: null
     },
     loading: false,
     errors: {}
@@ -42,9 +43,14 @@ class ComForm extends Component {
     data: { ...this.state.data, [e.target.name]: e.target.value }
   });
 
-  submit = data => this.props.updateUser(data)
+  submit = data => {
+    console.log(this.props, {...data, id: this.props.user._id})
+    return this.props.updateUser({...data, id: this.props.user._id})
+    .then(() => this.props.history.push("/profile"))
+    .catch(err => console.log(err));
+  }
   // .then(() => this.props.history.push("/"))
-  .catch(err => console.log(err));
+  // .catch(err => console.log(err));
 
   render() {
     const {data} = this.state;
@@ -163,4 +169,8 @@ ComForm.propTypes = {
   // submit: PropTypes.func.isRequired
 }
 
-export default connect(null, {updateUser})(ComForm);
+const mapStateToProps = (state) => ({
+	user: state.user.user
+});
+
+export default connect(mapStateToProps, {updateUser})(ComForm);

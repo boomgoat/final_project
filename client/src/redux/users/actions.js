@@ -9,7 +9,7 @@ export const getUsers = () => {
 
 export const userLoggedIn = (user) => ({
     type: USER_LOGGED_IN,
-    user
+    payload: user
 });
 
 export const userLoggedOut = () => ({
@@ -39,6 +39,6 @@ export const logout = () => dispatch => {
 
 export const updateUser = data => dispatch => {
     return api.user.update(data).then(data => {
-        dispatch(updateUser(data));
+        dispatch(userUpdateRequest(data));
     });
 }

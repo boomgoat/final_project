@@ -39,24 +39,22 @@ router.delete('/:id', (req, res) => {
 });
 
 router.patch('/', function(req, res, next){
-    User.findById(req.payload.id).then(function(user){
+  console.log(req.payload, req.body)
+    User.findById(req.body.data.id).then(function(user){
       if(!user){ return res.sendStatus(401); }
   
       // only update fields that were actually passed...
-      if(typeof req.body.user.age !== 'undefined'){
-        user.age = req.body.user.age;
+      if(typeof req.body.data.age !== 'undefined'){
+        user.age = req.body.data.age;
       }
-      if(typeof req.body.user.gender !== 'undefined'){
-        user.gender = req.body.user.gender;
+      if(typeof req.body.data.gender !== 'undefined'){
+        user.gender = req.body.data.gender;
       }
-      if(typeof req.body.user.skills !== 'undefined'){
-        user.skills = req.body.user.skills;
+      if(typeof req.body.data.skills !== 'undefined'){
+        user.skills = req.body.data.skills;
       }
-      if(typeof req.body.user.about !== 'undefined'){
-        user.about = req.body.user.about;
-      }
-      if(typeof req.body.user.phone !== 'undefined'){
-        user.phone = req.body.user.phone;
+      if(typeof req.body.data.phone !== 'undefined'){
+        user.phone = req.body.data.phone;
       }
   
       return user.save().then(function(){
@@ -65,5 +63,4 @@ router.patch('/', function(req, res, next){
     }).catch(next);
   });
 
-
-module.exports = router;
+  module.exports = router;
