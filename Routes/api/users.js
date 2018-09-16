@@ -17,14 +17,15 @@ router.get('/', (req, res) => {
 // @access  Public
 router.post('/', (req, res) => {
     const newUser = new User({
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstName: req.body.fname,
+        lastName: req.body.lname,
+        username: req.body.username,
         email: req.body.email,
         password: req.body.password
     });
     
     newUser.save()
-        .then(user => res.json(user));
+        .catch(err => res.json({err}));
 });
 
 // @route   DELETE api/user/:id

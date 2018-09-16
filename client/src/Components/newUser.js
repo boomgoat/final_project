@@ -10,7 +10,6 @@ class newUser extends Component {
   render() {
     return (
       <div className="Login">
-        <Header />
         <ComForm/>
         <Footer/>
       </div>

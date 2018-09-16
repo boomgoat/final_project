@@ -3,19 +3,31 @@ import '../App.css';
 import Header from './Generic/Header/header';
 import MainPanel from './Generic/Signup/mainPanel'
 import Footer from "./Generic/Footer/footer";
-import { BrowserRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import { signup } from '../actions/signupAction';
 
 class Signup extends Component {
+
+  submit = data => 
+    this.props.signup(data).then(() => this.props.history.push("/newUser"));
+
   render() {
     return (
       <div className="Signup">
         <Header />
-        <MainPanel/>
+        <MainPanel submit={this.submit}/>
         <Footer/>
       </div>
     );
   }
 }
 
-export default Signup;
+Signup.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired,
+  signup: PropTypes.func.isRequired
+}
+
+export default connect(null,  {signup} )(Signup);

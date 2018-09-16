@@ -13,6 +13,14 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import store from './Components/store';
+import { userLoggedIn } from './actions/auth';
+import UserRoute from './routes/UserRoute';
+import GuestRoute from './routes/GuestRoute';
+
+if(localStorage.FavorBankJWT){
+	const loginUser = {token: localStorage.FavorBankJWT};
+	store.dispatch(userLoggedIn(loginUser))
+}
 
 ReactDOM.render(
 	

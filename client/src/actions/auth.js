@@ -1,10 +1,26 @@
-import { USER_LOGGED_IN } from "./types";
+import { USER_LOGGED_IN, USER_LOGGED_OUT } from "./types";
 import api from "../Components/api";
 
-export const userLoggedIn = (user) => ({
+export const userLoggedIn = (loginUser) => ({
     type: USER_LOGGED_IN,
-    user
+    loginUser
 });
 
 export const login = credentials => dispatch => 
-    api.user.login(credentials).then( user => dispatch(userLoggedIn(user)));
+    api.loginUser.login(credentials).then( loginUser => 
+        {
+            localStorage.FavorBankJWT = loginUser.token;
+        
+            dispatch(userLoggedIn(loginUser));
+        });
+
+export const userLoggedOut = () => ({
+    type: USER_LOGGED_OUT
+});
+
+export const logout = () => dispatch => 
+        {
+            localStorage.removeItem('FavorBankJWT');
+            dispatch(userLoggedOut());
+        };
+

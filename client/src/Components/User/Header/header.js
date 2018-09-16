@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { connect } from 'react-redux';
 import { getUsers } from '../../../actions/userActions';
+import { logout } from '../../../actions/auth';
 import PropTypes from 'prop-types';
 
 
@@ -22,7 +23,7 @@ class Header extends Component {
 			{ users.map(({ id, name }) => (
 			<div className="container">
 			
-				<NavLink to='/' className="col-md-2 col-sm-5">
+				<NavLink to='/feed' className="col-md-2 col-sm-5">
 				<img className="logo" src = { logo } alt="logo"/>
 				</NavLink>
 							
@@ -52,8 +53,8 @@ class Header extends Component {
 							<NavLink to='/profile'>
 								<DropdownItem>View Profile</DropdownItem>
 							</NavLink>
-							<DropdownItem divider />
-							<NavLink to='/'>
+							<DropdownItem divider/>
+							<NavLink to='/' onClick={logout()}>
 								<DropdownItem>LOG OUT</DropdownItem>
 							</NavLink>
 						</DropdownMenu>
@@ -70,11 +71,13 @@ class Header extends Component {
 
 Header.propTypes = {
 	getUsers: PropTypes.func.isRequired,
-	user: PropTypes.object.isRequired
+	user: PropTypes.object.isRequired,
+	logout: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
-	user: state.user
+	user: state.user,
+	isAuthenticated: !!state.loginUser.token
 });
 
-export default connect(mapStateToProps, { getUsers })(Header);
+export default connect(mapStateToProps, { getUsers, logout })(Header);

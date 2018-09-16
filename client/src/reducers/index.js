@@ -5,6 +5,6 @@ import jobReducer from './jobReducer';
 
 export default combineReducers({
     user: userReducer,
-    login: loginReducer,
+    loginUser: loginReducer,
     job: jobReducer
 });

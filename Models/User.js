@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const UserSchema = new mongoose.Schema({
     firstName: {
@@ -25,7 +27,8 @@ const UserSchema = new mongoose.Schema({
         default: '',
         required: true,
         lowercase: true,
-        index: true
+        index: true,
+        unique: true
     },
     passwordHash: {
         type: String,
@@ -86,7 +89,7 @@ const UserSchema = new mongoose.Schema({
         lowercase: true,
         index: true
     },
-    approved: {
+    confirmed: {
         type: Boolean,
         default: false
     }
@@ -96,10 +99,26 @@ const UserSchema = new mongoose.Schema({
 });
 
 
-UserSchema.methods.isValidPassword = function isValidPassword(password) {
-    console.log(password, this.password);
-    return bcrypt.compareSync(password, this.password);
+// UserSchema.methods.isValidPassword = function isValidPassword(password) {
+//     console.log(password, this.password);
+//     return bcrypt.compareSync(password, this.password);
+// };
+
+UserSchema.methods.generateJWT = function generateJWT(){
+    return jwt.sign({
+        email: this.email
+    }, 'secretkey' );
 };
+
+UserSchema.methods.toAuthJSON = function toAuthJSON () {
+    return{
+        email: this.email,
+        confirmed: this.confirmed,
+        token: this.generateJWT()
+    }
+};
+
+UserSchema.plugin(uniqueValidator, { message: "This email is already taken"});
 
 
 module.exports = mongoose.model('User', UserSchema);

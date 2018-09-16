@@ -6,7 +6,7 @@ const initialState = {
         { 
             id: uuid(), 
             name: 'John', 
-            picURL: '../Components/Resources/Images/dingus.jpg', 
+            picURL: '../../Resources/Images/dingus.jpg', 
             about: 'Lorem ipsum dolor sit amet, nec sanctus debitis omittam id, vix soleat tibique id. Consetetur conclusionemque vel no, dicant nullam eam ei. Pri possim audiam inimicus id, ne veniam dicunt singulis per.'
         }
     ]
