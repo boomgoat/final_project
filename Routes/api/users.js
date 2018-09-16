@@ -8,7 +8,7 @@ const User = require('../../models/User');
 // @desc    Get All Items
 // @access  Public
 router.get('/', (req, res) => {
-    User.find({firstName: "talha"})
+    User.find()
     .then(users => res.json(users));
 });
 
@@ -17,9 +17,9 @@ router.get('/', (req, res) => {
 // @access  Public
 router.post('/', (req, res) => {
     const newUser = new User({
-        firstName: req.body.fname,
-        lastName: req.body.lname,
-        username: req.body.username,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        userName: req.body.userName,
         email: req.body.email,
         password: req.body.password
     });

@@ -30,4 +30,4 @@ Signup.propTypes = {
   signup: PropTypes.func.isRequired
 }
 
-export default connect(null,  {signup} )(Signup);
+export default connect(null, {signup} )(Signup);

@@ -30,12 +30,6 @@ const UserSchema = new mongoose.Schema({
         index: true,
         unique: true
     },
-    passwordHash: {
-        type: String,
-        default: false,
-        required: true,
-        index: true
-    },
     password: {
         type: String,
         default: false,

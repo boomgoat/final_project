@@ -8,11 +8,11 @@ import {Form, FormGroup} from 'reactstrap';
 class MainPanel extends Component {
   state = {
     data: {
-      username: '',
+      userName: '',
       email:'',
       password:'',
-      fname:'',
-      lname:''
+      firstName:'',
+      lastName:''
     },
     loading: false,
     errors: {}
@@ -36,9 +36,9 @@ class MainPanel extends Component {
 
   validate = (data) => {
     const errors = {};
-    if (!data.fname) errors.fname = "Can't be blank";
-    if (!data.lname) errors.lname = "Can't be blank";
-    if (!data.username) errors.userName = "Can't be blank";
+    if (!data.firstName) errors.fname = "Can't be blank";
+    if (!data.lastName) errors.lname = "Can't be blank";
+    if (!data.userName) errors.userName = "Can't be blank";
     if (!data.email) errors.email = "Can't be blank";
     if (!data.password) errors.password = "Can't be blank";
     return errors;
@@ -60,34 +60,34 @@ class MainPanel extends Component {
               
               <FormGroup>
                   <input type="text" 
-                    value={data.fname}
+                    value={data.firstName}
                     onChange={this.onChange}
                     placeholder="First Name" 
                     className="col-md-5 col-sm-5 col-xs-12"
-                    name="fname" 
+                    name="firstName" 
                   />
 
-                  {errors.fname && <InlineError text={errors.fname} />}
+                  {errors.firstNamefirstName && <InlineError text={errors.firstName} />}
 
                   <input type="text"
                       placeholder="Last Name"
-                      value={data.lname}
+                      value={data.lastName}
                       onChange={this.onChange}
                       className="col-md-5 col-sm-5 col-xs-12 col-sm-offset-2"
-                      name="lname" 
+                      name="lastName" 
                   />
 
-                  {errors.lname && <InlineError text={errors.lname} />}
+                  {errors.lastName && <InlineError text={errors.lastName} />}
 
                   
                   <input placeholder="User Name" 
-                  value={data.username}
+                  value={data.userName}
                       onChange={this.onChange}
                       className="col-md-12 col-sm-12 col-xs-12 email"
-                      name="username"
+                      name="userName"
                   />
 
-                  {errors.username && <InlineError text={errors.username} />}
+                  {errors.userName && <InlineError text={errors.userName} />}
 
                   
                   <input placeholder="Email" 
