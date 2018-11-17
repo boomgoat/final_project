@@ -62,24 +62,24 @@ class ComForm extends Component {
               <div className="container">
 
                 <div className="row">
-                  <Label className="col-md-1">
+                  <Label className="col-md-1 col-sm-1">
                     Age:
                   </Label>
 
                   <Input
-                  className="col-md-1"
+                  className="col-md-1 col-sm-1"
                   type="text" name="age"
                   placeholder="Age"
                   onChange={this.onChange}
                   value={data.age}
                   />
 
-                  <Label className="col-md-offset-4 col-md-2">
+                  <Label className="col-md-offset-3 col-md-1 col-sm-2">
                     Gender:
                   </Label>
 
                   <Col>
-                    <Label className="col-md-1">
+                    <Label className="col-md-1 col-sm-1">
                       Male
                     </Label>
 
@@ -94,7 +94,7 @@ class ComForm extends Component {
 
                   <Col>
 
-                    <Label className="col-md-1">
+                    <Label className="col-md-1 col-sm-1">
                       Female
                     </Label>
 
@@ -111,10 +111,10 @@ class ComForm extends Component {
 
                 <div className="row">
 
-                  <Label className="col-md-1">Phone:</Label>
+                  <Label className="col-md-1 col-sm-1">Phone:</Label>
 
                   <Input
-                    className="col-md-4"
+                    className="col-md-4 col-sm-1"
                     type="text"
                     name="phone"
                     value={data.phone}
@@ -126,10 +126,10 @@ class ComForm extends Component {
 
                 <div className="row">
 
-                  <Label className="col-md-1">About:</Label>
+                  <Label className="col-md-1 col-sm-1">About:</Label>
 
                   <Input
-                    className="col-md-8"
+                    className="col-md-8 col-sm-1"
                     type="textarea"
                     name="about"
                     value={data.about}
@@ -141,7 +141,7 @@ class ComForm extends Component {
 
                 <div className="row">
 
-                  <Label className="col-md-1">Skills:</Label>
+                  <Label className="col-md-1 col-sm-1">Skills:</Label>
 
                   <Input
                     className="col-md-8"

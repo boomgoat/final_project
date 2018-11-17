@@ -4,8 +4,8 @@ const router = express.Router();
 // User Model
 const User = require('../../models/User');
 
-// @route   Get api/items
-// @desc    Get All Items
+// @route   Get api/users
+// @desc    Get All Users
 // @access  Public
 router.get('/', (req, res) => {
     User.find({firstName: "talha"})
@@ -52,6 +52,9 @@ router.patch('/', function(req, res, next){
       }
       if(typeof req.body.data.skills !== 'undefined'){
         user.skills = req.body.data.skills;
+      }
+      if(typeof req.body.data.about !== 'undefined'){
+        user.about = req.body.data.about;
       }
       if(typeof req.body.data.phone !== 'undefined'){
         user.phone = req.body.data.phone;

@@ -4,6 +4,7 @@ import styles from './profile.css';
 import { connect } from 'react-redux';
 import { getUsers } from '../../../redux/users/actions';
 import PropTypes from 'prop-types';
+import pp from '../../Resources/Images/dingus.jpg';
 
 class Profile extends Component {
   
@@ -12,18 +13,17 @@ class Profile extends Component {
   }
   
   render() {
-    const { users } = this.props.user
+    const { firstName, about } = this.props.user.user
     return (
       <div className="container-fluid cont">
-      { users.map(({ id, name, picURL, about }) => (
         <div className="container">
         
           <div className="jumbotron text-left prof col-md-9">
-            <img src="../../Resources/Images/dingus.jpg" className="pp col-md-2" alt="profile-picture"/>
-            <h2 className="col-md-7 name">Welcome Back {name}</h2>
+            <img src={pp} className="pp col-md-2" alt="profile-picture"/>
+            <h2 className="col-md-7 name">Welcome Back {firstName}</h2>
             <p className="about">
-              { about }
-            </p>
+              {about}
+            </p> 
           </div>
           <div className="col-md-3 text-left">
           <button className="settingsButn col-md-12"><h4>Profile Settings</h4></button>
@@ -36,7 +36,6 @@ class Profile extends Component {
           </div>
         
         </div>
-        ))};
       </div>
     );
   }

@@ -27,7 +27,7 @@ class Header extends Component {
 		          <NavLink to='/login' className="navL col-md-3 col-sm-2">
 		          	<h4>LOGIN</h4>
 							</NavLink>
-							<NavLink to='#' className="navL col-md-3 hidden-sm">
+							<NavLink to='/howItWorks' className="navL col-md-3 hidden-sm">
 								<h4>HOW IT WORKS</h4>
 							</NavLink>
 							

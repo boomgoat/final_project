@@ -1,0 +1,104 @@
+/* SidePanel */
+
+.sidepanel{
+    padding-top: 10vh;
+    height: 80vh;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lg{
+    max-height: 7rem;
+    max-width: 7rem;
+    margin-bottom: 10rem;
+}
+
+.menuItems{
+    padding: 2rem;
+    text-align: left;
+    margin-left: 25%;
+    border-left: 3px solid #787B7F;
+}
+
+@media only screen and (max-width: 768px) {
+    .sidepanel{
+        padding-top: 2vh;
+        height: 10vh;
+    }
+    .lg{
+        max-height: 7rem;
+        max-width: 7rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* SidePanel End */
+
+/* Landing */
+
+.adminLanding{
+    height: 90vh;
+    padding-top: 13em;
+    background-color: #F4F7F8;
+    border-top-left-radius: 0%!important;
+    border-top-right-radius: 0%!important;
+    border-bottom-right-radius: 0%!important;
+}
+
+.adminLanding h1{
+    padding-bottom: 1em;
+}
+
+.adminContainer{
+    padding-right: 0%!important;
+}
+
+.updateText *{
+    font-size: 1.25em;
+}
+
+.bold{
+    font-family: 'DosisB';
+}
+
+/* Landing End */
+
+@media only screen and (max-width: 998px) {
+    /* SidePanel */
+    .sidepanel{
+        padding-top: 2vh;
+        height: 10vh;
+    }
+    .lg{
+        max-height: 7rem;
+        max-width: 7rem;
+        margin-bottom: 1rem;
+    }
+    /* Sidepanel end */
+
+    /* landing */
+
+    .adminLanding{
+        height: 100vh;
+        padding-top: 13em;
+        background-color: white;
+        border-radius: 0%!important;
+    }
+
+    .adminLanding h1{
+        font-size: 4em;
+    }
+
+    .adminLanding h2{
+        font-size: 1.75em;
+    }
+
+    .adminLanding h3, .bold{
+        font-size: 1.25em;
+    }
+
+    /* landing end */
+}

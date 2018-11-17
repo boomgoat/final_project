@@ -37,7 +37,7 @@ class Header extends Component {
 					<NavLink to='/feed' className="navL  col-md-offset-7 col-md-1 hidden-sm">
 						<h4><span className="glyphicon glyphicon-home"></span></h4>
 					</NavLink>
-					<NavLink to='/login' className="navL col-md-1 col-sm-2">
+					<NavLink to='#' className="navL col-md-1 col-sm-2">
 						<h4><span className="glyphicon glyphicon-envelope"></span></h4>
 					</NavLink>
 
@@ -62,7 +62,7 @@ class Header extends Component {
 				</div>
 			
 			</div>
-		))}
+		
       </div>
     );
   }

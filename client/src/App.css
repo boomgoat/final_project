@@ -18,6 +18,14 @@
   font-size: 1.5rem;
 }
 
+* a{
+  color: black;
+}
+
+* a:hover{
+  text-decoration: none;
+}
+
 .App-title {
   font-size: 1.5em;
 }

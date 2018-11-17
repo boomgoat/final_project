@@ -16,6 +16,15 @@
       cursor: pointer;
   }
 
+  .link{
+    color: black;
+  }
+
+  .link:hover{
+    text-decoration: none;
+    color: black;
+  }
+
   .desc{
     font-size: 1.5rem!important;
   }

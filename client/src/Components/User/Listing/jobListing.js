@@ -19,11 +19,13 @@ class JobListing extends Component {
             <div className="jumbotron text-left mainFeed col-md-8">
                 <h2> My Job Feed </h2>
                 { jobs.map(({ id, title, budget, desc }) => (
-                <Row className="borders" key={id}>
-                    <h2 className="col-md-12">{ title }</h2>
-                    <h3 className="col-md-12">{ budget }</h3>
-                    <p className="col-md-12 desc">{ desc }</p>
-                </Row>
+                <NavLink className="link" to="/jobDesc">
+                    <Row className="borders" key={id}>
+                        <h2 className="col-md-12">{ title }</h2>
+                        <h3 className="col-md-12">{ budget }</h3>
+                        <p className="col-md-12 desc">{ desc }</p>
+                    </Row>
+                </NavLink>
                 ))}
             </div>
         )

@@ -5,19 +5,21 @@
   "dependencies": {
     "axios": "^0.18.0",
     "history": "^4.7.2",
-    "react": "^16.3.1",
+    "jwt-decode": "^2.2.0",
+    "react": "^16.6.3",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.1",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "reactstrap": "^6.5.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
     "validator": "^10.7.1"
   },
   "scripts": {
-    "start": "cross-env PORT=3006 react-scripts start",
+    "start": "cross-env PORT=3001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
@@ -29,9 +31,6 @@
     "babel-loader": "^8.0.2",
     "babel-plugin-module-resolver": "^3.1.1",
     "cross-env": "^5.1.5",
-    "eslint": "^5.5.0",
-    "webpack": "^4.17.2",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.8"
+    "eslint": "^5.5.0"
   }
 }

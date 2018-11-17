@@ -60,6 +60,12 @@ const UserSchema = new mongoose.Schema({
         lowercase:true,
         index: true
     },
+    about: {
+        type: String,
+        default: '',
+        lowercase: true,
+        index: true
+    },
     age: {
         type: Number,
         default: '',
@@ -92,7 +98,13 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.methods.generateJWT = function generateJWT(){
     return jwt.sign({
-        email: this.email
+        email: this.email,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        userName: this.userName,
+        phone: this.phone,
+        about: this.about,
+        skills: this.skills
     }, 'secretkey' );
 };
 
@@ -103,6 +115,8 @@ UserSchema.methods.toAuthJSON = function toAuthJSON () {
         lastName: this.lastName,
         userName: this.userName,
         phone: this.phone,
+        about: this.about,
+        skills: this.skills,
         confirmed: this.confirmed,
         token: this.generateJWT()
     }
