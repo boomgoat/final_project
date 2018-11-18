@@ -27,6 +27,18 @@ router.post('/', (req, res) => {
         .then(admin => res.json(admin));
 });
 
+router.post('/login', (req, res) => {
+    const { credentials } = req.body;
+    Admin.findOne({ email: credentials.email }).then(admin=> {
+       if(admin && admin.password === credentials.pass) {
+            res.json({ admin: admin.toAuthJSON() });
+           
+       } else{
+        res.status(400).json({ errors: { global: "Invalid Credenials "}});
+       }
+   });
+})
+
 // @route   DELETE api/user/:id
 // @desc    Delete An Admin
 // @access  Public

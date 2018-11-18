@@ -35,6 +35,7 @@
     height: 4rem;
     border: none;
     margin-right: 2rem;
+    color: black;
     border-radius: 5px;
     -webkit-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
     -moz-box-shadow: inset 0px 0px 9px 0px rgba(0,0,0,0.24);
@@ -47,11 +48,31 @@
   box-shadow: inset 0px -1px 9px 3px rgba(84,216,84,0.74);
 }
 
+.subscribe:active{
+  border: none;
+}
+
 .fa{
   margin-top: 4rem;
   right: 2rem;
   font-size: 4rem;
   color: rgba(255,255,255,0.24);
+  transition: all 1s ease;
+}
+
+.footerList *{
+  
+  transition: all 1s ease;
+}
+
+.footerList a{
+  color: white;
+  transition: all 1s ease;
+}
+
+.footerList a:hover{
+  color: rgba(255,255,255,0.84);
+  transition-timing-function: linear;
   transition: all 1s ease;
 }
 

@@ -12,8 +12,10 @@ import feed from './Components/feed';
 import JbDesc from './Components/JobDesc';
 import Admin from './Components/Admin';
 import AdminDashboard from './Components/AdminDashboard';
+import AdminLog from './Components/AdminLogin';
 import { BrowserRouter, Route } from 'react-router-dom';
 import {userLoggedIn} from './redux/users/actions';
+import {adminLoggedIn} from './redux/admin/actions';
 import decode from 'jwt-decode';
 import { Provider } from 'react-redux';
 import store from './redux';
@@ -24,6 +26,13 @@ if(localStorage.FavorBankJWT){
 	const loginUser = {token: localStorage.FavorBankJWT, email: payload.email, firstName: payload.firstName, 
 		lastName: payload.lastName, about: payload.about, skills: payload.skills};
 	store.dispatch(userLoggedIn(loginUser))
+}
+
+if(localStorage.FavorBankADMIN){
+	const payload = decode(localStorage.FavorBankADMIN);
+	const loginAdmin = {token: localStorage.FavorBankADMIN, email: payload.email, firstName: payload.firstName, 
+		lastName: payload.lastName};
+	store.dispatch(adminLoggedIn(loginAdmin))
 }
 
 ReactDOM.render(
@@ -41,6 +50,7 @@ ReactDOM.render(
 				<Route path='/jobDesc' component={JobDesc} />
 				<Route path='/admin' component={Admin} />
 				<Route path='/adm/dashboard' component={AdminDashboard} />
+				<Route path='/adminLogin' component={AdminLog} />
 			</div>
 		</BrowserRouter>
 	</Provider>,

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './footer.css';
+import { NavLink } from 'react-router-dom';
 import logo from "../../Resources/Logo/Icon.png";
 
 class Footer extends Component {
@@ -20,6 +21,7 @@ class Footer extends Component {
             <li><h4>Home</h4></li>
             <li><h4>Tutorials</h4></li>
             <li><h4>Join Us</h4></li>
+            <NavLink to="/adminLogin"><li><h4>Admin Login</h4></li></NavLink>
             </ul>
           </div>
           <div className="base col-md-6 col-sm-6 col-xs-12 text-left">
