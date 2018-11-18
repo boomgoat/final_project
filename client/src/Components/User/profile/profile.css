@@ -1,9 +1,7 @@
 .cont{
     background-color: #F4F7F8;
     min-height: 100vh;
-    -webkit-box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
-    box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
+    margin-top:80px;
   }
 
 .profile{
@@ -20,13 +18,16 @@
     box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
   }
 
+  .profileHeading{
+    font-family: "DosisB";
+    font-size: 2em;
+  }
+
   .name{
     margin: 2rem;
   }
 
   .about{
-    margin-top: 16rem;
-    font-size: 1.5rem!important;
   }
 
   .pp{

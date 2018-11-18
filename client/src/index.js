@@ -6,6 +6,7 @@ import App from './Components/App';
 import How from './Components/How';
 import Signup from './Components/signup';
 import newUser from './Components/newUser';
+import UserSettings from './Components/UserSettings';
 import Login from './Components/login';
 import uProfile from './Components/profile';
 import feed from './Components/feed';
@@ -44,6 +45,7 @@ ReactDOM.render(
 				<Route exact path='/howItWorks' component={How} />
 				<Route path='/signup' component={Signup} />
 				<Route path='/newUser' component={newUser} />
+				<Route path='/settings' component={UserSettings} />
 				<Route path='/login' component={Login} />
 				<Route path='/profile' component={uProfile} />
 				<Route path='/feed' component={feed} />

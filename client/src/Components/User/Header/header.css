@@ -7,6 +7,12 @@
 .Header{
     height: 80px;
     width: 100vw;
+    position: fixed;
+    z-index: 999;
+    background-color: white;
+    -webkit-box-shadow: 0px 2px 21px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 21px -5px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 21px -5px rgba(0,0,0,0.75);
   }
 
   .mobileMenu{

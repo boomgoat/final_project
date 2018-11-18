@@ -1,9 +1,6 @@
 .cont{
     background-color: #F4F7F8;
     min-height: 100vh;
-    -webkit-box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
-    -moz-box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
-    box-shadow: inset 0px 5px 6px 0px rgba(0,0,0,0.16);
   }
 
 .profile{

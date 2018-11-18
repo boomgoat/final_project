@@ -13,20 +13,29 @@ class Profile extends Component {
   }
   
   render() {
-    const { firstName, about } = this.props.user.user
+    const { firstName, about, skills, lastName } = this.props.user.user
     return (
       <div className="container-fluid cont">
         <div className="container">
         
           <div className="jumbotron text-left prof col-md-9">
-            <img src={pp} className="pp col-md-2" alt="profile-picture"/>
-            <h2 className="col-md-7 name">Welcome Back {firstName}</h2>
-            <p className="about">
+            <img src={pp} className="pp col-md-offset-5 col-md-2" alt="profile-picture"/>
+            <h1 className="col-md-12 name text-center">{firstName + " " +lastName}</h1>
+            
+            <h2 className="col-md-12 profileHeading">About</h2>
+
+            <p className="about col-md-12">
               {about}
             </p> 
+
+            <h2 className="col-md-12 profileHeading">Skills</h2>
+
+            <p className="skills col-md-12">
+              {skills}
+            </p>
           </div>
           <div className="col-md-3 text-left">
-          <button className="settingsButn col-md-12"><h4>Profile Settings</h4></button>
+          <NavLink to="/settings"><button className="settingsButn col-md-12"><h4>Profile Settings</h4></button></NavLink>
             <ul className="sidePanels">
               <li>
                 <h3>Availability</h3>

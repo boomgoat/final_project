@@ -1,0 +1,16 @@
+.mobileMenu{
+    height: 100vh;
+    z-index: 999;
+    background-color: white;
+}
+
+.mobmen{
+    margin-top: 15vh;
+    height: auto;
+    width: 100vw;
+}
+
+.itemsMobile{
+    padding: 5vh;
+    font-size: 2em;
+}

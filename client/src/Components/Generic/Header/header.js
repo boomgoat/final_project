@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 class Header extends Component {
   render() {
     return (
-      <div className="Header">
+      <div className="Header hidden-sm hidden-xs">
        	<div className="container-fluid">
        	 	<NavLink to='/' className="col-md-3 col-sm-5">
        	 	<img className="logo col-md-4 col-lg-3 col-sm-3" src = { logo } alt="logo"/>
