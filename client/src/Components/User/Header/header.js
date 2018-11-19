@@ -19,7 +19,7 @@ class Header extends Component {
   render() {
 		const { firstName } = this.props.user.user
     return (
-			<div className="Header">
+			<div className="Header hidden-xs hidden-sm">
 			<div className="container">
 			
 				<NavLink to='/feed' className="col-md-2 col-sm-5">

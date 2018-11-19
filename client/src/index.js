@@ -10,6 +10,8 @@ import UserSettings from './Components/UserSettings';
 import Login from './Components/login';
 import uProfile from './Components/profile';
 import feed from './Components/feed';
+import JobCreation from './Components/JobCreation';
+import JobDashboard from './Components/JobDashboard';
 import JbDesc from './Components/JobDesc';
 import Admin from './Components/Admin';
 import AdminDashboard from './Components/AdminDashboard';
@@ -49,6 +51,8 @@ ReactDOM.render(
 				<Route path='/login' component={Login} />
 				<Route path='/profile' component={uProfile} />
 				<Route path='/feed' component={feed} />
+				<Route path='/newJob' component={JobCreation} />
+				<Route path='/myJobs' component={JobDashboard} />
 				<Route path='/jobDesc' component={JobDesc} />
 				<Route path='/admin' component={Admin} />
 				<Route path='/adm/dashboard' component={AdminDashboard} />

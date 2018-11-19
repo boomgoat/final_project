@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const JobSchema = new mongoose.Schema({
     title: {
@@ -52,13 +54,39 @@ const JobSchema = new mongoose.Schema({
     status: {
         type: String, enum: ['Pending', 'Active', 'Completed']
     },
-    userId: [{
-        type: Schema.Types.ObjectId, ref: 'User'
-    }]
+    userId: {
+        type: String,
+        default: '',
+        index: true
+    }
 },
 {
     timestamps: true
 });
+
+JobSchema.methods.generateJWT = function generateJWT(){
+    return jwt.sign({
+        title: this.title,
+        category: this.category,
+        isDeleted: this.isDeleted,
+        status: this.status,
+        duration: this.duration,
+        budget: this.budget
+    }, 'secretkey' );
+};
+
+JobSchema.methods.toAuthJSON = function toAuthJSON () {
+    return {
+        title: this.title,
+        category: this.category,
+        isDeleted: this.isDeleted,
+        status: this.status,
+        userId: this.userId,
+        duration: this.duration,
+        budget: this.budget,
+        token: this.generateJWT()
+    }
+};
 
 
 module.exports = mongoose.model('Job', JobSchema);
