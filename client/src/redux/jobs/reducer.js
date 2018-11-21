@@ -8,7 +8,7 @@ const jobsReducer = function(state = initialState, action) {
     switch(action.type) {
         case 'GET_JOBS':
             return {
-                ...state
+                ...state, jobs: action.payload
             }
         default:
             return state;

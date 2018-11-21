@@ -12,5 +12,9 @@ export default {
     admin: {
         login: credentials =>
             axios.post("/api/admins/login", { credentials }).then(res => res.data.admin)
+    },
+
+    job: {
+        getJobs : () => axios.get('/api/jobs').then(res => res.data.job)
     }
 }

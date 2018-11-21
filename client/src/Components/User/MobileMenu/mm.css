@@ -1,5 +1,5 @@
 .mobileMenu{
-    height: 10vh;
+    height: auto;
     z-index: 999;
     background-color: white;
 }

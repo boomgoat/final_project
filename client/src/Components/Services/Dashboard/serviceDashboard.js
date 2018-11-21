@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
-import styles from './jd.css';
+import styles from './ServiceDash.css';
 import { NavLink } from 'react-router-dom';
 import { Row, Table  } from 'reactstrap';
-import { connect } from 'react-redux';
-import { getJobs } from '../../../redux/jobs/actions';
-import PropTypes from 'prop-types';
 
 
-class JobDash extends Component {
-    componentDidMount() {
-		  this.props.getJobs();
-    }
+
+class ServDash extends Component {
     render() {
-      const { title, description } = this.props.job
         return(
-            <div className="jobDashboard">
+            <div className="servDashboard">
             <Table>
             <thead>
               <tr>
                 <th>#</th>
                 <th>Title</th>
                 <th>Description</th>
+                <th>Status</th>
                 <th>Edit</th>
                 <th>Delete</th>
               </tr>
@@ -28,8 +23,9 @@ class JobDash extends Component {
             <tbody>
               <tr>
                 <th scope="row">1</th>
-                <td>{title}</td>
-                <td>{description}</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>Active</td>
                 <td> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></td>
                 <td> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
               </tr>
@@ -40,13 +36,4 @@ class JobDash extends Component {
     }
 }
 
-JobDash.propTypes = {
-	getJob: PropTypes.func.isRequired,
-	job: PropTypes.object.isRequired
-}
-
-const mapStateToProps = (state) => ({
-	job: state.jobs.job
-});
-
-export default connect(mapStateToProps, { getJobs })(JobDash);
+export default ServDash

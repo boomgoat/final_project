@@ -25,7 +25,7 @@ mongoose
 
 //Use routes
 app.use('/api/users', user);
-// app.use('/api/jobs', job);
+app.use('/api/jobs', job);
 app.use('/api/admins', admin);
 app.use('/api/loginAuth', loginAuth);
 

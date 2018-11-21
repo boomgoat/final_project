@@ -9,7 +9,7 @@ class Feed extends Component {
     return (
       <div className="container-fluid cont">
         <div className="container">
-          <div className="col-md-2 text-left">
+          <div className="col-md-2 hidden-sm hidden-xs text-right">
             <ul className="sidePanels">
               <li><h4>Action</h4></li>
               <li><h4>Action</h4></li>
@@ -18,11 +18,11 @@ class Feed extends Component {
             </ul>
           </div>
           <JobListing/>
-          <div className="col-md-2 text-left">
+          <div className="col-md-2 hidden-sm hidden-xs text-left">
             <ul className="sidePanels">
-              <NavLink to="/profile"><li><h4>View Profile</h4></li></NavLink>
-              <NavLink to="#" onClick={this.toggle}><li><h4>Create Job</h4></li></NavLink>
-              <NavLink to="/myJobs"><li><h4>My Jobs</h4></li></NavLink>
+              <NavLink to="/profile"><li><h4>My Profile</h4></li></NavLink>
+              <NavLink to="/newService"><li><h4>Create Service</h4></li></NavLink>
+              <NavLink to="/myServices"><li><h4>My Services</h4></li></NavLink>
               <li><h4>Action</h4></li>
             </ul>
           </div>

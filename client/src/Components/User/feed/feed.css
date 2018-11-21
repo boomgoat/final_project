@@ -19,7 +19,8 @@
 
   .sidePanels{
     margin-top:5rem;
-    list-style: none;;
+    list-style: none;
+    padding: 2em;
   }
 
   .sidePanels li{

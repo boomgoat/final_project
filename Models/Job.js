@@ -26,7 +26,7 @@ const JobSchema = new mongoose.Schema({
     },
     isDeleted: {
         type: Boolean,
-        default: ''
+        default: false
     },
     budget: {
         type: Number,
@@ -34,9 +34,7 @@ const JobSchema = new mongoose.Schema({
         index: true
     },
     review: {
-        type: {
-            type: String
-        },
+        type: [String],
         default: '',
         index: true
     },
@@ -48,7 +46,6 @@ const JobSchema = new mongoose.Schema({
     },
     duration: {
         type: Number,
-        default:'',
         index: true
     },
     status: {
@@ -64,29 +61,6 @@ const JobSchema = new mongoose.Schema({
     timestamps: true
 });
 
-JobSchema.methods.generateJWT = function generateJWT(){
-    return jwt.sign({
-        title: this.title,
-        category: this.category,
-        isDeleted: this.isDeleted,
-        status: this.status,
-        duration: this.duration,
-        budget: this.budget
-    }, 'secretkey' );
-};
-
-JobSchema.methods.toAuthJSON = function toAuthJSON () {
-    return {
-        title: this.title,
-        category: this.category,
-        isDeleted: this.isDeleted,
-        status: this.status,
-        userId: this.userId,
-        duration: this.duration,
-        budget: this.budget,
-        token: this.generateJWT()
-    }
-};
 
 
 module.exports = mongoose.model('Job', JobSchema);
