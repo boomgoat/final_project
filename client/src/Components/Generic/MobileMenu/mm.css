@@ -14,3 +14,8 @@
     padding: 5vh;
     font-size: 2em;
 }
+
+.mobMenu{
+    margin-top: 1em;
+    cursor: pointer;
+}

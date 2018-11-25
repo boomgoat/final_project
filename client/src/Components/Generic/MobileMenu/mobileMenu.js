@@ -9,7 +9,9 @@ class MobileMenu extends Component {
     return (
         <div className="mobileMenu hidden-md hidden-lg">
             <UncontrolledDropdown className="col-md-3 ">
-                <DropdownToggle tag="a" className="nav-link ddLink" caret>MENU</DropdownToggle>
+                <DropdownToggle tag="a" className="nav-link mobMenu ddLink">
+                    <h4><span className="glyphicon  glyphicon-menu-hamburger "></span></h4>
+                </DropdownToggle>
 
                 <DropdownMenu className="mobmen text-center">
 

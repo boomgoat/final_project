@@ -7,8 +7,8 @@ const User = require('../../models/User');
 // @route   Get api/users
 // @desc    Get All Users
 // @access  Public
-router.get('/', (req, res) => {
-    User.find({firstName: "talha"})
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
     .then(users => res.json(users));
 });
 

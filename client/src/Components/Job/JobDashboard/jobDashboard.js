@@ -12,6 +12,8 @@ class JobDash extends Component {
 		  this.props.getJobs();
     }
     render() {
+      console.log(this.props.job)
+      debugger
       const { title, description } = this.props.job
         return(
             <div className="jobDashboard">
