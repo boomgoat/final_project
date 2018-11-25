@@ -8,13 +8,13 @@ class Profile extends Component {
     render() {
         return(
             <div className="container-fluid brand">
-                <section className="Greeting text-center">
+                <section className="Greeting fade-in col-md-12 text-center">
                     <h1><span className="boldHeading">favor</span>bank</h1>
                     <br/>
                     <hr/>
                     <h3>Open Source, Service Based Network</h3>
                 </section>
-                <section className="options">
+                <section className="options col-md-12">
                     <div></div>
                 </section>
             </div>

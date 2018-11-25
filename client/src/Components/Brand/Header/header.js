@@ -35,13 +35,13 @@ class Header extends Component {
 					<NavLink to='/newAd' className="navLB col-md-offset-1   col-md-3 hidden-sm">
 						<h4>CREATE AD</h4>
 					</NavLink>
-					<NavLink to='/myAd' className="navLB  col-md-3 hidden-sm">
+					<NavLink to='/adverts' className="navLB  col-md-3 hidden-sm">
 						<h4>MY ADS</h4>
 					</NavLink>
 					<NavLink to='/brand' className="navLB   col-md-1 hidden-sm">
 						<h4><span className="glyphicon glyphicon-home"></span></h4>
 					</NavLink>
-					<NavLink to='/profile' className="navLB col-md-1 col-sm-2">
+					<NavLink to='/myBrand' className="navLB col-md-1 col-sm-2">
 						<h4><span className="glyphicon glyphicon-user"></span></h4>
 					</NavLink>
 

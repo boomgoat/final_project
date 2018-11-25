@@ -1,0 +1,8 @@
+.adDashboard{
+    margin: 8em;
+    min-height: 60vh;
+}
+
+.adDashboard *{
+    font-size: 1.15em;
+}

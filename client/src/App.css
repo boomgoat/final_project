@@ -8,6 +8,21 @@
   src: url("fonts/Dosis-Bold.otf") format("opentype");
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url("fonts/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url("fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url("fonts/Roboto-Bold.ttf") format("truetype");
+}
+
 .App {
   text-align: center;
   font-family: "Dosis";
@@ -16,6 +31,22 @@
 *{
   transition-timing-function: linear;
   transition: all 1s ease;
+}
+
+@keyframes fadeIn{
+  0% {
+    opacity:0;
+  }
+  5% {
+      opacity:0;
+    }
+  100% {
+    opacity:1;
+  }
+}  
+
+.fade-in {
+  animation: fadeIn ease 5s;
 }
 
 * a{

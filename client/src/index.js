@@ -9,6 +9,7 @@ import How from './Components/How';
 import { BrowserRouter, Route } from 'react-router-dom';
 import {userLoggedIn} from './redux/users/actions';
 import {adminLoggedIn} from './redux/admin/actions';
+import {brandLoggedIn} from './redux/brands/actions';
 import decode from 'jwt-decode';
 import { Provider } from 'react-redux';
 import store from './redux';
@@ -16,6 +17,8 @@ import store from './redux';
 // Brand Imports
 
 import BrandProfile from './Components/Routes/Brands/profile';
+import BrandLog from './Components/Routes/Brands/BrandLogin';
+import AdDashboard from './Components/Routes/Brands/AdDashboard';
 
 // User Imports
 
@@ -58,6 +61,12 @@ if(localStorage.FavorBankADMIN){
 	store.dispatch(adminLoggedIn(loginAdmin))
 }
 
+if(localStorage.FavorBankBRAND){
+	const payload = decode(localStorage.FavorBankBRAND);
+	const loginBrand = {token: localStorage.FavorBankBRAND, email: payload.email, brandName: payload.brandName};
+	store.dispatch(brandLoggedIn(loginBrand))
+}
+
 ReactDOM.render(
 	
 	<Provider store={store}>
@@ -82,7 +91,9 @@ ReactDOM.render(
 
 				
 
+				<Route path='/brandLogin' component={BrandLog} />
 				<Route path='/brand' component={BrandProfile} />
+				<Route path='/adverts' component={AdDashboard} />
 
 				
 
