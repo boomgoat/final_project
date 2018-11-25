@@ -103,6 +103,7 @@ UserSchema.methods.generateJWT = function generateJWT(){
         firstName: this.firstName,
         lastName: this.lastName,
         userName: this.userName,
+        age: this.age,
         phone: this.phone,
         about: this.about,
         skills: this.skills
@@ -115,6 +116,8 @@ UserSchema.methods.toAuthJSON = function toAuthJSON () {
         email: this.email,
         firstName: this.firstName,
         lastName: this.lastName,
+        age: this.age,
+        gender: this.gender,
         userName: this.userName,
         phone: this.phone,
         about: this.about,

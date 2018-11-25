@@ -44,3 +44,10 @@ export const updateUser = (data) => dispatch => {
         dispatch(userUpdateRequest(data));
     });
 }
+
+export const getUser = id => dispatch => {
+    return api.user.getUser(id)
+        .then( user => {
+            dispatch()
+        } )
+};
