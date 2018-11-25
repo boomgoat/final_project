@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
-import Dashboard from './Admin/dashboard/dashboard';
-import Footer from "./Admin/Generic/footer";
+import Messenger from '../../Admin/Messenger/Messenger';
+import Footer from "../../Admin/Generic/footer";
 import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Landing from './Admin/Generic/landing';
 
 
-class Admin extends Component {
+class AdminMessenger extends Component {
   render() {
     return (
       <div className="Login">
-        <Landing/>
+        <Messenger/>
       </div>
     );
   }
 }
 
-export default Admin;
+export default AdminMessenger;

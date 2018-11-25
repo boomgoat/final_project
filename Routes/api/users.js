@@ -38,9 +38,10 @@ router.delete('/:id', (req, res) => {
     .catch(err => res.status(404).json({success: false}));
 });
 
-router.patch('/', function(req, res, next){
+router.patch('/:id', function(req, res, next){
   console.log(req.payload, req.body)
-    User.findById(req.body.data.id).then(function(user){
+    User.findById(req.params.id).then(function(user){
+      console.log(req.params.id)
       if(!user){ return res.sendStatus(401); }
   
       // only update fields that were actually passed...

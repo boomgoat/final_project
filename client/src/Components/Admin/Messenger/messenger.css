@@ -1,0 +1,57 @@
+.mess{
+    padding-right: 0;
+}
+
+.messenger{
+    height: 80vh;
+    padding: 0;
+    padding-top: 2em;
+    background-color: #F4F7F8;
+    border-top-left-radius: 0%!important;
+    border-top-right-radius: 0%!important;
+    border-bottom-right-radius: 0%!important;
+}
+
+/* User Tag */
+
+.userTags{
+    background-color: white;
+    padding-top: 1rem;
+    height: 6em;
+    border-bottom: 1px solid black;
+}
+
+.messPreview{
+    font-size: 15px!important;
+}
+
+.nameTag{
+    margin-top: 1rem;
+}
+
+.userCard .pp {
+    margin-top: 1rem;
+}
+
+.userCard{
+    height: 60vh;
+    padding: 0!important;
+    margin-left: 2em;
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+}
+
+/* User Tag End */
+
+/* Message Box */
+
+.messageBox{
+    height: 60vh;
+    margin-left: 2em;
+    background-color: white;
+    -webkit-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+}

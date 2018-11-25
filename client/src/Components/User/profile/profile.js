@@ -22,17 +22,6 @@ class Profile extends Component {
             <img src={pp} className="pp col-md-offset-5 col-md-2" alt="profile-picture"/>
             <h1 className="col-md-12 name text-center">{firstName + " " +lastName}</h1>
             
-            <h2 className="col-md-12 profileHeading">About</h2>
-
-            <p className="about col-md-12">
-              {about}
-            </p> 
-
-            <h2 className="col-md-12 profileHeading">Skills</h2>
-
-            <p className="skills col-md-12">
-              {skills}
-            </p>
           </div>
           <div className="col-md-3 text-left">
           <NavLink to="/settings"><button className="settingsButn col-md-12"><h4>Profile Settings</h4></button></NavLink>
@@ -42,6 +31,23 @@ class Profile extends Component {
                 <br/>More than 30 hrs/week
               </li>
             </ul>
+          </div>
+          <div className="jumbotron text-left prof col-md-9">
+            
+            <h2 className="col-md-12 profileHeading">About</h2>
+
+            <p className="about col-md-12">
+              {about}
+            </p> 
+          </div>
+
+          <div className="jumbotron text-left prof col-md-9">
+
+            <h2 className="col-md-12 profileHeading">Skills</h2>
+
+            <p className="skills col-md-12">
+              {skills}
+            </p>
           </div>
         
         </div>

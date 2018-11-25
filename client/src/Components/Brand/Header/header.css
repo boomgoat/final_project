@@ -1,0 +1,108 @@
+/*Header styling*/
+
+/* *{
+  border: 2px dotted black; 
+} */
+
+.BrandHeader{
+    height: 80px;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    background-color: white;
+    font-family: "DosisB";
+  }
+
+  .mobileMenu{
+    float: right;
+    margin-right: 2rem;
+  }
+
+  .mobileMenu i{
+    font-size: 3rem;
+    color: rgba(0,0,0,0.74);
+  }
+  
+  .active{
+    text-decoration: none;
+  }
+  
+  .active:hover{
+    text-decoration: none;
+  }
+  
+  .logoText{
+    margin-top: 3rem!important;
+    color:#757575;
+  }
+  
+  .titleColor{
+    color: #757575;
+  }
+  
+  .logoB{
+    margin-top: 2rem;
+    max-height: 5rem;
+    max-width: 8rem;
+  }
+  
+  .Search{
+    float: left;
+    margin-top: 2rem;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .mainNav{
+    float: right;
+  }
+
+  .ddLink{
+    cursor: pointer;
+    font-size: 2rem;
+    top: -2rem;
+  }
+  
+  .Search::placeholder{
+    font-family: "DosisB";
+  }
+  
+  .but{
+    background-color: #757575;
+    border: none;
+    color: white;
+    margin-top: 5px;
+    margin-right: 2rem;
+    height: 3rem;;
+    border-radius: 5px;
+  }
+  
+  .navLB h4{
+    color: #757575;
+    text-decoration: none;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .navLB{
+    padding-top: 2rem;
+  }
+  
+  .navLB:hover{
+    color: black;
+    text-decoration: none;
+  }
+  
+  /*Header End */
+
+  @media only screen and (max-width: 1740px) {
+    .logoText{
+      font-size: 2rem;
+      margin-top: 2rem;
+    }
+
+    .but{
+      margin-right: 1rem;
+    }
+}

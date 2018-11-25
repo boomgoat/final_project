@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import AdmLogin from './Admin/Generic/login';
+import AdmLogin from '../../Admin/Generic/login';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { login } from '../redux/admin/actions';
+import { login } from '../../../redux/admin/actions';
 
 
 class AdminLog extends Component {

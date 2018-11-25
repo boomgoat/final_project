@@ -1,34 +1,52 @@
+// Generic
+
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App';
 import How from './Components/How';
-import Signup from './Components/signup';
-import newUser from './Components/newUser';
-import UserSettings from './Components/UserSettings';
-import Login from './Components/login';
-import uProfile from './Components/profile';
-import feed from './Components/feed';
-import JobCreation from './Components/JobCreation';
-import NewServ from './Components/NewService';
-import JobDashboard from './Components/JobDashboard';
-import ServiceDashboard from './Components/ServiceDashboard';
-import JbDesc from './Components/JobDesc';
-import Admin from './Components/Admin';
-import AdminDashboard from './Components/AdminDashboard';
-import AdminLog from './Components/AdminLogin';
 import { BrowserRouter, Route } from 'react-router-dom';
 import {userLoggedIn} from './redux/users/actions';
 import {adminLoggedIn} from './redux/admin/actions';
 import decode from 'jwt-decode';
 import { Provider } from 'react-redux';
 import store from './redux';
-import JobDesc from './Components/JobDesc';
+
+// Brand Imports
+
+import BrandProfile from './Components/Routes/Brands/profile';
+
+// User Imports
+
+import Signup from './Components/Routes/User/signup';
+import newUser from './Components/Routes/User/newUser';
+import UserSettings from './Components/Routes/User/UserSettings';
+import Login from './Components/Routes/User/login';
+import uProfile from './Components/Routes/User/profile';
+import feed from './Components/Routes/User/feed';
+import JobCreation from './Components/Routes/User/JobCreation';
+import NewServ from './Components/Routes/User/NewService';
+import JobDashboard from './Components/Routes/User/JobDashboard';
+import ServiceDashboard from './Components/Routes/User/ServiceDashboard';
+import JobDesc from './Components/Routes/User/JobDesc';
+
+// Admin Imports
+
+import JobRev from './Components/Routes/Admin/JobReview';
+import Admin from './Components/Routes/Admin/Admin';
+import AdminDashboard from './Components/Routes/Admin/AdminDashboard';
+import AdminMessenger from './Components/Routes/Admin/AdminMessenger';
+import AdminLog from './Components/Routes/Admin/AdminLogin';
+
+
+
+// End Imports
+
 
 if(localStorage.FavorBankJWT){
 	const payload = decode(localStorage.FavorBankJWT);
-	const loginUser = {token: localStorage.FavorBankJWT, email: payload.email, firstName: payload.firstName, 
+	const loginUser = {token: localStorage.FavorBankJWT, id: payload.id, email: payload.email, firstName: payload.firstName, 
 		lastName: payload.lastName, about: payload.about, skills: payload.skills};
 	store.dispatch(userLoggedIn(loginUser))
 }
@@ -47,6 +65,9 @@ ReactDOM.render(
 			<div>
 				<Route exact path='/' component={App} />
 				<Route exact path='/howItWorks' component={How} />
+
+				
+
 				<Route path='/signup' component={Signup} />
 				<Route path='/newUser' component={newUser} />
 				<Route path='/settings' component={UserSettings} />
@@ -58,8 +79,17 @@ ReactDOM.render(
 				<Route path='/myServices' component={ServiceDashboard} />
 				<Route path='/newService' component={NewServ} />
 				<Route path='/jobDesc' component={JobDesc} />
+
+				
+
+				<Route path='/brand' component={BrandProfile} />
+
+				
+
+				<Route path='/jobRev' component={JobRev} />
 				<Route path='/admin' component={Admin} />
 				<Route path='/adm/dashboard' component={AdminDashboard} />
+				<Route path='/adm/messenger' component={AdminMessenger} />
 				<Route path='/adminLogin' component={AdminLog} />
 			</div>
 		</BrowserRouter>

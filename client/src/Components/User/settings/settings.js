@@ -46,7 +46,8 @@ class Settings extends Component {
   });
 
   submit = data => {
-    return this.props.updateUser({...data, id: this.props.user._id})
+    console.log(this.props.user)
+    return this.props.updateUser({...data, id: this.props.user.id})
     .then(() => {
       this.props.history.push("/profile")
     })

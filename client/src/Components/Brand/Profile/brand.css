@@ -1,0 +1,31 @@
+.brand{
+    height: 70vh;
+    margin-top: 80px;
+    padding: 0;
+}
+
+.boldHeading{
+    font-family: 'DosisB';
+    color:#757575;
+}
+
+.Greeting h1{
+    font-size: 8em;
+}
+
+hr{
+    width: 35rem;
+}
+
+.Greeting h3{
+    font-size: 4em;
+}
+
+.Greeting{
+    padding: 8em;
+}
+
+.options{
+    background-color: #F5F5F5;
+    min-height: 40vh;
+}

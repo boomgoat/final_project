@@ -98,6 +98,7 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.methods.generateJWT = function generateJWT(){
     return jwt.sign({
+        id: this._id,
         email: this.email,
         firstName: this.firstName,
         lastName: this.lastName,
@@ -110,6 +111,7 @@ UserSchema.methods.generateJWT = function generateJWT(){
 
 UserSchema.methods.toAuthJSON = function toAuthJSON () {
     return {
+        id: this._id,
         email: this.email,
         firstName: this.firstName,
         lastName: this.lastName,

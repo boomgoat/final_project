@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import '../App.css';
-import Header from './User/Header/header';
-import Profile from './User/profile/profile';
-import Footer from './Generic/Footer/footer';
+import '../../../App.css';
+import Header from '../../Brand/Header/header';
+import Profile from '../../Brand/Profile/brand';
+import Footer from '../../Generic/Footer/footer';
 import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-class uProfile extends Component {
+class BrandProfile extends Component {
   render() {
     return (
       <div className="Login">
@@ -18,4 +18,4 @@ class uProfile extends Component {
   }
 }
 
-export default uProfile;
+export default BrandProfile;

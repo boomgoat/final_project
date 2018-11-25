@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import '../App.css';
-import Header from './Generic/Header/header';
-import MainPanel from './Generic/Signup/mainPanel'
-import Footer from "./Generic/Footer/footer";
+import '../../../App.css';
+import Header from '../../Generic/Header/header';
+import MainPanel from '../../Generic/Signup/mainPanel'
+import Footer from "../../Generic/Footer/footer";
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { signup } from '../redux/users/actions';
+import { signup } from '../../../redux/users/actions';
 
 class Signup extends Component {
 

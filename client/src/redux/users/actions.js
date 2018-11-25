@@ -6,7 +6,7 @@ export const getUsers = () => {
         type: GET_USERS
     };
 };
-
+ 
 export const userLoggedIn = (user) => ({
     type: USER_LOGGED_IN,
     payload: user
@@ -16,7 +16,7 @@ export const userLoggedOut = () => ({
     type: USER_LOGGED_OUT
 });
 
-export const userUpdateRequest = data => ({
+export const userUpdateRequest = (data) => ({
     type: 'USER_UPDATE_REQUEST',
     payload: data
 });
@@ -37,8 +37,10 @@ export const logout = () => dispatch => {
     dispatch(userLoggedOut());
 };
 
-export const updateUser = data => dispatch => {
+export const updateUser = (data) => dispatch => {
     return api.user.update(data).then(data => {
+        console.log(data.user.token);
+        localStorage.FavorBankJWT = data.user.token;
         dispatch(userUpdateRequest(data));
     });
 }
