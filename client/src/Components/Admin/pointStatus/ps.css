@@ -1,0 +1,10 @@
+.pStatus{    
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    min-height: 70vh;
+    padding-top: 2em;
+    background-color: #F4F7F8;
+    border-top-left-radius: 0%!important;
+    border-top-right-radius: 0%!important;
+    border-bottom-right-radius: 0%!important;
+}

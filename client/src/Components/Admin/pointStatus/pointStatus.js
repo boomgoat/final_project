@@ -9,7 +9,7 @@ class PointStatus extends Component {
     render() {
         return(
             <div className="mainBox">
-                <div className="jumbotron col-md-10 mUser">
+                <div className="jumbotron col-md-10 pStatus">
                 
                 </div>
             </div>

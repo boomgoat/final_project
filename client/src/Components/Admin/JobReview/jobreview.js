@@ -9,8 +9,8 @@ class JobReview extends Component {
     render() {
         return(
             <div className="mainBox">
-            <div className="jumbotron col-md-10 jobReview">
-                <Table>
+            <div className="jumbotron fade-in col-md-10 jobReview">
+                <Table className="fade-in-slow">
                     <thead>
                     <tr>
                         <th>#</th>

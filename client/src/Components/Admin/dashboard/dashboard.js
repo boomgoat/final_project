@@ -18,7 +18,7 @@ class Dashboard extends Component {
         return(
             <Container fluid={true} className="dash">
                 <SidePanel></SidePanel>
-                <Jumbotron className="col-md-10 dashboard">
+                <Jumbotron className="col-md-10 fade-in dashboard">
                     <Jumbotron className="col-md-4 profileCard">
                         <img src={pp} className="pp col-md-6" alt="profile-picture"/>
                         <div className="col-md-6 text-left">
@@ -26,12 +26,12 @@ class Dashboard extends Component {
                         </div>
                     </Jumbotron>
                     <div className="col-md-8 stats">
-                    <Jumbotron className="col-md-12 graph">
+                    <Jumbotron className="col-md-12 fade-in-slow graph">
                     </Jumbotron>
-                    <Jumbotron className="col-md-12 graph">
+                    <Jumbotron className="col-md-12 fade-in-slow graph">
                     </Jumbotron>
                     </div>
-                    <Jumbotron className="col-md-12 graph">
+                    <Jumbotron className="col-md-12 fade-in-slow graph">
                     </Jumbotron>
                 </Jumbotron>
             </Container>

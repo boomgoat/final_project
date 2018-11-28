@@ -9,9 +9,10 @@ class ManageBrand extends Component {
     render() {
         return(
             <div className="mainBox">
-            <div className="jumbotron col-md-10 mBrand">
+            <div className="jumbotron fade-in col-md-10 mBrand">
                 <Row>
                     <Col>Create Account</Col>
+                    <Col></Col>
                     <Col>Unlock Job Access</Col>
                 </Row>
                 <br/><br/>

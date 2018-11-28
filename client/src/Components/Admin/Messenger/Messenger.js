@@ -18,7 +18,7 @@ class Messenger extends Component {
         return(
             <Container fluid={true} className="mess">
                 <SidePanel></SidePanel>
-                <Jumbotron className="col-md-10 messenger">
+                <Jumbotron className="col-md-10 fade-in messenger">
                     
                     <Jumbotron className="col-md-3 userCard">
                         <div className="col-md-12 userTags">
@@ -29,7 +29,7 @@ class Messenger extends Component {
                             </div>
                         </div>
                     </Jumbotron>
-                    <Jumbotron className="col-md-8 messageBox">
+                    <Jumbotron className="col-md-8 fade-in-slow messageBox">
                         
                     </Jumbotron>
                 </Jumbotron>

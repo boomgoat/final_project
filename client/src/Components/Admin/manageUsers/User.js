@@ -9,13 +9,14 @@ class ManageUser extends Component {
     render() {
         return(
             <div className="mainBox">
-            <div className="jumbotron col-md-10 mUser">
+            <div className="jumbotron fade-in col-md-10 mUser">
                 <Row>
                     <Col>Create Account</Col>
-                    <Col>Unlock Job Access</Col>
+                    <Col></Col>
+                    <Col></Col>
                 </Row>
                 <br/><br/>
-                <Table>
+                <Table className="fade-in-slow">
                     <thead>
                     <tr>
                         <th>#</th>
