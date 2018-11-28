@@ -49,7 +49,7 @@ class MainPanel extends Component {
     return (
       <div className="MainPanel">
         <div className="container-fluid cont">
-          <div className="jumbotron signup">
+          <div className="jumbotron fade-in signup">
             <Form onSubmit={this.onSubmit}>
             {errors.global && (
               <div className="alert alert-warning">Oops! Something went wrong!<br/>

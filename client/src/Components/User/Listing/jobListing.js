@@ -16,10 +16,10 @@ class JobListing extends Component {
     render() {
         const { jobs } = this.props
         return (
-            <div className="jumbotron text-left mainFeed col-md-8">
+            <div className="jumbotron fade-in text-left mainFeed col-md-8">
                 <h2> My Job Feed </h2>
                 { jobs.map(({ id, title, budget, desc }) => (
-                <NavLink className="link" to="/jobDesc">
+                <NavLink className="link fade-in-slow" to="/jobDesc">
                     <Row className="borders" key={id}>
                         <h2 className="col-md-12">{ title }</h2>
                         <h3 className="col-md-12">{ budget }</h3>

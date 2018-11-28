@@ -5,8 +5,8 @@ import styles from './landing.css';
 class Landing extends Component {
   render() {
     return (
-      <div className="Landing">
-        <div className="welcome col-md-4">
+      <div className="Landing fade-in">
+        <div className="welcome col-md-4 fade-in-slow">
           <h1>Get it done with a favor!</h1> 
           <NavLink to='/signup'>
             <button type='button' className="buttonMain"><h4>START NOW</h4></button>

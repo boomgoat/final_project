@@ -1,8 +1,8 @@
 /* SidePanel */
 
 .sidepanel{
-    padding-top: 10vh;
-    height: 80vh;
+    padding-top: 1em;
+    height: 100vh;
 }
 
 ul {
@@ -13,7 +13,8 @@ ul {
 .lg{
     max-height: 7rem;
     max-width: 7rem;
-    margin-bottom: 10rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
 }
 
 li a:active{
@@ -30,7 +31,8 @@ li a:visited{
     padding: 2rem;
     text-align: left;
     margin-left: 25%;
-    border-left: 3px solid #787B7F;
+    padding-left: 20%;
+    border-left: 2px solid #787B7F;
 }
 
 @media only screen and (max-width: 768px) {
@@ -149,7 +151,7 @@ li a:visited{
 @media only screen and (max-width: 998px) {
     /* SidePanel */
     .sidepanel{
-        padding-top: 2vh;
+        padding-top: 1em;
         height: 10vh;
     }
     .lg{

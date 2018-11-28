@@ -37,7 +37,11 @@ import JobDesc from './Components/Routes/User/JobDesc';
 // Admin Imports
 
 import JobRev from './Components/Routes/Admin/JobReview';
+import SerRev from './Components/Routes/Admin/ServiceReview';
+import MBrand from './Components/Routes/Admin/ManageBrand';
+import MUser from './Components/Routes/Admin/ManageUser';
 import Admin from './Components/Routes/Admin/Admin';
+import FPStatus from './Components/Routes/Admin/PointStatus';
 import AdminDashboard from './Components/Routes/Admin/AdminDashboard';
 import AdminMessenger from './Components/Routes/Admin/AdminMessenger';
 import AdminLog from './Components/Routes/Admin/AdminLogin';
@@ -98,7 +102,11 @@ ReactDOM.render(
 				
 
 				<Route path='/jobRev' component={JobRev} />
+				<Route path='/serRev' component={SerRev} />
 				<Route path='/admin' component={Admin} />
+				<Route path='/manageBrands' component={MBrand} />
+				<Route path='/manageUsers' component={MUser} />
+				<Route path='/pointStatus' component={FPStatus} />
 				<Route path='/adm/dashboard' component={AdminDashboard} />
 				<Route path='/adm/messenger' component={AdminMessenger} />
 				<Route path='/adminLogin' component={AdminLog} />

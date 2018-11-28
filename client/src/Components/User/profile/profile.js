@@ -18,7 +18,7 @@ class Profile extends Component {
       <div className="container-fluid cont">
         <div className="container">
         
-          <div className="jumbotron text-left prof col-md-9">
+          <div className="jumbotron fade-in text-left prof col-md-9">
             <img src={pp} className="pp col-md-offset-5 col-md-2" alt="profile-picture"/>
             <h1 className="col-md-12 name text-center">{firstName + " " +lastName}</h1>
             
@@ -32,7 +32,7 @@ class Profile extends Component {
               </li>
             </ul>
           </div>
-          <div className="jumbotron text-left prof col-md-9">
+          <div className="jumbotron fade-in-slow text-left prof col-md-9">
             
             <h2 className="col-md-12 profileHeading">About</h2>
 
@@ -41,7 +41,7 @@ class Profile extends Component {
             </p> 
           </div>
 
-          <div className="jumbotron text-left prof col-md-9">
+          <div className="jumbotron fade-in-slow text-left prof col-md-9">
 
             <h2 className="col-md-12 profileHeading">Skills</h2>
 

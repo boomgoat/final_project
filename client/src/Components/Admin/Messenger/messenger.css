@@ -17,7 +17,7 @@
 .userTags{
     background-color: white;
     padding-top: 1rem;
-    height: 6em;
+    height: 8em;
     border-bottom: 1px solid black;
 }
 
@@ -31,11 +31,13 @@
 
 .userCard .pp {
     margin-top: 1rem;
+    max-width: 8rem;
 }
 
 .userCard{
     height: 60vh;
     padding: 0!important;
+    padding-top: 2rem!important;
     margin-left: 2em;
     background-color: white;
     -webkit-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);

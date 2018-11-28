@@ -8,7 +8,7 @@ class Profile extends Component {
     render() {
         return(
             <div className="container-fluid brand">
-                <section className="Greeting fade-in col-md-12 text-center">
+                <section className="Greeting fade-in-slow col-md-12 text-center">
                     <h1><span className="boldHeading">favor</span>bank</h1>
                     <br/>
                     <hr/>

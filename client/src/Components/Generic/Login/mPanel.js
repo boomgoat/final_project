@@ -45,7 +45,7 @@ class MPanel extends Component {
     return (
       <div className="MPanel">
         <div className="container-fluid cont">
-          <div className="jumbotron login">
+          <div className="jumbotron fade-in login">
             <Form onSubmit={this.onSubmit}>
             {errors.global && (
               <div className="alert alert-warning">Oops! Something went wrong!<br/>

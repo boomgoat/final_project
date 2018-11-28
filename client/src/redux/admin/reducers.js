@@ -4,7 +4,7 @@ const initialState = {
     
 }
 
-const adminReducer = function(state = {}, action) {
+const adminReducer = function(state = initialState, action) {
     switch(action.type) {
         case GET_ADMIN:
             return {
