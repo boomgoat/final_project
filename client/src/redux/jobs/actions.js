@@ -1,4 +1,4 @@
-import { GET_JOB } from '../users/types';
+import { GET_JOB, ADD_JOB } from '../users/types';
 import api from "../../Components/api";
 
 export const getJobs = (jobs) => {
@@ -9,7 +9,44 @@ export const getJobs = (jobs) => {
 };
 
 export const getJob = () => dispatch =>
-    api.jobs.getJob().then(jobs => {
+    api.job.getJob().then(jobs => {
         dispatch(getJobs(jobs));
     });
 
+export const createJobRequest = (data) => ({
+        type: 'ADD_JOB',
+        payload: data
+    });
+
+
+export const createJob = (data) => dispatch => {
+        return api.job.createJob(data).then(data => {
+            dispatch(createJobRequest(data));
+        });
+    }
+
+// Services
+
+export const getServices = (service) => {
+    return {
+        type: GET_JOB,
+        payload: service
+    };
+};
+
+export const getService = () => dispatch =>
+    api.service.getService().then(service => {
+        dispatch(getServices(service));
+    });
+
+export const createServiceRequest = (data) => ({
+        type: 'ADD_SERVICE',
+        payload: data
+    });
+
+
+export const createService = (data) => dispatch => {
+        return api.service.createService(data).then(data => {
+            dispatch(createServiceRequest(data));
+        });
+    }

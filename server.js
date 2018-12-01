@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const user = require('./routes/api/users');
-const job = require('./routes/api/jobs')
+const job = require('./routes/api/jobs');
+const service = require('./routes/api/services');
 const admin = require('./routes/api/admins');
 const brand = require('./routes/api/brands');
 const loginAuth = require('./routes/api/loginAuth');
@@ -27,6 +28,7 @@ mongoose
 //Use routes
 app.use('/api/users', user);
 app.use('/api/jobs', job);
+app.use('/api/services', service);
 app.use('/api/admins', admin);
 app.use('/api/brands', brand);
 app.use('/api/loginAuth', loginAuth);

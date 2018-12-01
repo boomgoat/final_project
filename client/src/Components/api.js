@@ -23,6 +23,11 @@ export default {
     },
 
     job: {
-        getJobs : () => axios.get('/api/jobs').then(res => res.data.job)
+        getJobs : () => axios.get('/api/jobs').then(res => res.data.job),
+        createJob: data => axios.post('/api/jobs', { data }).then(res => res.data)
+    },
+    service: {
+        getService : () => axios.get('/api/services').then(res => res.data.job),
+        createService: data => axios.post('/api/services', { data }).then(res => res.data)
     }
 }

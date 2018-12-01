@@ -24,7 +24,7 @@ const ServiceSchema = new mongoose.Schema({
     },
     isDeleted: {
         type: Boolean,
-        default: ''
+        default: false
     },
     price: {
         type: Number,
@@ -32,9 +32,7 @@ const ServiceSchema = new mongoose.Schema({
         index: true
     },
     review: {
-        type: {
-            type: String
-        },
+        type: String,
         default: '',
         index: true
     },
@@ -46,9 +44,9 @@ const ServiceSchema = new mongoose.Schema({
     status: {
         type: String, enum: ['Inactive', 'Active']
     },
-    userId: [{
-        type: Schema.Types.ObjectId, ref: 'User'
-    }],
+    userId: {
+        type: String
+    },
 },
 {
     timestamps: true

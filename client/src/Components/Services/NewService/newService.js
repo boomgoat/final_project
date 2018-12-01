@@ -1,81 +1,204 @@
 import React, { Component } from 'react';
 import styles from './ns.css';
 import { NavLink } from 'react-router-dom';
+import pingy from "../../Resources/Images/job.png";
+import InlineError from '../../Generic/Utilities/InlineError';
+import PropTypes from 'prop-types';
 import { Row, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 
 
 
 class NewService extends Component {
+  state = {
+    data: {
+      title: '',
+      category:'',
+      price:'',
+      description:'',
+      skills:'',
+      duration: ''
+    },
+    loading: false,
+    errors: {}
+  };
+  
+  onChange = e =>
+  this.setState({
+    data: { ...this.state.data, [e.target.name]: e.target.value }
+  });
+
+  onSubmit = (e) =>{
+    e.preventDefault();
+    const errors = this.validate(this.state.data);
+    this.setState({ errors });
+
+    if (Object.keys(errors).length === 0){
+      this.props.submit(this.state.data)
+      .catch(err => this.setState({ errors: err.response.data.errors }));
+    }
+  };
+
+  validate = (data) => {
+    const errors = {};
+    if (!data.title) errors.title = "Can't be blank";
+    if (!data.category) errors.cat = "Can't be blank";
+    if (!data.price) errors.price = "Can't be blank";
+    if (!data.description) errors.desc = "Can't be blank";
+    if (!data.skills) errors.skill = "Can't be blank";
+    if (!data.duration) errors.dur = "Can't be blank";
+    return errors;
+  }
+
     render() {
+      const { data, errors } = this.state;
         return(
-            <div className="newService">
-                <div className="jumbotron servForm">
-                <Form onSubmit>
+            <div className="createJob">
+                <div className="jumbotron col-md-6 jobForm">
+                <Form onSubmit={this.onSubmit}>
+                {errors.global && (
+                  <div className="alert alert-warning">Oops! Something went wrong!<br/>
+                    {errors.global}
+                  </div>
+                )}
                 <FormGroup>
-                  <div className="container">
+                  <div className="container text-left">
     
                     <div className="row">
-                      <Label className="col-md-1 col-sm-1">
-                        Age:
+                      <Label className="col-md-2 col-sm-2 labelText">
+                        Service Title:
                       </Label>
     
                       <Input
-                      className="col-md-1 col-sm-1"
-                      type="text" name="age"
-                      placeholder="Age"
+                      value={data.title}
+                      onChange={this.onChange}
+                      className="inputStyles col-md-2 col-sm-2"
+                      type="text" name="title"
+                      placeholder="Job Title"
                       />
+
+                      {errors.title && <InlineError text={errors.title} />}
+
+                      <Label className="col-md-offset-2 col-sm-offset-2 col-md-2 col-sm-2 labelText">
+                        Category:
+                      </Label>
     
+                      <Input
+                      value={data.category}
+                      onChange={this.onChange}
+                      className="inputStyles col-md-2 col-sm-2"
+                      type="text" name="category"
+                      list="categories"
+                      placeholder="Category"
+                      />
+
+                      {errors.category && <InlineError text={errors.category} />}
+
+                      <datalist id="categories">
+                        <option>Cat 1</option>
+                        <option>Cat 2</option>
+                        <option>Cat 3</option>
+                      </datalist>
+    
+    
+                    </div>
+
+                    <div className="row">
+                      <Label className="col-md-2 col-sm-2 labelText">
+                        Price:
+                      </Label>
+    
+                      <Input
+                      value={data.price}
+                      onChange={this.onChange}
+                      className="inputStyles col-md-2 col-sm-2"
+                      type="text" name="price"
+                      placeholder="$"
+                      />
+
+                      {errors.price && <InlineError text={errors.price} />}
+
+                      <Label className="col-md-offset-2 col-sm-offset-2 col-md-2 col-sm-2 labelText">
+                        Duration:
+                      </Label>
+    
+                      <select
+                      value={data.duration}
+                      onChange={this.onChange}
+                      className="inputStyles col-md-2 col-sm-2"
+                      type="text" name="duration"
+                      placeholder="duration"
+                      >
+                      <option>1 hour</option>
+                      <option>5 hours</option>
+                      </select>
+    
+                      {errors.duration && <InlineError text={errors.duration} />}
     
                     </div>
     
                     <div className="row">
     
-                      <Label className="col-md-1 col-sm-1">Phone:</Label>
+                      <Label className="col-md-2 col-sm-2 labelText">Description:</Label>
     
                       <Input
-                        className="col-md-4 col-sm-1"
-                        type="text"
-                        name="phone"
-                        placeholder="Phone Number"
-                        />
-    
-                    </div>
-    
-                    <div className="row">
-    
-                      <Label className="col-md-1 col-sm-1">About:</Label>
-    
-                      <Input
-                        className="col-md-8 col-sm-1"
+                        value={data.description}
+                        onChange={this.onChange}
+                        className="col-md-8 col-sm-8 inputStyles"
                         type="textarea"
-                        name="about"
-                        placeholder="100 words at least"
+                        name="description"
+                        placeholder="Desc."
                         />
+
+                        {errors.description && <InlineError text={errors.description} />}
     
                     </div>
     
                     <div className="row">
     
-                      <Label className="col-md-1 col-sm-1">Skills:</Label>
+                      <Label className="col-md-2 col-sm-2 labelText">Required Skills:</Label>
     
                       <Input
-                        className="col-md-8"
+                        value={data.skills}
+                       onChange={this.onChange}
+                        className="col-md-8 inputStyles"
                         type="textarea"
                         name="skills"
-                        placeholder="At least 10"
+                        placeholder=""
                       />
+
+                      {errors.skills && <InlineError text={errors.skills} />}
     
                     </div>
                   </div>
     
-                  <button className="button col-md-12 col-sm-12 col-xs-12">SAVE!</button>
+                  <button type="submit" className="button cjb col-md-4 col-md-offset-6 col-sm-4 col-sm-offset-3 col-xs-12">SAVE!</button>
     
                 </FormGroup>
                 </Form>
+            </div>
+            <div className="container col-md-6 infographic">
+            
+              
+              <h1>Dont Forget the Details!</h1>
+              <br/>
+              <p className="text-left info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna 
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+              ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+              aute irure dolor in reprehenderit in voluptate velit esse cillum 
+              dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+              non proident, sunt in culpa qui officia deserunt mollit anim 
+              id est laborum.</p>
+              <img className="pingy col-md-offset-4 col-md-4" src = { pingy } alt="pingy"/>
             </div>
             </div>
         );
     }
 }
+
+NewService.propTypes = {
+  submit: PropTypes.func.isRequired
+}
+
 
 export default NewService
