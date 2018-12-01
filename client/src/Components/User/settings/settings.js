@@ -12,6 +12,7 @@ class Settings extends Component {
     state = {
         data: {
             age: '',
+            availability: '',
             gender: '',
             phone: '',
             about: '',
@@ -61,7 +62,7 @@ class Settings extends Component {
 
     render() {
         const {data} = this.state;
-        const {about, skills, age, phone} = data;
+        const {about, skills, age, phone, availability} = data;
         return (
             <div className="ComForm container-fluid cont">
                 <div className="jumbotron comform col-md-6 col-sm-6 col-xs-12">
@@ -82,22 +83,36 @@ class Settings extends Component {
                                         value={data.age}
                                     />
 
+                                    <Label className="col-md-2 col-sm-2">
+                                        Availability:
+                                    </Label>
+
+                                    <Input
+                                        className="col-md-1 col-sm-1"
+                                        type="text" name="availability"
+                                        placeholder={availability}
+                                        onChange={this.onChange}
+                                        value={data.availability}
+                                    />
+
                                     <Label className="col-md-offset-3 col-md-1 col-sm-2">
                                         Gender:
                                     </Label>
 
                                     <FormGroup check>
                                         <Label check>
+                                        Male<br/>
                                             <Input type="radio" name="gender" onChange={this.onChange}
                                                    value="male"/>{' '}
-                                            Male
+                                            
                                         </Label>
                                     </FormGroup>
                                     <FormGroup check>
                                         <Label check>
+                                        Female<br/>
                                             <Input type="radio" name="gender" onChange={this.onChange}
                                                    value="female"/>{' '}
-                                            Female
+                                            
                                         </Label>
                                     </FormGroup>
 

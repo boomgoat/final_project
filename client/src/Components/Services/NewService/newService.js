@@ -73,7 +73,7 @@ class NewService extends Component {
                       onChange={this.onChange}
                       className="inputStyles col-md-2 col-sm-2"
                       type="text" name="title"
-                      placeholder="Job Title"
+                      placeholder="Service Title"
                       />
 
                       {errors.title && <InlineError text={errors.title} />}

@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './landing.css';
+import { Row, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import a from '../../Resources/Images/a.png';
+import b from '../../Resources/Images/b.png';
+import c from '../../Resources/Images/c.png';
+import d from '../../Resources/Images/d.png';
+import e from '../../Resources/Images/e.png';
+import logo from '../../Resources/Images/logo.png';
 
 class Landing extends Component {
   render() {
@@ -14,7 +21,46 @@ class Landing extends Component {
         </div>
        	<div className="col-md-8 background">
        	 	
-       	</div>
+         </div>
+         <div className="partner col-md-12">
+
+            <Col className="col-md-2"><img src={a}/></Col>
+            <Col className="col-md-2"><img src={b}/></Col>
+            <Col className="col-md-2"><img className="col-md-6 col-md-offset-3" src={logo}/></Col>
+            <Col className="col-md-2"><img src={c}/></Col>
+            <Col className="col-md-2"><img src={d}/></Col>
+            <Col className="col-md-2"><img src={e}/></Col>
+            
+         </div>
+
+         <div className="selfPraise col-md-12">
+
+            <Col className="col-md-2 col-md-offset-1 praise">
+              <h2>Hire for any scope<br/>
+              of work:</h2>
+            </Col>
+
+            <Col className="col-md-2 praise center">
+            <h2>Hire for any scope<br/>
+            of work:</h2>
+            </Col>
+
+            <Col className="col-md-2 praise center">
+            <h2>Hire for any scope<br/>
+              of work:</h2>
+            </Col>
+
+            <Col className="col-md-2 praise center">
+            <h2>Hire for any scope<br/>
+              of work:</h2>
+            </Col>
+
+            <Col className="col-md-2 praise">
+            <h2>Hire for any scope<br/>
+              of work:</h2>
+            </Col>
+            
+         </div>
 
       </div>
     );

@@ -55,7 +55,7 @@ import AdminLog from './Components/Routes/Admin/AdminLogin';
 if(localStorage.FavorBankJWT){
 	const payload = decode(localStorage.FavorBankJWT);
 	const loginUser = {token: localStorage.FavorBankJWT, id: payload.id, email: payload.email, firstName: payload.firstName, 
-		lastName: payload.lastName, about: payload.about, skills: payload.skills};
+		lastName: payload.lastName, availability: payload.availability, about: payload.about, skills: payload.skills};
 	store.dispatch(userLoggedIn(loginUser))
 }
 

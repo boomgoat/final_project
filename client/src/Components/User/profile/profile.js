@@ -13,7 +13,7 @@ class Profile extends Component {
   }
   
   render() {
-    const { firstName, about, skills, lastName } = this.props.user.user
+    const { firstName, about, skills, lastName, availability } = this.props.user.user
     return (
       <div className="container-fluid cont">
         <div className="container">
@@ -28,7 +28,7 @@ class Profile extends Component {
             <ul className="sidePanels">
               <li>
                 <h3>Availability</h3>
-                <br/>More than 30 hrs/week
+                <br/>More than {availability} hrs/week
               </li>
             </ul>
           </div>

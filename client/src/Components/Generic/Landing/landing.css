@@ -1,7 +1,11 @@
 /*Landing*/
 
+.landing{
+  padding: 0;
+}
+
 .background{
-    height: 35em;
+    height: 55em;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -10,7 +14,30 @@
   
   .welcome h1{
     font-family: "DosisB";
+    font-size: 4em;
     margin-top: 10rem;
+  }
+
+  .partner{
+    padding: 4em;
+    background-color: #494949;
+    min-height: 20vh;
+    margin-bottom: 3em;
+  }
+
+  .selfPrase{
+    
+    background-color: rgba(245, 245, 245, 0.47);
+  }
+
+  .praise{
+    padding: 2em;
+    margin-bottom: 2em;
+  }
+
+  .center{
+    border-right: 1px solid #54D854;
+    border-left: 1px solid #54D854;
   }
   
   .buttonMain{

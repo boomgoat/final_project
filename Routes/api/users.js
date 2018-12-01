@@ -48,6 +48,9 @@ router.patch('/:id', function(req, res, next){
       if(typeof req.body.data.age !== 'undefined'){
         user.age = req.body.data.age;
       }
+      if(typeof req.body.data.availability !== 'undefined'){
+        user.availability = req.body.data.availability;
+      }
       if(typeof req.body.data.gender !== 'undefined'){
         user.gender = req.body.data.gender;
       }

@@ -17,6 +17,26 @@
     box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
   }
 
+  .feedPic{
+    margin-bottom: 3em;
+  }
+
+  .profLink{
+    color:#54D854;
+    font-family: 'DosisB';
+  }
+
+  .sidepanelSplit{
+    margin-top: 2em;
+    margin-bottom: 2em;
+    float: left;
+    width: 10em;
+  }
+
+  .links{
+    font-family: 'DosisB';
+  }
+
   .sidePanels{
     margin-top:5rem;
     list-style: none;

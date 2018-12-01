@@ -71,6 +71,11 @@ const UserSchema = new mongoose.Schema({
         default: '',
         index: true
     },
+    availability: {
+        type: Number,
+        default: '',
+        index: true
+    },
     rank: {
         type: Number,
         default: '',
@@ -104,6 +109,7 @@ UserSchema.methods.generateJWT = function generateJWT(){
         lastName: this.lastName,
         userName: this.userName,
         age: this.age,
+        availability: this.availability,
         phone: this.phone,
         about: this.about,
         skills: this.skills
@@ -119,6 +125,7 @@ UserSchema.methods.toAuthJSON = function toAuthJSON () {
         age: this.age,
         gender: this.gender,
         userName: this.userName,
+        availability: this.availability,
         phone: this.phone,
         about: this.about,
         skills: this.skills,
