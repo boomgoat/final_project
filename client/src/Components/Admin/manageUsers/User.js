@@ -30,10 +30,10 @@ class ManageUser extends Component {
                     <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
+                        <NavLink to="/adm/dashboard"><td>Mark</td></NavLink>
                         <td>Otto</td>
                         <td>Active</td>
-                        <td> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></td>
+                        <NavLink to="#"><td> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></td></NavLink>
                         <td> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
                     </tr>
                     </tbody>

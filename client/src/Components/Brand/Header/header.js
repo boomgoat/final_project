@@ -21,7 +21,7 @@ class Header extends Component {
 			<div className="BrandHeader hidden-xs hidden-sm">
 			<div className="container-fluid">
 			
-				<NavLink to='/feed' className="col-md-3 col-sm-5">
+				<NavLink to='/brand' className="col-md-3 col-sm-5">
 				<img className="logoB" src = { logo } alt="logo"/>
 				</NavLink>
 							

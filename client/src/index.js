@@ -17,6 +17,7 @@ import store from './redux';
 // Brand Imports
 
 import BrandProfile from './Components/Routes/Brands/profile';
+import BrandInfo from './Components/Routes/Brands/BrandInfo';
 import BrandLog from './Components/Routes/Brands/BrandLogin';
 import AdDashboard from './Components/Routes/Brands/AdDashboard';
 
@@ -98,6 +99,7 @@ ReactDOM.render(
 				<Route path='/brandLogin' component={BrandLog} />
 				<Route path='/brand' component={BrandProfile} />
 				<Route path='/adverts' component={AdDashboard} />
+				<Route path='/myBrand' component={BrandInfo} />
 
 				
 

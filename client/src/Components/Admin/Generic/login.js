@@ -45,20 +45,20 @@ class AdmLogin extends Component {
     return (
       <div className="MPanel">
         <div className="container-fluid cont">
-          <div className="jumbotron login">
+          <div className="jumbotron fade-in login">
             <Form onSubmit={this.onSubmit}>
             {errors.global && (
-              <div className="alert alert-warning">Oops! Something went wrong!<br/>
+              <div className="alert fade-in alert-warning">Oops! Something went wrong!<br/>
                 {errors.global}
               </div>
             )}
               <FormGroup>
-                <h2 className="col-md-12 col-sm-12">Log in and get to work</h2>
+                <h2 className="col-md-12 fade-in-slow col-sm-12">Log in and get to work</h2>
                 <input 
                   placeholder="Email" 
                   value={data.email} 
                   name="email" 
-                  className="col-md-12 col-sm-12 col-xs-12 uname"
+                  className="col-md-12 fade-in-slow col-sm-12 col-xs-12 uname"
                   onChange= { this.onChange }
                 />
 
@@ -69,14 +69,14 @@ class AdmLogin extends Component {
                   value={data.pass} 
                   name="pass" 
                   type="password"
-                  className="col-md-12 col-sm-12 col-xs-12 password"
+                  className="col-md-12 col-sm-12 fade-in-slow col-xs-12 password"
                   onChange= { this.onChange }
                 />
 
                 {errors.pass && <InlineError text={errors.pass} />}
 
                 
-                <button type="submit" className="Adminbutton col-sm-12 col-xs-12">
+                <button type="submit" className="Adminbutton fade-in-slow col-sm-12 col-xs-12">
                   <h4>LOGIN</h4>
                 </button>
                 

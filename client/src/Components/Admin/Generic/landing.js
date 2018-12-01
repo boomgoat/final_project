@@ -17,7 +17,7 @@ class Landing extends Component {
         return(
             <Container fluid={true} className="adminContainer">
                 <SidePanel></SidePanel>
-                <Jumbotron className="col-md-10 col-sm-12 col-xs-12 adminLanding">
+                <Jumbotron className="col-md-10 fadde-in col-sm-12 col-xs-12 adminLanding">
                     <h1>Welcome Back {firstName + " " +lastName}!</h1>
                     <h2 className="updateText"><span className="bold">Todays Updates:</span></h2>
                     <br/>

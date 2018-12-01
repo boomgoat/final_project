@@ -1,11 +1,25 @@
 .createJob{
     margin: 8em;
+    margin-top: 10em;
 }
 
 .jobForm{
-    height: 60vh;
+    min-height: 80vh;
+    padding: 5em;
     background-color: white;
     -webkit-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
     -moz-box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
     box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
+}
+
+.infographic h1{
+    font-family: 'DosisB';
+    font-size: 5em;
+    padding: 1em;
+}
+
+.info{
+    font-size: 1.75em;
+    font-family: 'Roboto';
+    padding: 3em;
 }

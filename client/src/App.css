@@ -46,11 +46,11 @@
 }  
 
 .fade-in {
-  animation: fadeIn ease 2s;
+  animation: fadeIn ease 1s;
 }
 
 .fade-in-slow {
-  animation: fadeIn ease 5s;
+  animation: fadeIn ease 2.5s;
 }
 
 * a{
@@ -67,4 +67,16 @@
 
 .App-intro {
   font-size: large;
+}
+
+
+.inputStyles{
+  border: none;
+  font-size: 1.5em;
+  font-family: 'Roboto';
+}
+
+.labelText{
+  font-size: 1.5em;
+  font-family: 'Roboto';
 }
