@@ -2,15 +2,17 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './jl.css';
 import { connect } from 'react-redux';
-import { getJobs } from '../../../redux/jobs/actions';
+import { fetchJobs } from '../../../redux/jobs/actions';
 import PropTypes from 'prop-types';
 import { Row } from 'reactstrap'; 
 
 
 class JobListing extends Component {
 
+    state = {}
+
     componentDidMount() {
-		this.props.getJobs();
+		this.props.fetchJobs();
 	}
 
     render() {
@@ -18,9 +20,9 @@ class JobListing extends Component {
         return (
             <div className="jumbotron fade-in text-left mainFeed col-md-8">
                 <h2> My Job Feed </h2>
-                { jobs.map(({ id, title, budget, desc }) => (
-                <NavLink className="link fade-in-slow" to="/jobDesc">
-                    <Row className="borders" key={id}>
+                { jobs.map(({ _id, title, budget, desc }) => (
+                <NavLink className="link fade-in-slow" to="/jobDesc" key={_id}>
+                    <Row className="borders">
                         <h2 className="col-md-12">{ title }</h2>
                         <h3 className="col-md-12">{ budget }</h3>
                         <p className="col-md-12 desc">{ desc }</p>
@@ -33,7 +35,7 @@ class JobListing extends Component {
 }
 
 JobListing.propTypes = {
-	getJobs: PropTypes.func.isRequired,
+	fetchJobs: PropTypes.func.isRequired,
 	jobs: PropTypes.array.isRequired
 }
 
@@ -41,4 +43,4 @@ const mapStateToProps = (state) => ({
 	jobs: state.jobs
 });
 
-export default connect(mapStateToProps, { getJobs })(JobListing);
+export default connect(mapStateToProps, { fetchJobs })(JobListing);

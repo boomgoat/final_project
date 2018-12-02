@@ -10,12 +10,9 @@ const User = require('../../models/User');
 // @access  Public
 router.get('/', (req, res) => {
     
-    Job.find({userId: req.body.data.userId}).then(job =>{
-        if(req.body.data.userId == User.findById(req.params.id)){
-            res.json(job)
-        } else {
-            res.status(400).json({ errors: { global: "No jobs available"}});
-        }
+    Job.find().then(jobs =>{
+        console.log(jobs)
+            res.json(jobs)
     });
     
     
@@ -27,16 +24,23 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log(req.body.data);
     const newJob = new Job({
-        title: req.body.title,
-        category: req.body.category,
-        description: req.body.description,
-        budget: req.body.budget,
-        skills: req.body.skills,
-        duration: req.body.duration
+        title: req.body.data.title,
+        category: req.body.data.category,
+        description: req.body.data.description,
+        budget: req.body.data.budget,
+        skills: req.body.data.skills,
+        duration: req.body.data.duration
     });
     
     newJob.save()
-        .then(job => res.json(job));
+        .then(() => {
+            Job.find()
+            .then(jobs => { 
+                console.log(jobs)
+                res.json(jobs)
+            })
+            
+        });
 });
 
 // @route   DELETE api/user/:id

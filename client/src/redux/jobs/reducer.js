@@ -8,9 +8,12 @@ const initialState = [
 const jobsReducer = function(state = initialState, action) {
     switch(action.type) {
         case 'GET_JOBS':
-            return {
-                ...state, jobs: action.payload
-            }
+            console.log(action)
+            // return {
+                
+            //     ...state, jobs: action.payload
+            // }
+            return state.concat(action.payload)
         case 'ADD_JOB':
             return {
                 ...state, jobs: action.payload

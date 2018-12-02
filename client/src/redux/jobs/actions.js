@@ -3,13 +3,14 @@ import api from "../../Components/api";
 
 export const getJobs = (jobs) => {
     return {
-        type: GET_JOB,
+        type: 'GET_JOBS',
         payload: jobs
     };
 };
 
-export const getJob = () => dispatch =>
-    api.job.getJob().then(jobs => {
+export const fetchJobs = () => dispatch =>
+    api.job.getJobs().then(jobs => {
+        console.log(jobs)
         dispatch(getJobs(jobs));
     });
 
