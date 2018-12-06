@@ -128,8 +128,8 @@ class NewService extends Component {
                       type="text" name="duration"
                       placeholder="duration"
                       >
-                      <option>1 hour</option>
-                      <option>5 hours</option>
+                      <option>1</option>
+                      <option>5</option>
                       </select>
     
                       {errors.duration && <InlineError text={errors.duration} />}

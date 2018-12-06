@@ -18,6 +18,10 @@ const jobsReducer = function(state = initialState, action) {
             return {
                 ...state, jobs: action.payload
             }
+        case 'ADD_SERVICE':
+            return {
+                ...state, services: action.payload
+            }
         default:
             return state;
     }

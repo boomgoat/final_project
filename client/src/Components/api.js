@@ -25,6 +25,7 @@ export default {
     job: {
         getJobs : () => axios.get('/api/jobs').then(res =>  {
             console.log(res)
+            
             return res.data}),
         createJob: data => axios.post('/api/jobs', { data }).then(res => res.data)
     },

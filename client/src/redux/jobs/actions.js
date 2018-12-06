@@ -30,7 +30,7 @@ export const createJob = (data) => dispatch => {
 
 export const getServices = (service) => {
     return {
-        type: GET_JOB,
+        type: 'GET_SERVICE',
         payload: service
     };
 };

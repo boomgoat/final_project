@@ -13,7 +13,7 @@ import { createService } from '../../../redux/jobs/actions';
 class NewServ extends Component {
 
   submit = data => 
-  this.props.createService(data).then(() => this.props.history.push("/feed"));
+  this.props.createService(data).then(() => this.props.history.push("/myServices"));
 
   render() {
     return (

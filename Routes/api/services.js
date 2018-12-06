@@ -27,12 +27,12 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     console.log(req.body.data);
     const newService = new Service({
-        title: req.body.title,
-        category: req.body.category,
-        description: req.body.description,
-        budget: req.body.budget,
-        skills: req.body.skills,
-        duration: req.body.duration
+        title: req.body.data.title,
+        category: req.body.data.category,
+        description: req.body.data.description,
+        budget: req.body.data.budget,
+        skills: req.body.data.skills,
+        duration: req.body.data.duration
     });
     
     newService.save()
