@@ -55,7 +55,7 @@ class ManageUser extends Component {
 
 ManageUser.propTypes = {
 	getUsers: PropTypes.func.isRequired,
-	user: PropTypes.object.isRequired
+	user: PropTypes.array.isRequired
 }
 
 const mapStateToProps = (state) => ({

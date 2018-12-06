@@ -6,7 +6,7 @@ import { UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from
 import { connect } from 'react-redux';
 import { getUsers } from '../../../redux/users/actions';
 import PropTypes from 'prop-types';
-import { logout } from '../../../redux/users/actions';
+import { logout } from '../../../redux/brands/actions';
 
 
 
@@ -54,7 +54,7 @@ class Header extends Component {
 								<DropdownItem>View Profile</DropdownItem>
 							</NavLink>
 							<DropdownItem divider />
-							<NavLink to='/'>
+							<NavLink to='/' onClick={logout()}>
 								<DropdownItem>LOG OUT</DropdownItem>
 							</NavLink>
 						</DropdownMenu>

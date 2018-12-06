@@ -68,17 +68,19 @@ class Feed extends Component {
     return (
       <div className="container-fluid cont">
         <div className="container">
-          <div className="col-md-2 hidden-sm hidden-xs text-right">
+          <div className="col-md-2 hidden-sm hidden-xs text-justify">
             <ul className="sidePanels">
               <li onClick = {this.brand}><h4 className="brandAnchor">Brand Feed</h4></li>
               <li onClick = {this.job}><h4>Job Feed</h4></li>
               <li onClick = {this.service}><h4>Service Feed</h4></li>
               <li><h4>Active Jobs</h4></li>
+              <li><h4>Active Services</h4></li>
               <li><h4>Completed Jobs</h4></li>
+              <li><h4>Completed Services</h4></li>
             </ul>
           </div>
           {this.getComponent()}
-          <div className="col-md-2 hidden-sm hidden-xs text-left">
+          <div className="col-md-2 hidden-sm hidden-xs text-justify">
             <ul className="sidePanels">
             
               <li><img src={pp} className="pp col-md-9 feedPic" alt="profile-picture"/></li>
