@@ -27,7 +27,7 @@ class CreateJob extends Component {
   });
 
   onSubmit = (e) =>{
-    debugger
+    // debugger
     e.preventDefault();
     const errors = this.validate(this.state.data);
     this.setState({ errors });

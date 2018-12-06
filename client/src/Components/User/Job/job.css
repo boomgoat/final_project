@@ -37,8 +37,38 @@
     opacity: 1!important;
   }
 
+  .butn2{
+    font-size: 1.25em;
+    background-color: #54D854;
+    border: none;
+    color: white;
+    padding: 5px;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-radius: 5px;
+  }
+
+  .mainButn{
+    background-color: #3A8B21;
+  }
+
   .modal{
     background-color: rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto';
+    font-size: 1.5em;
+  }
+
+  .modal-header{
+    font-family: 'Roboto-Bold';
+  }
+
+  .modal-content{
+    min-width: 60vw!important;
+    min-height: 80vh;
+  }
+
+  .bidInfo{
+    font-size: 1.25em;
   }
 
   .modal-backdrop{
@@ -50,6 +80,7 @@
   }
 
   .butn{
+    font-size: 1.75em;
     background-color: #3A8B21;
     border: none;
     color: white;

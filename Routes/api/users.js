@@ -9,7 +9,11 @@ const User = require('../../models/User');
 // @access  Public
 router.get('/', (req, res) => {
   User.find()
-    .then(users => res.json(users));
+    .then(users => {
+      console.log(users)
+          res.json(users)
+  });
+
 });
 
 // @route   POST api/user

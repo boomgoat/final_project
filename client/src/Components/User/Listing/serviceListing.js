@@ -2,29 +2,29 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './jl.css';
 import { connect } from 'react-redux';
-import { fetchJobs } from '../../../redux/jobs/actions';
+import { fetchServices } from '../../../redux/jobs/actions';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap'; 
 
 
-class JobListing extends Component {
+class ServiceListing extends Component {
 
     state = {}
 
     componentDidMount() {
-		this.props.fetchJobs();
+		this.props.fetchServices();
 	}
 
     render() {
-        const { jobs } = this.props
+        const { services } = this.props
         return (
             <div className="jumbotron fade-in text-left mainFeed col-md-8">
                 <h1 className="feedHeader"> My Job Feed </h1>
-                { jobs.map(({ _id, title, budget, description }) => (
+                { services.map(({ _id, title, price, description }) => (
                 <NavLink className="link fade-in-slow" to="/jobDesc" key={_id}>
                     <Row className="borders">
                         <Col><h2 className="col-md-12 title"><strong>{ title }</strong></h2></Col>
-                        <Col className="text-right"><h3 className="col-md-12 budget"><strong className="budg">Budget:</strong> { budget } Points</h3></Col>
+                        <Col className="text-right"><h3 className="col-md-12 budget"><strong className="budg">Price:</strong> { price } Points</h3></Col>
                         <Col md={12}><p className="col-md-12 desc">{ description }</p></Col>
                     </Row>
                 </NavLink>
@@ -34,13 +34,13 @@ class JobListing extends Component {
     }
 }
 
-JobListing.propTypes = {
-	fetchJobs: PropTypes.func.isRequired,
-	jobs: PropTypes.array.isRequired
+ServiceListing.propTypes = {
+	fetchServices: PropTypes.func.isRequired,
+	services: PropTypes.array.isRequired
 }
 
 const mapStateToProps = (state) => ({
-	jobs: state.jobs
+	services: state.services
 });
 
-export default connect(mapStateToProps, { fetchJobs })(JobListing);
+export default connect(mapStateToProps, { fetchServices })(ServiceListing);

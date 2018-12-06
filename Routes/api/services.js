@@ -10,12 +10,9 @@ const User = require('../../models/User');
 // @access  Public
 router.get('/', (req, res) => {
     
-    Service.find({userId: req.body.data.userId}).then(service =>{
-        if(req.body.data.userId == User.findById(req.params.id)){
-            res.json(service)
-        } else {
-            res.status(400).json({ errors: { global: "No services available"}});
-        }
+    Service.find().then(services =>{
+        console.log(services)
+        return res.json(services)
     });
     
     
@@ -30,7 +27,7 @@ router.post('/', (req, res) => {
         title: req.body.data.title,
         category: req.body.data.category,
         description: req.body.data.description,
-        budget: req.body.data.budget,
+        price: req.body.data.price,
         skills: req.body.data.skills,
         duration: req.body.data.duration
     });

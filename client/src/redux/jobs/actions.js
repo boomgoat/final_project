@@ -28,16 +28,17 @@ export const createJob = (data) => dispatch => {
 
 // Services
 
-export const getServices = (service) => {
+export const getServices = (services) => {
     return {
-        type: 'GET_SERVICE',
-        payload: service
+        type: 'GET_SERVICES',
+        payload: services
     };
 };
 
-export const getService = () => dispatch =>
-    api.service.getService().then(service => {
-        dispatch(getServices(service));
+export const fetchServices = () => dispatch =>
+    api.service.getService().then(services => {
+        console.log(services)
+        dispatch(getServices(services));
     });
 
 export const createServiceRequest = (data) => ({
@@ -51,3 +52,4 @@ export const createService = (data) => dispatch => {
             dispatch(createServiceRequest(data));
         });
     }
+

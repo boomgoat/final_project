@@ -2,11 +2,57 @@ import React, { Component } from 'react';
 import styles from './job.css';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Row, Col, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { connect } from 'react-redux';
+import { updateUser } from '../../../redux/users/actions';
+import { withRouter } from 'react-router';
+import { Form, FormGroup, Label, Input, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 
 
 class Job extends Component {
+    state = {
+        data: {
+          age: '',
+          gender: '',
+          phone:'',
+          about:'',
+          skills:'',
+          id: null
+        },
+        loading: false,
+        errors: {}
+      };
+    
+      onChange = e =>
+      this.setState({
+        data: { ...this.state.data, [e.target.name]: e.target.value }
+      });
+    
+      onSubmit = (e) =>{
+        e.preventDefault();
+        // const errors = this.validate(this.state.data);
+        // this.setState({ errors });
+        this.submit(this.state.data)
+          .catch(err => this.setState({ errors: err.response.data.errors }));
+    
+        // if (Object.keys(errors).length === 0){
+        //   this.props.submit(this.state.data)
+        //   .catch(err => this.setState({ errors: err.response.data.errors }));
+        // }
+      };
+    
+      onChange = e =>
+      this.setState({
+        data: { ...this.state.data, [e.target.name]: e.target.value }
+      });
+    
+      submit = data => {
+        return this.props.updateUser({...data, id: this.props.user._id})
+        .then(() => {
+          this.props.history.push("/profile")
+        })
+        .catch(err => console.log(err));
+      };
     
     
     constructor(props) {
@@ -27,6 +73,7 @@ class Job extends Component {
 
 
     render() {
+        const {data} = this.state;
         return(
             <div className="container-fluid backgroundColor">
                 <div className="jumbotron jobs col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
@@ -46,18 +93,55 @@ class Job extends Component {
                         <button className="butn" onClick={this.toggle}>Place Bid</button>
                     </Row>
                 </div>
+
                 <Row className="fadeFix">
-                    <Modal isOpen={this.state.modal} toggle={this.toggle}>
-                        <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                    <Modal isOpen={this.state.modal} toggle={this.toggle} className="fade-in-slow">
+                        <ModalHeader toggle={this.toggle}>PLACE BID</ModalHeader>
                         <ModalBody className="jobs">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <div className="row">
+
+                                <Col>
+                                    <Label className="">Your Bid:</Label>
+                                </Col>
+                                <Col>
+                                    <Input
+                                    className="bidInfo"
+                                    type="text"
+                                    name="BidPrice"
+                                    onChange={this.onChange}
+                                    value=""
+                                    placeholder="Enter Amount"
+                                    />
+                                </Col>
+            
+                            </div>
+            
+                            <div className="row">
+            
+                                <Col>
+                                    <Label className="">Bid Description:</Label>
+                                </Col>
+                                <Col>
+                                    <Input
+                                    className="bidInfo"
+                                    type="textarea"
+                                    name="BidInfo"
+                                    onChange={this.onChange}
+                                    value=""
+                                    placeholder="At least 10"
+                                    />
+                                </Col>
+            
+                            </div>
+
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-                            <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                            <Button className="butn2 mainButn" onClick={this.toggle}>Do Something</Button>{' '}
+                            <Button className="butn2" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                     </Modal>
                 </Row>
+
                 <div className="jumbotron reviews col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
                     <Row>
                         <h1>Reviews</h1>
@@ -135,4 +219,12 @@ Modal.propTypes = {
   }
 
 
-export default Job
+  Job.propTypes = {
+    // submit: PropTypes.func.isRequired
+  }
+  
+  const mapStateToProps = (state) => ({
+      user: state.user.user
+  });
+  
+  export default withRouter(connect(mapStateToProps, {updateUser})(Job));

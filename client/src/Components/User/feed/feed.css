@@ -17,6 +17,11 @@
     box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
   }
 
+  .brandAnchor{
+    font-family: 'DosisB';
+    color: #3D8D25;
+  }
+
   .feedPic{
     margin-bottom: 3em;
   }

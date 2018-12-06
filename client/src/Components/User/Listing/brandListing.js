@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap'; 
 
 
-class JobListing extends Component {
+class BrandListing extends Component {
 
     state = {}
 
@@ -34,7 +34,7 @@ class JobListing extends Component {
     }
 }
 
-JobListing.propTypes = {
+BrandListing.propTypes = {
 	fetchJobs: PropTypes.func.isRequired,
 	jobs: PropTypes.array.isRequired
 }
@@ -43,4 +43,4 @@ const mapStateToProps = (state) => ({
 	jobs: state.jobs
 });
 
-export default connect(mapStateToProps, { fetchJobs })(JobListing);
+export default connect(mapStateToProps, { fetchJobs })(BrandListing);

@@ -10,6 +10,34 @@
     box-shadow: 0px 5px 6px 0px rgba(0,0,0,0.16);
   }
 
+  .title{
+    font-family: 'DosisB';
+    font-size: 2.25em;
+  }
+
+  .title::first-letter{
+    text-transform: uppercase;
+  }
+
+  .feedHeader{
+    font-size: 3.5em!important;
+    font-family: 'Roboto';
+  }
+
+  .desc{
+    /* font-style: italic; */
+  }
+
+  .desc::first-letter{
+    text-transform: uppercase;
+  }
+
+
+  .budg{
+    font-style: normal;
+    font-family: 'Roboto';
+  }
+
   .borders{
       border-top: 1px solid rgba(0,0,0,0.16);
       padding-top: 2rem;

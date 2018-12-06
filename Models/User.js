@@ -81,6 +81,11 @@ const UserSchema = new mongoose.Schema({
         default: '',
         index: true
     },
+    rating: {
+        type: Number,
+        default: '',
+        index: true
+    },
     favorPoints: {
         type: Number,
         default: '',

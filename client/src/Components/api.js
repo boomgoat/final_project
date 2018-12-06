@@ -3,6 +3,9 @@ import axios from 'axios';
 
 export default {
     user: {
+        getUsers : () => axios.get('/api/users').then(res =>  {
+            console.log(res)
+            return res.data}),
         login: credentials =>
             axios.post("/api/loginAuth", { credentials }).then(res => res.data.user),
         signup: data => axios.post('/api/users', { data }).then(res => res.data),
@@ -25,12 +28,13 @@ export default {
     job: {
         getJobs : () => axios.get('/api/jobs').then(res =>  {
             console.log(res)
-            
             return res.data}),
         createJob: data => axios.post('/api/jobs', { data }).then(res => res.data)
     },
     service: {
-        getService : () => axios.get('/api/services').then(res => res.data.job),
+        getService : () => axios.get('/api/services').then(res =>  {
+            console.log(res.data)
+            return res.data}),
         createService: data => axios.post('/api/services', { data }).then(res => res.data)
     }
 }
