@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
-import { createService } from '../../../redux/jobs/actions';
+import { createService } from '../../../redux/services/actions';
 
 class NewServ extends Component {
 

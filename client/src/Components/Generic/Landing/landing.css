@@ -25,6 +25,10 @@
     margin-bottom: 3em;
   }
 
+  .logoS{
+    max-height: 15em;
+  }
+
   .selfPrase{
     
     background-color: rgba(245, 245, 245, 0.47);

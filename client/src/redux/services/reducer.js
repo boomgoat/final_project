@@ -5,22 +5,22 @@ const initialState = [
   
 ];
 
-const jobsReducer = function(state = initialState, action) {
+const serviceReducer = function(state = initialState, action) {
     switch(action.type) {
-        case 'GET_JOBS':
+        case 'GET_SERVICES':
             console.log(action)
             // return {
                 
             //     ...state, jobs: action.payload
             // }
             return state = action.payload
-        case 'ADD_JOB':
+        case 'ADD_SERVICE':
             return {
-                ...state, jobs: action.payload
+                ...state, services: action.payload
             }
-         default:
+        default:
             return state;
     }
 }
 
-export default jobsReducer;
+export default serviceReducer;

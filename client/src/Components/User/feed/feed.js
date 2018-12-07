@@ -73,10 +73,10 @@ class Feed extends Component {
               <li onClick = {this.brand}><h4 className="brandAnchor">Brand Feed</h4></li>
               <li onClick = {this.job}><h4>Job Feed</h4></li>
               <li onClick = {this.service}><h4>Service Feed</h4></li>
-              <li><h4>Active Jobs</h4></li>
-              <li><h4>Active Services</h4></li>
-              <li><h4>Completed Jobs</h4></li>
-              <li><h4>Completed Services</h4></li>
+              <NavLink to="/activeJobs"><li><h4>Active Jobs</h4></li></NavLink>
+              <NavLink to="/activeServices"><li><h4>Active Services</h4></li></NavLink>
+              <NavLink to="/completedJobs"><li><h4>Completed Jobs</h4></li></NavLink>
+              <NavLink to="/completedServices"><li><h4>Completed Services</h4></li></NavLink>
             </ul>
           </div>
           {this.getComponent()}

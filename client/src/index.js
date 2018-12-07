@@ -20,6 +20,7 @@ import BrandProfile from './Components/Routes/Brands/profile';
 import BrandInfo from './Components/Routes/Brands/BrandInfo';
 import BrandLog from './Components/Routes/Brands/BrandLogin';
 import AdDashboard from './Components/Routes/Brands/AdDashboard';
+import BrandJob from './Components/Routes/Brands/JobCreation';
 
 // User Imports
 
@@ -32,6 +33,8 @@ import feed from './Components/Routes/User/feed';
 import JobCreation from './Components/Routes/User/JobCreation';
 import NewServ from './Components/Routes/User/NewService';
 import JobDashboard from './Components/Routes/User/JobDashboard';
+import ActiveJobs from './Components/Routes/User/ActiveJobs';
+import CompJobs from './Components/Routes/User/CompJobs';
 import ServiceDashboard from './Components/Routes/User/ServiceDashboard';
 import JobDesc from './Components/Routes/User/JobDesc';
 
@@ -90,6 +93,8 @@ ReactDOM.render(
 				<Route path='/feed' component={feed} />
 				<Route path='/newJob' component={JobCreation} />
 				<Route path='/myJobs' component={JobDashboard} />
+				<Route path='/activeJobs' component={ActiveJobs} />
+				<Route path='/completedJobs' component={CompJobs} />
 				<Route path='/myServices' component={ServiceDashboard} />
 				<Route path='/newService' component={NewServ} />
 				<Route path='/jobDesc' component={JobDesc} />
@@ -100,6 +105,7 @@ ReactDOM.render(
 				<Route path='/brand' component={BrandProfile} />
 				<Route path='/adverts' component={AdDashboard} />
 				<Route path='/myBrand' component={BrandInfo} />
+				<Route path='/newBrandJob' component={BrandJob} />
 
 				
 

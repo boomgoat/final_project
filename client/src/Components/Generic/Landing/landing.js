@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import styles from './landing.css';
 import { Row, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 import a from '../../Resources/Images/a.png';
@@ -26,7 +26,7 @@ class Landing extends Component {
 
             <Col className="col-md-2"><img src={a}/></Col>
             <Col className="col-md-2"><img src={b}/></Col>
-            <Col className="col-md-2"><img className="col-md-6 col-md-offset-3" src={logo}/></Col>
+            <Link to='//squaberry.com'><Col className="col-md-2"><img className="logoS" src={logo}/></Col></Link>
             <Col className="col-md-2"><img src={c}/></Col>
             <Col className="col-md-2"><img src={d}/></Col>
             <Col className="col-md-2"><img src={e}/></Col>

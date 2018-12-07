@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './jl.css';
 import { connect } from 'react-redux';
-import { fetchServices } from '../../../redux/jobs/actions';
+import { fetchServices } from '../../../redux/services/actions';
 import PropTypes from 'prop-types';
 import { Row, Col } from 'reactstrap'; 
 
@@ -18,7 +18,7 @@ class ServiceListing extends Component {
     render() {
         const { services } = this.props
         return (
-            <div className="jumbotron fade-in text-left mainFeed col-md-8">
+            <div className="jumbotron fade-in-slow text-left mainFeed col-md-8">
                 <h1 className="feedHeader"> My Job Feed </h1>
                 { services.map(({ _id, title, price, description }) => (
                 <NavLink className="link fade-in-slow" to="/jobDesc" key={_id}>

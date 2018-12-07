@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './dashboard.css';
+import styles from './jd.css';
 import { NavLink } from 'react-router-dom';
 import { Row, Table  } from 'reactstrap';
 import { connect } from 'react-redux';
@@ -7,14 +7,14 @@ import { fetchJobs } from '../../../redux/jobs/actions';
 import PropTypes from 'prop-types';
 
 
-class AdDash extends Component {
+class CompDash extends Component {
     componentDidMount() {
 		  this.props.fetchJobs();
     }
     render() {
       const { jobs } = this.props
         return(
-            <div className="adDashboard fade-in">
+            <div className="jobDashboard">
             <Table>
             <thead>
               <tr>
@@ -42,7 +42,7 @@ class AdDash extends Component {
     }
 }
 
-AdDash.propTypes = {
+CompDash.propTypes = {
 	fetchJobs: PropTypes.func.isRequired,
 	jobs: PropTypes.array.isRequired
 }
@@ -51,4 +51,4 @@ const mapStateToProps = (state) => ({
 	jobs: state.jobs
 });
 
-export default connect(mapStateToProps, { fetchJobs })(AdDash);
+export default connect(mapStateToProps, { fetchJobs })(CompDash);
