@@ -43,12 +43,15 @@ class Feed extends Component {
     });
   }
 
-  setCurrentComponent(componentName) {
-    this.setState({currentComponent: componentName})
-  }
+  setCurrentComponent = (event) => {
+    event.preventDefault();
+    const { id } = event.target;
+    this.setState({currentComponent: id});
+  };
 
 
   getComponent(componentName) {
+    console.log(componentName);
     switch (componentName) {
       case 'compA' :
         return <JobListing/>;
@@ -74,9 +77,9 @@ class Feed extends Component {
         <div className="container">
           <div className="col-md-2 hidden-sm hidden-xs text-justify">
             <ul className="sidePanels">
-              <li onClick={this.setCurrentComponent('compC')}><h4 className="brandAnchor">Brand Feed</h4></li>
-              <li onClick={this.setCurrentComponent('compA')}><h4>Job Feed</h4></li>
-              <li onClick={this.setCurrentComponent('compB')}><h4>Service Feed</h4></li>
+              <li onClick={this.setCurrentComponent}><h4 id={'compC'} className="brandAnchor">Brand Feed</h4></li>
+              <li onClick={this.setCurrentComponent}><h4 id={'compA'}>Job Feed</h4></li>
+              <li onClick={this.setCurrentComponent}><h4 id={'compB'}>Service Feed</h4></li>
               <NavLink to="/activeJobs">
                 <li><h4>Active Jobs</h4></li>
               </NavLink>
