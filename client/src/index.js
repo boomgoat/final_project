@@ -97,7 +97,7 @@ ReactDOM.render(
 				<Route path='/completedJobs' component={CompJobs} />
 				<Route path='/myServices' component={ServiceDashboard} />
 				<Route path='/newService' component={NewServ} />
-				<Route path='/jobDesc' component={JobDesc} />
+				<Route path='/jobDesc/:_id' component={JobDesc} />
 
 				
 

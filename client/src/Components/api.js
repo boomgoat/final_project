@@ -28,6 +28,9 @@ export default {
     },
 
     job: {
+        getOne : (data) => axios.get(`/api/jobs/${data.id}`).then(res =>  {
+            console.log(res)
+            return res.data}),
         getJobs : () => axios.get('/api/jobs').then(res =>  {
             console.log(res)
             return res.data}),

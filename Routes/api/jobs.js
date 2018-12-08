@@ -10,12 +10,20 @@ const User = require('../../models/User');
 // @access  Public
 router.get('/', (req, res) => {
     
-    Job.find().then(jobs =>{
+    Job.find().sort({timestamps: -1}).then(jobs =>{
         console.log(jobs)
             res.json(jobs)
     });
     
     
+});
+
+router.get('/:id', (req, res) => {
+    Job.findById(req.params.id)
+    .then(users => {
+      console.log(users)
+          res.json(users)
+  });
 });
 
 // @route   POST api/user

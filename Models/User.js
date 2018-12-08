@@ -91,6 +91,15 @@ const UserSchema = new mongoose.Schema({
         default: '',
         index: true
     },
+    jobs: [
+        { type: mongoose.Schema.ObjectId, ref: 'Job' }
+    ],
+    bids: [
+        { type: mongoose.Schema.ObjectId, ref: 'Bid' }
+    ],
+    services: [
+        { type: mongoose.Schema.ObjectId, ref: 'Service' }
+    ],
     skills: {
         type: [String],
         default: '',

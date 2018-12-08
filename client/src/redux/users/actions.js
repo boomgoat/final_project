@@ -1,11 +1,18 @@
 import { GET_USERS, ADD_USER, DELETE_USER, USER_LOGGED_OUT, USER_LOGGED_IN } from './types';
 import api from "../../Components/api";
 
-export const getUsers = () => {
+export const getUsers = (users) => {
     return {
-        type: GET_USERS
+        type: 'GET_USERS',
+        payload: users
     };
 };
+
+export const fetchUsers = () => dispatch =>
+    api.user.getUsers().then(users => {
+        console.log(users)
+        dispatch(getUsers(users));
+    });
  
 export const userLoggedIn = (user) => ({
     type: USER_LOGGED_IN,

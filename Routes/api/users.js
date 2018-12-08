@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
       console.log(users)
           res.json(users)
   });
-
 });
 
 // @route   POST api/user

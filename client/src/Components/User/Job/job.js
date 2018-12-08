@@ -17,7 +17,7 @@ class Job extends Component {
           phone:'',
           about:'',
           skills:'',
-          id: null
+          id: ''
         },
         loading: false,
         errors: {}
@@ -58,6 +58,9 @@ class Job extends Component {
     constructor(props) {
         super(props);
         this.state = {
+          data: {
+                id: this.props.match.params._id
+          },
           modal: false
         };
     
@@ -81,7 +84,7 @@ class Job extends Component {
                         <h1>Title</h1>
                     </Row>
                     <Row>
-                        <h3 className="col-md-6 text-left">Job By: ____</h3>
+                        <h3 className="col-md-6 text-left">Job By: {this.props.match.params._id} ____</h3>
                         <h3 className="col-md-6 text-center">Budget: $x</h3>
                     </Row>
                     <Row>

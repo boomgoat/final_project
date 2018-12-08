@@ -9,7 +9,7 @@ const userReducer = function(state = initialState, action) {
     switch(action.type) {
         case GET_USERS:
             return {
-                ...state
+                ...state, ...action.payload
             }
         case 'USER_LOGGED_IN':
             return {...state, user: action.payload}

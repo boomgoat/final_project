@@ -3,14 +3,14 @@ import styles from './user.css';
 import { NavLink } from 'react-router-dom';
 import { Row, Col, Table  } from 'reactstrap';
 import { connect } from 'react-redux';
-import { getUsers } from '../../../redux/users/actions';
+import { fetchUsers } from '../../../redux/users/actions';
 import PropTypes from 'prop-types';
 
 
 
 class ManageUser extends Component {
     componentDidMount() {
-		this.props.getUsers();
+		this.props.fetchUsers();
   }
     render() {
         const { user } = this.props
@@ -37,7 +37,7 @@ class ManageUser extends Component {
                     <tbody>
                     { user.map(({ _id, firstName }) => (
                     <tr>
-                        <th scope="row">1</th>
+                        <th scope="row">{_id}</th>
                         <NavLink to="/adm/dashboard"><td>{firstName}</td></NavLink>
                         <td>Otto</td>
                         <td>Active</td>
@@ -54,7 +54,7 @@ class ManageUser extends Component {
 }
 
 ManageUser.propTypes = {
-	getUsers: PropTypes.func.isRequired,
+	fetchUsers: PropTypes.func.isRequired,
 	user: PropTypes.array.isRequired
 }
 
@@ -62,4 +62,4 @@ const mapStateToProps = (state) => ({
 	user: state.user.user
 });
 
-export default connect(mapStateToProps, { getUsers })(ManageUser);
+export default connect(mapStateToProps, { fetchUsers })(ManageUser);
