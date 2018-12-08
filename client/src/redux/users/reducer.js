@@ -11,7 +11,6 @@ const userReducer = function (state = initialState, action) {
     case 'GET_USER_REQUEST': // does nothing
       return state;
     case 'GET_USER_SUCCESS':
-      debugger;
       return state;
     case 'GET_USER_FAILED': // does nothing
       return state;

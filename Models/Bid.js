@@ -1,4 +1,6 @@
+
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const BidSchema = new mongoose.Schema({
     status: {
@@ -13,12 +15,18 @@ const BidSchema = new mongoose.Schema({
         lowercase:true,
         index: true
     },
+    bidValue: {
+        type: String,
+        default: '',
+        required: true,
+        index: true
+    },
     jobId: [{
         type: Schema.Types.ObjectId, ref: 'Job'
     }],
     userId: [{
         type: Schema.Types.ObjectId, ref: 'User'
-    }], 
+    }],
 },
 {
     timestamps: true
