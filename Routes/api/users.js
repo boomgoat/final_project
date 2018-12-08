@@ -15,6 +15,13 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  User.findById(req.params.id)
+    .then(users => {
+      res.json(users)
+    });
+});
+
 // @route   POST api/user
 // @desc    Create A Post
 // @access  Public

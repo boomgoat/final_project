@@ -23,8 +23,7 @@ const createFetchJobFailed = (error) => ({
 
 export const fetchJob = (id) => dispatch => {
   dispatch(createFetchJobRequest());
-  console.log(id)
-  api.job.getOne(id)
+  return api.job.getOne(id)
     .then(job => {
       return dispatch(createFetchJobSuccess(job));
     })

@@ -14,7 +14,6 @@ class BrandCard extends Component {
     }
     render() {
         const { brandName } = this.props
-        console.log(this.props)
         return(
             <Container fluid={true} className="dash">
                     <Jumbotron className="col-md-2 col-md-offset-1 fade-in profileCard">

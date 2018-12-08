@@ -15,7 +15,8 @@ class CreateJob extends Component {
       budget:'',
       description:'',
       skills:'',
-      duration: ''
+      duration: '',
+      userId: ''
     },
     loading: false,
     errors: {}
@@ -27,7 +28,6 @@ class CreateJob extends Component {
   });
 
   onSubmit = (e) =>{
-    // debugger
     e.preventDefault();
     const errors = this.validate(this.state.data);
     this.setState({ errors });

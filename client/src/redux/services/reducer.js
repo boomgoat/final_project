@@ -8,7 +8,6 @@ const initialState = [
 const serviceReducer = function(state = initialState, action) {
     switch(action.type) {
         case 'GET_SERVICES':
-            console.log(action)
             // return {
                 
             //     ...state, jobs: action.payload

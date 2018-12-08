@@ -1,42 +1,63 @@
 import React, {Component} from 'react';
 import styles from './job.css';
 import {NavLink} from 'react-router-dom';
-import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {fetchJob} from '../../../redux/jobs/actions';
+import {getUser} from '../../../redux/users/actions';
 import {withRouter} from 'react-router';
-import {Form, FormGroup, Label, Input, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
+import { Label, Input, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 
 
 class Job extends Component {
-  state = {
-    data: {
-      age: '',
-      gender: '',
-      phone: '',
-      about: '',
-      skills: '',
-      id: ''
-    },
-    loading: false,
-    errors: {}
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        jobId: this.props.match.params._id,
+        category: '',
+        createdAt: '',
+        description: '',
+        title: '',
+        reviews: '',
+        ownerId: '',
+        budget: ''
 
-  onSubmit = (e) => {
-    e.preventDefault();
-    // const errors = this.validate(this.state.data);
-    // this.setState({ errors });
-    this.submit(this.state.data)
-      .catch(err => this.setState({errors: err.response.data.errors}));
+      },
+      jobOwner: '',
+      modal: false,
+    };
 
-    // if (Object.keys(errors).length === 0){
-    //   this.props.submit(this.state.data)
-    //   .catch(err => this.setState({ errors: err.response.data.errors }));
-    // }
-  };
+    this.toggle = this.toggle.bind(this);
+  }
 
   componentDidMount() {
-    this.props.fetchJob(this.props.match.params._id);
+    this.props.fetchJob(this.props.match.params._id)
+      .then(({ payload }) => {
+        const { title, reviews, budget, description, userId } = payload;
+        this.setState({
+          title,
+          reviews,
+          budget,
+          description,
+          ownerId: userId
+        }, () => {
+          this.fetchUser(this.state.ownerId);
+        });
+      });
+  }
+
+  fetchUser = id => {
+    this.props.getUser(id)
+      .then(user => {
+        this.setState({ jobOwner: user })
+      })
+      .catch(err => console.log(err))
+  };
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   onChange = e =>
@@ -52,29 +73,8 @@ class Job extends Component {
       .catch(err => console.log(err));
   };
 
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: {
-        id: this.props.match.params._id
-      },
-      modal: false
-    };
-
-    this.toggle = this.toggle.bind(this);
-  }
-
-
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
-
-
   render() {
-    const {data} = this.state;
+    const { description, title, reviews, budget  } = this.state.data;
     return (
       <div className="container-fluid backgroundColor">
         <div className="jumbotron jobs col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
@@ -172,13 +172,8 @@ class Job extends Component {
   }
 }
 
-
-Job.propTypes = {
-  // submit: PropTypes.func.isRequired
-}
-
 const mapStateToProps = (state) => ({
   user: state.user.user
 });
 
-export default withRouter(connect(mapStateToProps, {fetchJob})(Job));
+export default withRouter(connect(mapStateToProps, {fetchJob, getUser})(Job));

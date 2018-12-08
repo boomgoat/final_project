@@ -29,7 +29,6 @@ class Feed extends Component {
   }
 
   getComponent(componentName) {
-    console.log(componentName);
     switch (componentName) {
       case 'compA' :
         return <JobListing/>;

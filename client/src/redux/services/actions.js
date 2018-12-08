@@ -12,7 +12,6 @@ export const getServices = (services) => {
 
 export const fetchServices = () => dispatch =>
     api.service.getService().then(services => {
-        console.log(services)
         dispatch(getServices(services));
     });
 
