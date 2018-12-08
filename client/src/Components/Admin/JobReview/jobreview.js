@@ -23,6 +23,7 @@ class JobReview extends Component {
                         <th>#</th>
                         <th>Title</th>
                         <th>Description</th>
+                        <th>Status</th>
                         <th>Edit</th>
                         <th>Delete</th>
                         </tr>
@@ -33,6 +34,16 @@ class JobReview extends Component {
                         <th scope="row">{_id}</th>
                         <td>{title}</td>
                         <td>{description}</td>
+                        <td>
+                            <select
+                            className="inputStyles col-md-2 col-sm-2"
+                            type="text" name="duration"
+                            placeholder="duration"
+                            >
+                            <option>1</option>
+                            <option>5</option>
+                            </select>
+                        </td>
                         <td> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></td>
                         <td> <span class="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
                         </tr>

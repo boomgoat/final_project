@@ -57,6 +57,24 @@ class Feed extends Component {
               <li onClick={this.setCurrentComponent}><h4 id={'compC'} className="brandAnchor">Brand Feed</h4></li>
               <li onClick={this.setCurrentComponent}><h4 id={'compA'}>Job Feed</h4></li>
               <li onClick={this.setCurrentComponent}><h4 id={'compB'}>Service Feed</h4></li>
+              <hr className="sidepanelSplit"/>
+              <h3 className="links">Created Jobs & Services</h3>
+              <hr className="sidepanelSplit"/>
+              <NavLink to="/activeJobs">
+                <li><h4>Active Jobs</h4></li>
+              </NavLink>
+              <NavLink to="/activeServices">
+                <li><h4>Active Services</h4></li>
+              </NavLink>
+              <NavLink to="/completedJobs">
+                <li><h4>Completed Jobs</h4></li>
+              </NavLink>
+              <NavLink to="/completedServices">
+                <li><h4>Completed Services</h4></li>
+              </NavLink>
+              <hr className="sidepanelSplit"/>
+              <h3 className="links">Applied Jobs & Services</h3>
+              <hr className="sidepanelSplit"/>
               <NavLink to="/activeJobs">
                 <li><h4>Active Jobs</h4></li>
               </NavLink>
@@ -88,6 +106,9 @@ class Feed extends Component {
               </NavLink>
               <NavLink to="/myServices">
                 <li className="links"><h4>My Services</h4></li>
+              </NavLink>
+              <NavLink to="/myBids">
+                <li className="links"><h4>My Bids</h4></li>
               </NavLink>
 
             </ul>
