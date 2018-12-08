@@ -11,44 +11,22 @@ import pp from '../../Resources/Images/dingus.jpg';
 
 class Feed extends Component {
 
+  setCurrentComponent = (event) => {
+    event.preventDefault();
+    const {id} = event.target;
+    this.setState({currentComponent: id});
+  };
+
   constructor() {
     super();
     this.state = {
       currentComponent: 'compA'
     };
-    this.service = this.service.bind(this);
-    this.brand = this.brand.bind(this);
-    this.job = this.job.bind(this);
   }
 
   componentDidMount() {
     this.props.getUsers();
   }
-
-  job() {
-    this.setState({
-      currentComponent: 'compA'
-    });
-  }
-
-  service() {
-    this.setState({
-      currentComponent: 'compB'
-    });
-  }
-
-  brand() {
-    this.setState({
-      currentComponent: 'compC'
-    });
-  }
-
-  setCurrentComponent = (event) => {
-    event.preventDefault();
-    const { id } = event.target;
-    this.setState({currentComponent: id});
-  };
-
 
   getComponent(componentName) {
     console.log(componentName);
@@ -71,7 +49,7 @@ class Feed extends Component {
   render() {
 
     const {firstName, about, skills, lastName, availability} = this.props.user.user;
-    const { currentComponent } = this.state;
+    const {currentComponent} = this.state;
     return (
       <div className="container-fluid cont">
         <div className="container">
