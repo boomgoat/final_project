@@ -3,7 +3,6 @@ const router = express.Router();
 
 // User Model
 const Job = require('../../models/Job');
-const User = require('../../models/User');
 
 // @route   Get api/users
 // @desc    Get All Users
