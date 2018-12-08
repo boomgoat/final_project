@@ -18,7 +18,7 @@ class JobCreation extends Component {
       <div className="Login">
         <MobileMenu></MobileMenu>
         <Header />
-        <CreateJob submit={this.submit}/>
+        <CreateJob userId={this.props.userId} submit={this.submit}/>
         <Footer/>
       </div>
     );
@@ -30,6 +30,10 @@ JobCreation.propTypes = {
     push: PropTypes.func.isRequired
   }).isRequired,
   createJob: PropTypes.func.isRequired
-}
+};
 
-export default connect(null, {createJob} )(JobCreation);
+const mapStateToProps = ({ user: { user } }) => ({
+  userId: user.id
+});
+
+export default connect(mapStateToProps, {createJob} )(JobCreation);

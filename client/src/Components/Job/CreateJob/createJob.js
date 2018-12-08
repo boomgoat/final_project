@@ -16,7 +16,7 @@ class CreateJob extends Component {
       description:'',
       skills:'',
       duration: '',
-      userId: ''
+      userId: this.props.userId
     },
     loading: false,
     errors: {}
@@ -197,7 +197,8 @@ class CreateJob extends Component {
 }
 
 CreateJob.propTypes = {
-  submit: PropTypes.func.isRequired
+  submit: PropTypes.func.isRequired,
+  userId: PropTypes.string
 }
 
 export default CreateJob

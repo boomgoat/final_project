@@ -45,7 +45,6 @@ export const logout = () => dispatch => {
 
 export const updateUser = (data) => dispatch => {
   return api.user.update(data).then(data => {
-    console.log(data.user.token);
     localStorage.FavorBankJWT = data.user.token;
     dispatch(userUpdateRequest(data));
   });
