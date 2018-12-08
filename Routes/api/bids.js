@@ -22,3 +22,5 @@ router.post('/bids', (req, res) => {
 
     });
 });
+
+module.exports = router;
