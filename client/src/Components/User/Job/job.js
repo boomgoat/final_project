@@ -5,14 +5,8 @@ import {connect} from 'react-redux';
 import {fetchJob, submitBid} from '../../../redux/jobs/actions';
 import {getUser} from '../../../redux/users/actions';
 import {withRouter} from 'react-router';
-<<<<<<< Updated upstream
 import { Input, Row, Col, Button} from 'reactstrap';
 import PlaceBid from "./PlaceBid/PlaceBid";
-=======
-import bid from '../../Resources/Images/bidding.png'
-import {Label, Input, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
-
->>>>>>> Stashed changes
 
 class Job extends Component {
   fetchUser = id => {
