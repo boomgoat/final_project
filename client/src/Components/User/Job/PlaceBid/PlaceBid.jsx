@@ -14,7 +14,8 @@ class PlaceBid extends Component {
     const {bidValue, bidInfo} = this.state;
 
     submitBid({bidValue, bidInfo, jobId: job._id, userId: user._id, status: false});
-  }
+  };
+
   render() {
     const {isOpen, toggle} = this.props;
     return (

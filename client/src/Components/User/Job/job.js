@@ -139,7 +139,7 @@ class Job extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const job = state.jobs.filter(job => job._id === ownProps.match.params._id)[0];
+  const job = state.jobs.data.filter(job => job._id === ownProps.match.params._id)[0];
 
   return {
     user: state.user.user,
