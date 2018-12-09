@@ -76,7 +76,9 @@ if (localStorage.FavorBankADMIN) {
 
 if (localStorage.FavorBankBRAND) {
   const payload = decode(localStorage.FavorBankBRAND);
-  const loginBrand = {token: localStorage.FavorBankBRAND, email: payload.email, brandName: payload.brandName};
+  const loginBrand = {
+    token: localStorage.FavorBankBRAND, email: payload.email, brandName: payload.brandName
+  };
   store.dispatch(brandLoggedIn(loginBrand))
 }
 

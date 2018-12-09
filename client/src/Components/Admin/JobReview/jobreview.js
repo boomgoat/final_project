@@ -40,8 +40,10 @@ class JobReview extends Component {
                             type="text" name="duration"
                             placeholder="duration"
                             >
-                            <option>1</option>
-                            <option>5</option>
+                            <option value="" selected disabled hidden>Select Status</option>
+                            <option>Active</option>
+                            <option>Pending</option>
+                            <option>Blocked</option>
                             </select>
                         </td>
                         <td> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></td>
@@ -62,7 +64,7 @@ JobReview.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-	jobs: state.jobs
+	jobs: state.jobs.data
 });
 
 export default connect(mapStateToProps, { fetchJobs })(JobReview);

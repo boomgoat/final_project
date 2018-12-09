@@ -4,12 +4,11 @@ import api from "../../Components/api";
 export const getBrand = () => {
     return {
         type: GET_BRAND
-        
     };
 };
 
 export const brandLoggedIn = (brand) => ({
-    type: 'BRAND_LOGGED_IN',
+    type: BRAND_LOGGED_IN,
     payload: brand
 });
 

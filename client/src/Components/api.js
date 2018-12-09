@@ -23,7 +23,7 @@ export default {
     brand: {
         login: credentials =>
             axios.post("/api/brands/login", { credentials }).then(res =>  {
-                return res.data})
+                return res.data.brand})
     },
 
     job: {
@@ -31,7 +31,8 @@ export default {
             return res.data}),
         getJobs : () => axios.get('/api/jobs').then(res =>  {
             return res.data}),
-        createJob: data => axios.post('/api/jobs', { data }).then(res => res.data)
+        createJob: data => axios.post('/api/jobs', { data }).then(res => res.data),
+        deleteJob : (id) => axios.delete(`/api/jobs/${id}`).then(res => res.data)
     },
     service: {
         getService : () => axios.get('/api/services').then(res =>  {

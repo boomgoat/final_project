@@ -31,7 +31,6 @@ class ManageUser extends Component {
                         <th>Description</th>
                         <th>Status</th>
                         <th>Edit</th>
-                        <th>Delete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -42,7 +41,6 @@ class ManageUser extends Component {
                         <td>Otto</td>
                         <td>Active</td>
                         <NavLink to="#"><td> <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span></td></NavLink>
-                        <td> <span className="glyphicon glyphicon-trash" aria-hidden="true"></span></td>
                     </tr>
                     ))}
                     </tbody>

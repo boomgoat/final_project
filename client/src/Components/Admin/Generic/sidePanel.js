@@ -12,12 +12,10 @@ class SidePanel extends Component {
             <img className="lg" src={ logo } alt="logo"/>
                 <ul className="hidden-xs hidden-sm">
                     <NavLink to="/admin"><li className="menuItems"><h3>Home</h3></li></NavLink>
-                    <NavLink to="/adm/messenger"><li className="menuItems"><h3>Messages</h3></li></NavLink>
                     <NavLink to="/jobRev"><li className="menuItems"><h3>Jobs</h3></li></NavLink>
                     <NavLink to="/serRev"><li className="menuItems"><h3>Services</h3></li></NavLink>
                     <NavLink to="/manageUsers"><li className="menuItems"><h3>Users</h3></li></NavLink>
                     <NavLink to="/manageBrands"><li className="menuItems"><h3>Brands</h3></li></NavLink>
-                    <NavLink to="/pointStatus"><li className="menuItems"><h3>Point Status</h3></li></NavLink>
                     <NavLink to="/" onClick= {logout()}><li className="menuItems"><h3>Logout</h3></li></NavLink>
                 </ul>
             </div>
