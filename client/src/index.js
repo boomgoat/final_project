@@ -38,6 +38,7 @@ import CompJobs from './Components/Routes/User/CompJobs';
 import ServiceDashboard from './Components/Routes/User/ServiceDashboard';
 import JobDesc from './Components/Routes/User/JobDesc';
 import BidDash from './Components/Routes/User/BidDash';
+import BidInfo from './Components/Job/JobDashboard/BidInfo/BidInfo';
 
 // Admin Imports
 
@@ -103,6 +104,7 @@ ReactDOM.render(
         <Route path='/activeJobs/:viewType' component={ActiveJobs}/>
         <Route path='/completedJobs' component={CompJobs}/>
         <Route path='/jobDesc/:_id' component={JobDesc}/>
+        <Route path='/jobBids/:_id' component={BidInfo}/>
 
         <Route path='/myBids' component={BidDash}/>
         <Route path='/feed' component={feed}/>
