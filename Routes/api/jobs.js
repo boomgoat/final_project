@@ -11,8 +11,16 @@ const User = mongoose.model('User');
 // @access  Public
 router.get('/', (req, res) => {
 
-  Job.find().populate('bids').sort({timestamps: -1}).then(jobs => {
-    res.json(jobs)
+  Job.find().populate({
+    path:'bids',
+    model: 'Bid',
+    populate: {
+      path: 'user',
+      model: 'User'
+    }
+  }).sort({timestamps: -1}).then(jobs => {
+
+    res.json(jobs);
   });
 });
 
