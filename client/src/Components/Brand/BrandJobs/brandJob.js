@@ -170,7 +170,7 @@ class CreateJob extends Component {
                     </div>
                   </div>
     
-                  <button type="submit" className="button cjb col-md-4 col-md-offset-6 col-sm-4 col-sm-offset-3 col-xs-12">SAVE!</button>
+                  <button type="submit" className="buttonBrand cjb col-md-4 col-md-offset-6 col-sm-4 col-sm-offset-3 col-xs-12"><h2>SAVE!</h2></button>
     
                 </FormGroup>
                 </Form>

@@ -32,7 +32,7 @@ class Header extends Component {
 
 				<div className="mainNav col-md-6 col-md-offset-3 col-sm-5 hidden-xs">
 				
-					<NavLink to='/newAd' className="navLB col-md-offset-1   col-md-3 hidden-sm">
+					<NavLink to='/newBrandJob' className="navLB col-md-offset-1   col-md-3 hidden-sm">
 						<h4>CREATE JOB</h4>
 					</NavLink>
 					<NavLink to='/adverts' className="navLB  col-md-3 hidden-sm">

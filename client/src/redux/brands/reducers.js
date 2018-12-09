@@ -4,7 +4,7 @@ const initialState = {
     
 }
 
-const brandReducer = function(state = {}, action) {
+const brandReducer = function(state = initialState, action) {
     switch(action.type) {
         case GET_BRAND:
             return {

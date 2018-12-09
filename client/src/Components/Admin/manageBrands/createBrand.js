@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './signup.css';
+import styles from './brand.css';
 import InlineError from '../../Generic/Utilities/InlineError';
 import PropTypes from 'prop-types';
 import {Form, FormGroup} from 'reactstrap';
@@ -45,8 +45,7 @@ class CreateBrand extends Component {
   render() {
     const { data, errors } = this.state;
     return (
-      <div className="MainPanel">
-        <div className="container-fluid cont">
+        <div className="container-fluid">
           <div className="jumbotron fade-in signup">
             <Form onSubmit={this.onSubmit}>
             {errors.global && (
@@ -102,14 +101,13 @@ class CreateBrand extends Component {
 
                   
                  
-                  <button type="submit" className="button col-md-12 col-sm-12 col-xs-12">SIGN UP</button>
+                  <button type="submit" className="newBrand col-md-12 col-sm-12 col-xs-12"><h2>Create Brand</h2></button>
                   
               </FormGroup>
 
             </Form>
           </div>
         </div>
-      </div>
     );
   }
 }
