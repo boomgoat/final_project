@@ -55,20 +55,20 @@ li a:visited{
 
 @keyframes bounce{
     0% {
-        -webkit-box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
-        -moz-box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
-        box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
+        -webkit-box-shadow: 0px 205px 60px -133px rgba(0,0,0,0.82);
+        -moz-box-shadow: 0px 205px 60px -133px rgba(0,0,0,0.82);
+        box-shadow: 0px 205px 60px -133px rgba(0,0,0,0.82);
     }
     50% {
-        -webkit-box-shadow: 0px 215px 60px -133px rgba(0,0,0,0.82);
-        -moz-box-shadow: 0px 215px 60px -133px rgba(0,0,0,0.82);
-        box-shadow: 0px 215px 60px -133px rgba(0,0,0,0.82);
+        -webkit-box-shadow: 0px 207px 60px -133px rgba(0,0,0,0.82);
+        -moz-box-shadow: 0px 207px 60px -133px rgba(0,0,0,0.82);
+        box-shadow: 0px 207px 60px -133px rgba(0,0,0,0.82);
         
       }
     100% {
-        -webkit-box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
-        -moz-box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
-        box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
+        -webkit-box-shadow: 0px 205px 60px -133px rgba(0,0,0,0.82);
+        -moz-box-shadow: 0px 205px 60px -133px rgba(0,0,0,0.82);
+        box-shadow: 0px 205px 60px -133px rgba(0,0,0,0.82);
     }
   }
   @keyframes move{
@@ -77,23 +77,29 @@ li a:visited{
       opacity: 0;
       transform: rotateY(0deg);
     }
-    5%{
+    20%{
+        opacity: 1;
+    }
+    40%{
         opacity: 1;
     }
     45%{
       left: 50vw;
       transform: rotateY(1deg);
+      opacity: 0;
     }
     49%{
         transform: rotateY(180deg);
-        opacity: 0;
     }
-    55%{
+    80%{
+        opacity: 1;
+    }
+    90%{
         opacity: 1;
     }
     95%{
         left:10vh;
-        opacity: 1;;
+        opacity: 0;
         transform: rotateY(181deg);
     }
 }
@@ -102,7 +108,6 @@ li a:visited{
 .adminLanding{
     height: 90vh;
     padding-top: 13em;
-    z-index: 999;
     background: inherit;
     border-top-left-radius: 0%!important;
     border-top-right-radius: 0%!important;
@@ -117,7 +122,7 @@ li a:visited{
     position: absolute;
     left: 10vw;
     top: 30vh;
-    z-index: 1;
+    opacity: 0;;
 }
 
 .adminLanding h1{
