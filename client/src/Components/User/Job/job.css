@@ -62,6 +62,10 @@
     font-family: 'Roboto-Bold';
   }
 
+  .modal-body{
+    margin-top: 0;
+  }
+
   .modal-content{
     min-width: 60vw!important;
     min-height: 80vh;

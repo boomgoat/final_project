@@ -59,7 +59,8 @@ if (localStorage.FavorBankJWT) {
   const payload = decode(localStorage.FavorBankJWT);
   const loginUser = {
     token: localStorage.FavorBankJWT, id: payload.id, email: payload.email, firstName: payload.firstName,
-    lastName: payload.lastName, availability: payload.availability, about: payload.about, skills: payload.skills
+    lastName: payload.lastName, availability: payload.availability, about: payload.about, skills: payload.skills, 
+    rating: payload.rating, rank: payload.rank, reviews: payload.reviews, favorPoints: payload.favorPoints
   };
   store.dispatch(userLoggedIn(loginUser))
 }
