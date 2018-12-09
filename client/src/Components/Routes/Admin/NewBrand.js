@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import '../../../App.css';
 import CreateBrand from '../../Admin/manageBrands/createBrand';
 import SidePanel from '../../Admin/Generic/sidePanel';
-import { signup } from '../../../redux/users/actions';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
 
 class NewBrand extends Component {
 
     submit = data => 
-    this.props.signup(data).then(() => this.props.history.push("/newBrand"));
+    this.props.newBrand(data).then(() => this.props.history.push("/newBrand"));
 
   render() {
     return (
       <div className="Login">
         <SidePanel/>
-        <CreateBrand/>
+        <CreateBrand submit={this.submit}/>
       </div>
     );
   }
@@ -24,7 +25,7 @@ NewBrand.propTypes = {
     history: PropTypes.shape({
       push: PropTypes.func.isRequired
     }).isRequired,
-    NewBrand: PropTypes.func.isRequired
+    newBrand: PropTypes.func.isRequired
   }
   
-  export default connect(null, {signup} )(NewBrand);
+  export default connect(null, {} )(NewBrand);

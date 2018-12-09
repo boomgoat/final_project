@@ -21,6 +21,7 @@ import BrandInfo from './Components/Routes/Brands/BrandInfo';
 import BrandLog from './Components/Routes/Brands/BrandLogin';
 import AdDashboard from './Components/Routes/Brands/AdDashboard';
 import BrandJob from './Components/Routes/Brands/JobCreation';
+import NewBrand from './Components/Routes/Admin/NewBrand';
 
 // User Imports
 
@@ -121,6 +122,7 @@ ReactDOM.render(
 
 
         <Route path='/jobRev' component={JobRev}/>
+        <Route path='/createBrand' component={NewBrand}/>
         <Route path='/serRev' component={SerRev}/>
         <Route path='/admin' component={Admin}/>
         <Route path='/manageBrands' component={MBrand}/>
