@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import styles from './job.css';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {fetchJob} from '../../../redux/jobs/actions';
+import {fetchJob, submitBid} from '../../../redux/jobs/actions';
 import {getUser} from '../../../redux/users/actions';
 import {withRouter} from 'react-router';
-import {Label, Input, Row, Col, Button, Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
-
+import { Input, Row, Col, Button} from 'reactstrap';
+import PlaceBid from "./PlaceBid/PlaceBid";
 
 class Job extends Component {
   fetchUser = id => {
@@ -69,14 +69,15 @@ class Job extends Component {
   }
 
   toggle() {
-    this.setState({
-      modal: !this.state.modal
-    });
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
   }
 
   render() {
     const {description, title, reviews, budget} = this.state;
     const budgetValue = budget ? budget : 0;
+    const {submitBid, job, user} = this.props;
     return (
       <div className="container-fluid backgroundColor">
         <div className="jumbotron jobs col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
@@ -84,65 +85,27 @@ class Job extends Component {
             <h1>{title}</h1>
           </Row>
           <Row>
-            <h3 className="col-md-6 text-left">Job By: {this.props.match.params._id} ____</h3>
+            <h3 className="col-md-6 text-left">Job By: {this.props.user.firstName} </h3>
             <h3 className="col-md-6 text-center">{`Budget: $${budgetValue}`}</h3>
           </Row>
           <Row>
             <p className="text-left description">
-              {description}
+             {description}
             </p>
           </Row>
           <Row>
-            <button className="butn" onClick={this.toggle}>Place Bid</button>
+            <Button className="butn" onClick={this.toggle}>Place Bid</Button>
           </Row>
         </div>
 
         <Row className="fadeFix">
-          <Modal isOpen={this.state.modal} toggle={this.toggle} className="fade-in-slow">
-            <ModalHeader toggle={this.toggle}>PLACE BID</ModalHeader>
-            <ModalBody className="jobs">
-              <div className="row">
-
-                <Col>
-                  <Label className="">Your Bid:</Label>
-                </Col>
-                <Col>
-                  <Input
-                    className="bidInfo"
-                    type="text"
-                    name="BidPrice"
-                    onChange={this.onChange}
-                    value=""
-                    placeholder="Enter Amount"
-                  />
-                </Col>
-
-              </div>
-
-              <div className="row">
-
-                <Col>
-                  <Label className="">Bid Description:</Label>
-                </Col>
-                <Col>
-                  <Input
-                    className="bidInfo"
-                    type="textarea"
-                    name="BidInfo"
-                    onChange={this.onChange}
-                    value=""
-                    placeholder="At least 10"
-                  />
-                </Col>
-
-              </div>
-
-            </ModalBody>
-            <ModalFooter>
-              <Button className="butn2 mainButn" onClick={this.toggle}>Do Something</Button>{' '}
-              <Button className="butn2" onClick={this.toggle}>Cancel</Button>
-            </ModalFooter>
-          </Modal>
+          <PlaceBid
+            job={job}
+            user={user}
+            isOpen={this.state.modal}
+            toggle={this.toggle}
+            submitBid={submitBid}
+          />
         </Row>
 
         <div className="jumbotron reviews col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
@@ -175,8 +138,13 @@ class Job extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  user: state.user.user
-});
+const mapStateToProps = (state, ownProps) => {
+  const job = state.jobs.filter(job => job._id === ownProps.match.params._id)[0];
 
-export default withRouter(connect(mapStateToProps, {fetchJob, getUser})(Job));
+  return {
+    user: state.user.user,
+    job
+  }
+};
+
+export default withRouter(connect(mapStateToProps, {fetchJob, getUser, submitBid})(Job));

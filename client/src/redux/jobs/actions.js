@@ -46,4 +46,8 @@ export const createJob = (data) => dispatch => {
   });
 }
 
-
+export const submitBid = data => dispatch => {
+  return api.bid.saveBid(data).then(data=> {
+    console.log(data);
+  })
+}

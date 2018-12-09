@@ -8,6 +8,7 @@ const service = require('./routes/api/services');
 const admin = require('./routes/api/admins');
 const brand = require('./routes/api/brands');
 const loginAuth = require('./routes/api/loginAuth');
+const bids = require('./routes/api/bids');
 
 const app = express();
 
@@ -17,7 +18,7 @@ const app = express();
 app.use(bodyParser.json());
 
 //DB Config
-const db = require('./config/keys').mongoURI; 
+const db = require('./config/keys').mongoURI;
 
 // Connect to Mongo
 mongoose
@@ -32,6 +33,7 @@ app.use('/api/services', service);
 app.use('/api/admins', admin);
 app.use('/api/brands', brand);
 app.use('/api/loginAuth', loginAuth);
+app.use('/api/bids', bids);
 
 const port = process.env.PORT || 5050;
 
