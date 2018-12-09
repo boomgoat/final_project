@@ -40,6 +40,6 @@ export default {
         createService: data => axios.post('/api/services', { data }).then(res => res.data)
     },
     bid : {
-        saveBid: (data) => axios.post('/api/bids', {data}).then(res => res.data)
+        saveBid: (data, meta) => axios.post('/api/bids', {data, meta}).then(res => res.data)
     }
 }

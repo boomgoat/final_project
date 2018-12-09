@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const BidSchema = new mongoose.Schema({
     status: {
-        type: Boolean,
+        type: String, enum: ['Pending', 'Accepted', 'Rejected'],
         default: false,
         required: true,
         index: true
@@ -21,12 +21,12 @@ const BidSchema = new mongoose.Schema({
         required: true,
         index: true
     },
-    jobId: [{
+    job: {
         type: Schema.Types.ObjectId, ref: 'Job'
-    }],
-    userId: [{
+    },
+    user: {
         type: Schema.Types.ObjectId, ref: 'User'
-    }],
+    },
 },
 {
     timestamps: true

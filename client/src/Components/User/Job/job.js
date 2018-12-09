@@ -51,7 +51,6 @@ class Job extends Component {
   }
 
   fetchUser = id => {
-    debugger
     this.props.getUser(id)
       .then(user => {
         this.setState({jobOwner: user})
@@ -110,6 +109,7 @@ class Job extends Component {
             isOpen={this.state.modal}
             toggle={this.toggle}
             submitBid={submitBid}
+            history={history}
           />
         </Row>
 

@@ -71,8 +71,11 @@ export const createJob = (data) => dispatch => {
   });
 }
 
-export const submitBid = data => dispatch => {
+export const submitBid = (data, meta) => dispatch => {
   return api.bid.saveBid(data).then(data=> {
     console.log(data);
+    meta.history.push('/feed');
+  }).catch((error) => {
+    console.log('*** Something went wrong',error);
   })
 }
