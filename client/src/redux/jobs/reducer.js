@@ -8,7 +8,7 @@ const initialState = {
 
 const jobsReducer = function (state = initialState, {type, payload}) {
   switch (type) {
-    case 'GET_JOBS':
+    case 'GET_JOBS_SUCCESS':
       return {...state, data: payload};
     case 'GET_JOB':
       return state;

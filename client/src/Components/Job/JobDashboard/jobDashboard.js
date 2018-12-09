@@ -26,7 +26,7 @@ class JobDash extends Component {
 
   componentDidMount() {
     this.props.fetchJobs()
-      .then(({payload}) => this.setState({myJobs: this.extractMyJobs(payload)}));
+      .then(jobs => this.setState({myJobs: this.extractMyJobs(jobs)}));
   }
 
   extractMyJobs = jobs => jobs.filter(job => job.userId === this.props.id);

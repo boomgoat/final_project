@@ -1,9 +1,9 @@
 import {GET_JOB, ADD_JOB} from '../users/types';
 import api from "../../Components/api";
 
-export const getJobs = (jobs) => {
+export const getJobsDone = (jobs) => {
   return {
-    type: 'GET_JOBS',
+    type: 'GET_JOBS_SUCCESS',
     payload: jobs
   };
 };
@@ -32,7 +32,10 @@ export const fetchJob = (id) => dispatch => {
     })
 };
 
-export const fetchJobs = () => dispatch => api.job.getJobs().then(jobs => dispatch(getJobs(jobs)));
+export const fetchJobs = () => dispatch => api.job.getJobs().then(jobs => {
+  dispatch(getJobsDone(jobs));
+  return jobs;
+});
 
 export const createJobRequest = (data) => ({
   type: 'ADD_JOB',
