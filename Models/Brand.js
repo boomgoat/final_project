@@ -46,8 +46,10 @@ const BrandSchema = new mongoose.Schema({
 
 BrandSchema.methods.generateJWT = function generateJWT(){
     return jwt.sign({
+        id: this._id,
         email: this.email,
-        brandName: this.brandName
+        brandName: this.brandName,
+        phone: this.phone
     }, 'secretkey' );
 };
 
@@ -57,7 +59,6 @@ BrandSchema.methods.toAuthJSON = function toAuthJSON () {
         email: this.email,
         brandName: this.brandName,
         phone: this.phone,
-        confirmed: this.confirmed,
         token: this.generateJWT()
     }
 };

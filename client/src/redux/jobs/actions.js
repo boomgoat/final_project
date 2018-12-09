@@ -21,6 +21,18 @@ const createFetchJobFailed = (error) => ({
   type: 'GET_JOB_FAILED'
 });
 
+const createDeleteJobRequest = () => ({
+  type: 'DELETE_JOB_REQUEST'
+});
+
+const createDeleteJobSuccess = () => ({
+  type: 'DELETE_JOB_SUCCESS'
+});
+
+const createDeleteJobFailed = () => ({
+  type: 'DELETE_JOB_FAILED'
+});
+
 export const fetchJob = (id) => dispatch => {
   dispatch(createFetchJobRequest());
   return api.job.getOne(id)
@@ -36,6 +48,18 @@ export const fetchJobs = () => dispatch => api.job.getJobs().then(jobs => {
   dispatch(getJobsDone(jobs));
   return jobs;
 });
+export const deleteJob = (id) => dispatch => {
+  dispatch(createDeleteJobRequest());
+  return api.job.deleteJob(id)
+  .then(job => {
+    return dispatch(createDeleteJobSuccess());
+  })
+  .catch(error => {
+    return dispatch(createDeleteJobFailed(error));
+  })
+}
+
+export const fetchJobs = () => dispatch => api.job.getJobs().then(jobs => dispatch(getJobs(jobs)));
 
 export const createJobRequest = (data) => ({
   type: 'ADD_JOB',

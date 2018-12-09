@@ -47,7 +47,8 @@ const JobSchema = new mongoose.Schema({
         index: true
     },
     status: {
-        type: String, enum: ['Pending', 'Active', 'Completed']
+        type: String, enum: ['Blocked', 'Active', 'Completed'],
+        default: 'Active'
     },
     userId: {
         type: String,
