@@ -59,8 +59,6 @@ export const deleteJob = (id) => dispatch => {
   })
 }
 
-export const fetchJobs = () => dispatch => api.job.getJobs().then(jobs => dispatch(getJobs(jobs)));
-
 export const createJobRequest = (data) => ({
   type: 'ADD_JOB',
   payload: data
