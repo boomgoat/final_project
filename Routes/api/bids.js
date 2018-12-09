@@ -5,6 +5,7 @@ const router = express.Router();
 
 const Bid = require('../../Models/Bid');
 const Job = mongoose.model('Job');
+const User = mongoose.model('User');
 
 router.get('/', (req, res) => {
 
@@ -30,10 +31,18 @@ router.post('/', (req, res) => {
         const job = jobs[0];
         job.bids = job.bids.concat([newBid]);
         job.save().then(job => {
-          bid.job = job;
-          bid.save().then(bid=> {
-            const populatedBid = bid.populate('job');
-            res.json(populatedBid)});
+          User.find({_id : req.body.data.userId}).exec((err, users)=> {
+            const user = users[0];
+            user.bids = user.bids.concat([bid]);
+            user.save().then(user => {
+              bid.job = job;
+              bid.user = user;
+              bid.save().then(bid=> {
+                const populatedBid = bid.populate('job, user');
+                res.json(populatedBid);
+              });
+            })
+          });
         })
       });
 
