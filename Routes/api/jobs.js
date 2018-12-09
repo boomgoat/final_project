@@ -9,11 +9,9 @@ const Job = require('../../models/Job');
 // @access  Public
 router.get('/', (req, res) => {
 
-  Job.find().sort({timestamps: -1}).then(jobs => {
+  Job.find().populate('bids').sort({timestamps: -1}).then(jobs => {
     res.json(jobs)
   });
-
-
 });
 
 router.get('/:id', (req, res) => {

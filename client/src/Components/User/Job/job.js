@@ -74,7 +74,7 @@ class Job extends Component {
   };
 
   render() {
-    const {submitBid, job, user} = this.props;
+    const {submitBid, job, user, history} = this.props;
     return (
       <div className="container-fluid backgroundColor">
         <div className="jumbotron jobs col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
@@ -102,6 +102,7 @@ class Job extends Component {
             isOpen={this.state.modal}
             toggle={this.toggle}
             submitBid={submitBid}
+            history={history}
           />
         </Row>
 

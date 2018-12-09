@@ -10,10 +10,10 @@ class PlaceBid extends Component {
   }
 
   submit = () => {
-    const {submitBid, job, user} = this.props;
+    const {submitBid, job, user, history} = this.props;
     const {bidValue, bidInfo} = this.state;
 
-    submitBid({bidValue, bidInfo, jobId: job._id, userId: user._id, status: false});
+    submitBid({bidValue, bidInfo, jobId: job._id, userId: user._id, status: 'Pending'}, { history});
   }
   render() {
     const {isOpen, toggle} = this.props;
@@ -59,7 +59,7 @@ class PlaceBid extends Component {
 
         </ModalBody>
         <ModalFooter>
-          <Button className="butn2 mainButn" onClick={this.submit}>Do Something</Button>{' '}
+          <Button className="butn2 mainButn" onClick={this.submit}>Place Bid</Button>{' '}
           <Button className="butn2" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>

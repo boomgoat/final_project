@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const JobSchema = new mongoose.Schema({
     title: {
@@ -20,7 +21,7 @@ const JobSchema = new mongoose.Schema({
         default: '',
         required: true,
         lowercase:true,
-        index: true 
+        index: true
     },
     isDeleted: {
         type: Boolean,
@@ -53,7 +54,10 @@ const JobSchema = new mongoose.Schema({
         type: String,
         default: '',
         index: true
-    }
+    },
+    bids: [{
+        type: Schema.Types.ObjectId, ref: 'Bid'
+    }]
 },
 {
     timestamps: true
