@@ -9,25 +9,6 @@ import { Input, Row, Col, Button} from 'reactstrap';
 import PlaceBid from "./PlaceBid/PlaceBid";
 
 class Job extends Component {
-  fetchUser = id => {
-    this.props.getUser(id)
-      .then(user => {
-        this.setState({jobOwner: user})
-      })
-      .catch(err => console.log(err))
-  };
-  onChange = e =>
-    this.setState({
-      ...this.state, [e.target.name]: e.target.value
-    });
-  submit = data => {
-    return this.props.updateUser({...data, id: this.props.user._id})
-      .then(() => {
-        this.props.history.push("/profile")
-      })
-      .catch(err => console.log(err));
-  };
-
   constructor(props) {
     super(props);
     this.state = {
@@ -53,6 +34,7 @@ class Job extends Component {
       reviewRecipientId: 124,
       message: 'I have experience with fixing things'
     }];
+
     this.props.fetchJob(this.props.match.params._id)
       .then(({payload}) => {
         const {title, budget, description, userId} = payload;
@@ -68,16 +50,39 @@ class Job extends Component {
       });
   }
 
+  fetchUser = id => {
+    debugger
+    this.props.getUser(id)
+      .then(user => {
+        this.setState({jobOwner: user})
+      })
+      .catch(err => console.log(err))
+  };
+
   toggle() {
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
   }
 
+  onChange = e =>
+    this.setState({
+      ...this.state, [e.target.name]: e.target.value
+    });
+
+  submit = data => {
+    return this.props.updateUser({...data, id: this.props.user._id})
+      .then(() => {
+        this.props.history.push("/profile")
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     const {description, title, reviews, budget} = this.state;
     const budgetValue = budget ? budget : 0;
     const {submitBid, job, user} = this.props;
+    console.log(job)
     return (
       <div className="container-fluid backgroundColor">
         <div className="jumbotron jobs col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
@@ -139,8 +144,8 @@ class Job extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const job = state.jobs.data.filter(job => job._id === ownProps.match.params._id)[0];
-
+  const job = state.jobs.data.filter(job => job._id === ownProps.match.params._id);
+  console.log(state.jobs.data);
   return {
     user: state.user.user,
     job

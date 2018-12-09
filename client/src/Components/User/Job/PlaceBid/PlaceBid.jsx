@@ -12,7 +12,7 @@ class PlaceBid extends Component {
   submit = () => {
     const {submitBid, job, user} = this.props;
     const {bidValue, bidInfo} = this.state;
-
+debugger
     submitBid({bidValue, bidInfo, jobId: job._id, userId: user._id, status: false});
   };
 
