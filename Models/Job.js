@@ -51,11 +51,9 @@ const JobSchema = new mongoose.Schema({
         type: String, enum: ['Blocked', 'Active', 'Completed'],
         default: 'Active'
     },
-    userId: {
-        type: String,
-        default: '',
-        index: true
-    },
+    userId: [{
+      type: Schema.Types.ObjectId, ref: 'User'
+    }],
     workerId: {
         type: String,
         default: '',

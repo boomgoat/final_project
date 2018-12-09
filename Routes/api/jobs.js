@@ -11,7 +11,12 @@ const User = mongoose.model('User');
 // @access  Public
 router.get('/', (req, res) => {
 
-  Job.find().populate({
+  Job.find()
+    .populate({
+      path: 'userId',
+      model: 'User'
+    })
+    .populate({
     path:'bids',
     model: 'Bid',
     populate: {
@@ -26,9 +31,17 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Job.findById(req.params.id)
-    .then(job => {
-      res.json(job)
-    });
+    .populate({
+      path:'bids',
+      model: 'Bid',
+      populate: {
+        path: 'user',
+        model: 'User'
+      }
+    })
+    .exec((err, job) => {
+      return res.json(job)
+    })
 });
 
 // @route   POST api/user

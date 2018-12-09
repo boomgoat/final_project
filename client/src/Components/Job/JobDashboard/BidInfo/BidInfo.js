@@ -19,28 +19,32 @@ class BidInfo extends Component {
   }
 
   render() {
-    const {bids = []} = this.state;
-    const bidItems = bids.map(bid =>
-      <div>
-        <Row>
-          <h1>Bids</h1>
-        </Row>
-        <Row>
-          <Col md={3}>
-            <h2>Name</h2>
-          </Col>
-          <Col md={3}>
-            <h2>Amount</h2>
-          </Col>
-          <Col md={6}>
-            <p>Info</p>
-          </Col>
-        </Row>
-      </div>
+    const {bids = []} = this.state.job;
+    const bidItems = bids.length > 0 && bids.map(({ user, bidInfo, bidValue }) =>
+      <Row>
+        <Col md={3}>
+          <h2>Name</h2>
+          <h2>{user ? user.firstName : 'simon'}</h2>
+        </Col>
+        <Col md={3}>
+          <h2>Amount</h2>
+          <h2>{bidValue}</h2>
+        </Col>
+        <Col md={6}>
+          <p>Info</p>
+        </Col>
+      </Row>
     );
     return (
       <div className="jumbotron jobs col-md-8">
-        {bidItems}
+        <Row>
+          <Row>
+            <h1>
+              Bids
+            </h1>
+          </Row>
+          <Row>{bids.length > 0 ? bidItems : 'No bids yet :('}</Row>
+        </Row>
       </div>
     );
   }

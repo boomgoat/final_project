@@ -23,7 +23,7 @@ class ActiveDash extends Component {
       fetchJobs()
         .then(jobs => {
         this.setState({
-          jobs: jobs.filter(job => params.viewType === 'owner' ? job.userId : job.workerId !== user.id)
+          jobs: jobs.filter(job => params.viewType === 'owner' ? job.userId[0]._id === user.id : job.workerId === user.id)
         })
       });
   }
