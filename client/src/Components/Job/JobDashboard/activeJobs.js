@@ -19,7 +19,6 @@ class ActiveDash extends Component {
 
   componentDidMount() {
     const {fetchJobs, user, match: { params }} = this.props;
-    debugger;
       fetchJobs()
         .then(jobs => {
         this.setState({
