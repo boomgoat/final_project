@@ -74,9 +74,18 @@ li a:visited{
   @keyframes move{
     0%{
       left: 10vw;
+      transform: rotateY(0deg);
     }
-    100%{
+    45%{
       left: 50vw;
+      transform: rotateY(1deg);
+    }
+    49%{
+        transform: rotateY(180deg);
+    }
+    95%{
+        left:10vh;
+        transform: rotateY(181deg);
     }
 }
 
@@ -95,8 +104,9 @@ li a:visited{
 }
 
 .adminLanding img{
-    animation: bounce ease .66s infinite, move ease 15s;
+    animation: bounce ease .66s infinite, move ease 15s infinite;
     position: absolute;
+    left: 10vw;
     top: 30vh;
     z-index: 1;
 }
