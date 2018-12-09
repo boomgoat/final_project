@@ -24,15 +24,16 @@ router.post('/', (req, res) => {
   });
 
 
-
   newBid.save()
     .then((bid) => {
-      bid.populate('Job');
       Job.find({_id : req.body.data.jobId}).exec((err, jobs)=>{
         const job = jobs[0];
         job.bids = job.bids.concat([newBid]);
         job.save().then(job => {
-          res.json(bid);
+          bid.job = job;
+          bid.save().then(bid=> {
+            const populatedBid = bid.populate('job');
+            res.json(populatedBid)});
         })
       });
 
