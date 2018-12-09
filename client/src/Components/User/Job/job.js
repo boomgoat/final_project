@@ -74,21 +74,20 @@ class Job extends Component {
   };
 
   render() {
-    const { description, title, reviews, budget  } = this.state.data;
     const {submitBid, job, user} = this.props;
     return (
       <div className="container-fluid backgroundColor">
         <div className="jumbotron jobs col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
           <Row>
-            <h1>{title}</h1>
+            <h1>{job.title}</h1>
           </Row>
           <Row>
-            <h3 className="col-md-6 text-left">Job By: {this.props.user.firstName} </h3>
-            <h3 className="col-md-6 text-center">Budget: {budget}</h3>
+            <h3 className="col-md-6 text-left">Job By: {user.firstName} </h3>
+            <h3 className="col-md-6 text-center">Budget: {job.budget}</h3>
           </Row>
           <Row>
             <p className="text-left description">
-             {description}
+             {job.description}
             </p>
           </Row>
           <Row>

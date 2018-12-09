@@ -21,12 +21,12 @@ const BidSchema = new mongoose.Schema({
         required: true,
         index: true
     },
-    jobId: [{
+    jobId: {
         type: Schema.Types.ObjectId, ref: 'Job'
-    }],
-    userId: [{
+    },
+    userId: {
         type: Schema.Types.ObjectId, ref: 'User'
-    }],
+    },
 },
 {
     timestamps: true

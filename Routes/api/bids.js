@@ -4,12 +4,20 @@ const router = express.Router();
 
 const Bid = require('../../Models/Bid');
 
-router.post('/bids', (req, res) => {
+router.get('/', (req, res) => {
+
+  Bid.find().sort({timestamps: -1}).then(bids => {
+    res.json(bids)
+  });
+
+});
+
+router.post('/', (req, res) => {
   const newBid = new Bid({
-    status: '',
-    bidInfo: '',
-    bidValue: '',
-    jobId: '',
+    status: req.body.data.status,
+    bidInfo: req.body.data.bidInfo,
+    bidValue: req.body.data.bidValue,
+    jobId: req.body.data.jobId,
     userId: req.body.data.userId
   });
 
