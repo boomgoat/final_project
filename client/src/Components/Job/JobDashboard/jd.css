@@ -1,4 +1,13 @@
 .jobDashboard{
     margin: 8em;
     min-height: 60vh;
+    font-size: 2em;
+}
+
+.complete{
+    border: none;
+    border-radius: 15px;
+    margin:none;
+    background-color: #54D854;
+    color:white;
 }

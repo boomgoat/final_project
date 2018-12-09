@@ -19,7 +19,7 @@ class ServiceListing extends Component {
         const { services } = this.props
         return (
             <div className="jumbotron fade-in-slow text-left mainFeed col-md-8">
-                <h1 className="feedHeader"> My Job Feed </h1>
+                <h1 className="feedHeader">Service Feed </h1>
                 { services.map(({ _id, title, price, description }) => (
                 <NavLink className="link fade-in-slow" to="/jobDesc" key={_id}>
                     <Row className="borders">

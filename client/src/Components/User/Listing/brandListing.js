@@ -19,7 +19,7 @@ class BrandListing extends Component {
         const { jobs } = this.props
         return (
             <div className="jumbotron fade-in text-left mainFeed col-md-8">
-                <h1 className="feedHeader"> My Job Feed </h1>
+                <h1 className="feedHeader">Sponsered Brand Jobs</h1>
                 { jobs.map(({ _id, title, budget, description }) => (
                 <NavLink className="link fade-in-slow" to="/jobDesc" key={_id}>
                     <Row className="borders">

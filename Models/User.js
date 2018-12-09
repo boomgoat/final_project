@@ -78,17 +78,22 @@ const UserSchema = new mongoose.Schema({
     },
     rank: {
         type: Number,
-        default: '',
+        default: 0,
         index: true
     },
     rating: {
-        type: Number,
+        type: [Number],
+        default: [0],
+        index: true
+    },
+    reviews: {
+        type: [String],
         default: '',
         index: true
     },
     favorPoints: {
         type: Number,
-        default: '',
+        default: 1000,
         index: true
     },
     jobs: [
@@ -126,7 +131,11 @@ UserSchema.methods.generateJWT = function generateJWT(){
         availability: this.availability,
         phone: this.phone,
         about: this.about,
-        skills: this.skills
+        skills: this.skills,
+        favorPoints: this.favorPoints,
+        rating: this.rating,
+        rank: this.rank,
+        reviews: this.reviews
     }, 'secretkey' );
 };
 
@@ -143,6 +152,10 @@ UserSchema.methods.toAuthJSON = function toAuthJSON () {
         phone: this.phone,
         about: this.about,
         skills: this.skills,
+        favorPoints: this.favorPoints,
+        rating: this.rating,
+        rank: this.rank,
+        reviews: this.reviews,
         confirmed: this.confirmed,
         token: this.generateJWT()
     }

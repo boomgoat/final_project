@@ -47,7 +47,7 @@ class Feed extends Component {
 
   render() {
 
-    const {firstName, about, skills, lastName, availability} = this.props.user.user;
+    const {availability, favorPoints, rank} = this.props.user.user;
     const {currentComponent} = this.state;
     return (
       <div className="container-fluid cont">
@@ -94,8 +94,8 @@ class Feed extends Component {
             <ul className="sidePanels">
 
               <li><img src={pp} className="pp col-md-9 feedPic" alt="profile-picture"/></li>
-              <li><h2 className="links">Rank:</h2><h4>Archangel</h4></li>
-              <li><h2 className="links">Points:</h2><h4>3466</h4></li>
+              <li><h2 className="links">Rank:</h2><h4>{rank}</h4></li>
+              <li><h2 className="links">Points:</h2><h4>{favorPoints}</h4></li>
               <li><h4 className="links">Availability:</h4><h4>{availability} hrs/week</h4></li>
               <hr className="sidepanelSplit"/>
               <NavLink to="/profile">

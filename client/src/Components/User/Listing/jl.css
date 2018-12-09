@@ -24,10 +24,6 @@
     font-family: 'Roboto';
   }
 
-  .desc{
-    /* font-style: italic; */
-  }
-
   .desc::first-letter{
     text-transform: uppercase;
   }

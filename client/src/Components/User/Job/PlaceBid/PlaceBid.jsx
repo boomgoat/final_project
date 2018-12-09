@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Col, Label, Input, ModalHeader, ModalBody, ModalFooter, Button, Modal } from "reactstrap";
+import { Row, Col, Label, Input, ModalHeader, ModalBody, ModalFooter, Button, Modal } from "reactstrap";
 import styles from '../job.css';
+import bid from '../../../Resources/Images/bidding.png';
 
 class PlaceBid extends Component {
 
@@ -22,7 +23,14 @@ debugger
       <Modal isOpen={isOpen} toggle={toggle} className="fade-in-slow">
         <ModalHeader toggle={toggle}>PLACE BID</ModalHeader>
         <ModalBody className="jobs">
+          <Row>
+            <Col>
+              <Row><h1>Up for the Job?</h1></Row>
+              <Row><h2>Please provide the following details!</h2></Row>
+            </Col>
+          </Row>
           <div className="row">
+            
 
             <Col>
               <Label className="">Your Bid:</Label>
@@ -57,10 +65,15 @@ debugger
             </Col>
 
           </div>
+          <Row>
+            <Col md={6}>
+              <img className="col-md-12" src={bid}/>
+            </Col>
+          </Row>
 
         </ModalBody>
         <ModalFooter>
-          <Button className="butn2 mainButn" onClick={this.submit}>Do Something</Button>{' '}
+          <Button className="butn2 mainButn" onClick={this.submit}>Place Bid!</Button>{' '}
           <Button className="butn2" onClick={toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
