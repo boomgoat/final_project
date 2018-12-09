@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 
 // User Model
 const Job = require('../../models/Job');
+const User = mongoose.model('User');
 
 // @route   Get api/users
 // @desc    Get All Users
@@ -47,6 +49,27 @@ router.post('/', (req, res) => {
     });
 });
 
+// @route   PATCH api/jobs
+// @desc    Assign job to worker
+// @access  Public
+router.patch('/', function (req, res, next) {
+  console.log(req.body);
+  Job.findById(req.body.jobId)
+    .then(job => {
+      job.workerId = req.body.jobId;
+      job.save()
+        .then(job => {
+          User.find({_id: req.body.workerId}).exec((err, users) => {
+            const user = users[0];
+            user.jobs = user.jobs.concat(job);
+            user.save()
+              .then(user => {
+              res.json(user)
+            });
+          })
+        });
+    })
+});
 // @route   DELETE api/user/:id
 // @desc    Delete A User
 // @access  Public

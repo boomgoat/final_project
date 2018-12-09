@@ -54,6 +54,11 @@ const JobSchema = new mongoose.Schema({
         type: String,
         default: '',
         index: true
+    },
+    workerId: {
+        type: String,
+        default: '',
+        index: true
     }
 },
 {

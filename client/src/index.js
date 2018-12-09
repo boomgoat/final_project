@@ -100,7 +100,7 @@ ReactDOM.render(
 
         <Route path='/myJobs' component={JobDashboard}/>
 
-        <Route path='/activeJobs' component={ActiveJobs}/>
+        <Route path='/activeJobs/:viewType' component={ActiveJobs}/>
         <Route path='/completedJobs' component={CompJobs}/>
         <Route path='/jobDesc/:_id' component={JobDesc}/>
 

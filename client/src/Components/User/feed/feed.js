@@ -60,7 +60,7 @@ class Feed extends Component {
               <hr className="sidepanelSplit"/>
               <h3 className="links">Created Jobs & Services</h3>
               <hr className="sidepanelSplit"/>
-              <NavLink to="/activeJobs">
+              <NavLink to="/activeJobs/owner">
                 <li><h4>Active Jobs</h4></li>
               </NavLink>
               <NavLink to="/activeServices">
@@ -75,7 +75,7 @@ class Feed extends Component {
               <hr className="sidepanelSplit"/>
               <h3 className="links">Applied Jobs & Services</h3>
               <hr className="sidepanelSplit"/>
-              <NavLink to="/activeJobs">
+              <NavLink to="/activeJobs/worker">
                 <li><h4>Active Jobs</h4></li>
               </NavLink>
               <NavLink to="/activeServices">
