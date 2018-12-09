@@ -29,10 +29,12 @@ router.post('/', (req, res) => {
     .then((bid) => {
       Job.find({_id : req.body.data.jobId}).exec((err, jobs)=>{
         const job = jobs[0];
+        console.log(job)
         job.bids = job.bids.concat([newBid]);
         job.save().then(job => {
           User.find({_id : req.body.data.userId}).exec((err, users)=> {
             const user = users[0];
+            console.log(user)
             user.bids = user.bids.concat([bid]);
             user.save().then(user => {
               bid.job = job;

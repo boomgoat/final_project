@@ -80,7 +80,7 @@ class Job extends Component {
   render() {
     const {description, title, reviews, budget} = this.state;
     const budgetValue = budget ? budget : 0;
-    const {submitBid, job, user} = this.props;
+    const {submitBid, job, user, history} = this.props;
     console.log(job)
     return (
       <div className="container-fluid backgroundColor">
