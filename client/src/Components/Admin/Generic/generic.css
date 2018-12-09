@@ -74,7 +74,11 @@ li a:visited{
   @keyframes move{
     0%{
       left: 10vw;
+      opacity: 0;
       transform: rotateY(0deg);
+    }
+    5%{
+        opacity: 1;
     }
     45%{
       left: 50vw;
@@ -82,9 +86,14 @@ li a:visited{
     }
     49%{
         transform: rotateY(180deg);
+        opacity: 0;
+    }
+    55%{
+        opacity: 1;
     }
     95%{
         left:10vh;
+        opacity: 1;;
         transform: rotateY(181deg);
     }
 }
