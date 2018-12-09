@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import styles from './settings.css';
-import {Form, FormGroup, Label, Input, Col} from 'reactstrap';
+import {Form, FormGroup, Label, Input, Col, Row} from 'reactstrap';
 import {connect} from 'react-redux';
 import {updateUser} from '../../../redux/users/actions';
 import {getUsers} from '../../../redux/users/actions';
@@ -11,6 +11,8 @@ import PropTypes from 'prop-types';
 class Settings extends Component {
     state = {
         data: {
+            firstName: '',
+            lastName: '',
             age: '',
             availability: '',
             gender: '',
@@ -62,106 +64,164 @@ class Settings extends Component {
 
     render() {
         const {data} = this.state;
-        const {about, skills, age, phone, availability} = data;
+        const {firstName, lastName, about, skills, age, phone, availability} = data;
         return (
-            <div className="ComForm container-fluid cont">
+            <div className="ComForm settings settingBackGround container-fluid cont">
                 <div className="jumbotron comform col-md-6 col-sm-6 col-xs-12">
                     <Form onSubmit={this.onSubmit}>
                         <FormGroup>
                             <div className="container">
 
-                                <div className="row">
-                                    <Label className="col-md-1 col-sm-1">
-                                        Age:
-                                    </Label>
-
-                                    <Input
-                                        className="col-md-1 col-sm-1"
-                                        type="text" name="age"
-                                        placeholder={age}
-                                        onChange={this.onChange}
-                                        value={data.age}
-                                    />
-
-                                    <Label className="col-md-2 col-sm-2">
-                                        Availability:
-                                    </Label>
-
-                                    <Input
-                                        className="col-md-1 col-sm-1"
-                                        type="text" name="availability"
-                                        placeholder={availability}
-                                        onChange={this.onChange}
-                                        value={data.availability}
-                                    />
-
-                                    <Label className="col-md-offset-3 col-md-1 col-sm-2">
-                                        Gender:
-                                    </Label>
-
-                                    <FormGroup check>
-                                        <Label check>
-                                        Male<br/>
-                                            <Input type="radio" name="gender" onChange={this.onChange}
-                                                   value="male"/>{' '}
-                                            
+                                <Row>
+                                    <Col>
+                                        <Label className="text-left col-md-12">
+                                            <h2>First Name</h2>
                                         </Label>
-                                    </FormGroup>
-                                    <FormGroup check>
-                                        <Label check>
-                                        Female<br/>
-                                            <Input type="radio" name="gender" onChange={this.onChange}
-                                                   value="female"/>{' '}
-                                            
+                                    </Col>
+                                    <Col>
+                                        <Input
+                                            className="col-md-8 inputStyles"
+                                            type="text" name="firstName"
+                                            placeholder={firstName}
+                                            onChange={this.onChange}
+                                            value={data.firstName}
+                                        />
+                                    </Col>
+                                    <Col>
+                                        <Label className="text-left col-md-12">
+                                            <h2>Last Name</h2>
                                         </Label>
-                                    </FormGroup>
+                                    </Col>
+                                    <Col>
+                                        <Input
+                                            className="col-md-8 inputStyles"
+                                            type="text" name="lastName"
+                                            placeholder={lastName}
+                                            onChange={this.onChange}
+                                            value={data.lastName}
+                                        />
+                                    </Col>
+                                </Row>
 
-                                </div>
+                                <hr className="fieldDiv"/>
 
-                                <div className="row">
+                                <Row>
+                                    <Col>
+                                        <Label className="col-md-1 col-sm-1">
+                                            <h2>Age:</h2>
+                                        </Label>
+                                    </Col>
+                                    <Col>
+                                        <Input
+                                            className="inputStyles"
+                                            type="text" name="age"
+                                            placeholder={age}
+                                            onChange={this.onChange}
+                                            value={data.age}
+                                        />
+                                    </Col>
 
-                                    <Label className="col-md-1 col-sm-1">Phone:</Label>
+                                    <Col>
+                                        <Label className="col-md-2 col-sm-2">
+                                        <h2>Availability:</h2> 
+                                        </Label>
+                                    </Col>
+                                    <Col>
+                                        <Input
+                                            className="inputStyles"
+                                            type="text" name="availability"
+                                            placeholder={availability}
+                                            onChange={this.onChange}
+                                            value={data.availability}
+                                        />
+                                    </Col>
+                                </Row>
 
+                                <hr className="fieldDiv"/>
+
+                                <Row>
+                                    <Col md={2}>
+                                    <Label className=" col-sm-2">
+                                        <h2>Gender:</h2>
+                                    </Label>
+                                    </Col>
+
+                                    <Col md={10}>
+                                        <Col md={6}>
+                                            <FormGroup check>
+                                                <Label check>
+                                                    <h2 className="col-md-6">Male</h2>
+                                                    <Input className="col-md-6" type="radio" name="gender" onChange={this.onChange}
+                                                        value="male"/>{' '}
+                                                </Label>
+                                            </FormGroup>
+                                        </Col>
+
+                                        <Col md={6}>
+                                            <FormGroup check>
+                                                <Label check>
+                                                    <h2 className="col-md-6">Female</h2>
+                                                    <Input className="col-md-6" type="radio" name="gender" onChange={this.onChange}
+                                                        value="female"/>{' '}
+                                                </Label>
+                                            </FormGroup>
+                                        </Col>
+                                    </Col>
+                                </Row>
+
+                                <hr className="fieldDiv"/>
+
+                                <Row>
+                                    <Col md={3}>
+                                    <Label className="col-md-1 col-sm-1"><h2>Phone:</h2></Label>
+                                    </Col>
+                                    <Col>
                                     <Input
-                                        className="col-md-4 col-sm-1"
+                                        className="col-md-4 col-sm-1 inputStyles"
                                         type="text"
                                         name="phone"
                                         value={data.phone}
                                         onChange={this.onChange}
                                         placeholder={phone}
                                     />
+                                    </Col>
+                                </Row>
 
-                                </div>
+                                <hr className="fieldDiv"/>
 
-                                <div className="row">
+                                <Row>
+                                    <Col md={3}>
+                                        <Label className="col-md-1 col-sm-1"><h2>About:</h2></Label>
+                                    </Col>
+                                    <Col md={8}>
+                                        <Input
+                                            className=" inputStyles"
+                                            type="textarea"
+                                            name="about"
+                                            value={data.about}
+                                            onChange={this.onChange}
+                                            placeholder={about}
+                                        />
+                                    </Col>
+                                </Row>
 
-                                    <Label className="col-md-1 col-sm-1">About:</Label>
+                                <hr className="fieldDiv"/>
 
-                                    <Input
-                                        className="col-md-8 col-sm-1"
-                                        type="textarea"
-                                        name="about"
-                                        value={data.about}
-                                        onChange={this.onChange}
-                                        placeholder={about}
-                                    />
-
-                                </div>
-
-                                <div className="row">
-
-                                    <Label className="col-md-1 col-sm-1">Skills:</Label>
-
-                                    <Input
-                                        className="col-md-8"
-                                        type="textarea"
-                                        name="skills"
-                                        onChange={this.onChange}
-                                        value={data.skills}
-                                        placeholder={skills}
-                                    />
-
-                                </div>
+                                <Row>
+                                    <Col md={3}>
+                                        <Label className="col-md-1 col-sm-1"><h2>Skills:</h2></Label>
+                                    </Col>
+                                    <Col>
+                                        <Input
+                                            className="col-md-8 inputStyles"
+                                            type="textarea"
+                                            name="skills"
+                                            onChange={this.onChange}
+                                            value={data.skills}
+                                            placeholder={skills}
+                                        />
+                                    </Col>
+                                </Row>
                             </div>
 
                             <button className="button col-md-12 col-sm-12 col-xs-12">SAVE!</button>

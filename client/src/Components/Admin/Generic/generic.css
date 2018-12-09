@@ -53,13 +53,52 @@ li a:visited{
 
 /* Landing */
 
+@keyframes bounce{
+    0% {
+        -webkit-box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
+        -moz-box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
+        box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
+    }
+    50% {
+        -webkit-box-shadow: 0px 215px 60px -133px rgba(0,0,0,0.82);
+        -moz-box-shadow: 0px 215px 60px -133px rgba(0,0,0,0.82);
+        box-shadow: 0px 215px 60px -133px rgba(0,0,0,0.82);
+        
+      }
+    100% {
+        -webkit-box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
+        -moz-box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
+        box-shadow: 0px 220px 60px -133px rgba(0,0,0,0.82);
+    }
+  }
+  @keyframes move{
+    0%{
+      left: 10vw;
+    }
+    100%{
+      left: 50vw;
+    }
+}
+
+
 .adminLanding{
     height: 90vh;
     padding-top: 13em;
-    background-color: #F4F7F8;
+    z-index: 999;
+    background: inherit;
     border-top-left-radius: 0%!important;
     border-top-right-radius: 0%!important;
     border-bottom-right-radius: 0%!important;
+    -webkit-box-shadow: inset 3px -3px 5px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 3px -3px 5px 0px rgba(0,0,0,0.2);
+    box-shadow: inset 3px -3px 5px 0px rgba(0,0,0,0.2);
+}
+
+.adminLanding img{
+    animation: bounce ease .66s infinite, move ease 15s;
+    position: absolute;
+    top: 30vh;
+    z-index: 1;
 }
 
 .adminLanding h1{

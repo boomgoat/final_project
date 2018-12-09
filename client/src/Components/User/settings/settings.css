@@ -1,0 +1,18 @@
+.fieldDiv{
+    margin: 5%;
+    min-width: 90%;
+}
+
+.settings .inputStyles{
+    font-size: 1.45em;
+    -webkit-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2);
+    box-shadow: inset 0px 0px 4px 0px rgba(0,0,0,0.2);
+}
+
+.settingBackGround{
+    background-image: url('../../Resources/Images/settings.png');
+    background-repeat: no-repeat;
+    background-position-x: 95%; 
+    background-position-y: 50%;
+}
